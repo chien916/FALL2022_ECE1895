@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29 32-bit) (preloaded format=pdflatex 2022.8.30)  31 AUG 2022 00:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29 32-bit) (preloaded format=pdflatex 2022.8.30)  3 SEP 2022 14:10
 entering extended mode
 **./document.tex
 (document.tex
@@ -97,52 +97,52 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 11.
 
+[1
+
+{C:/Users/Administrator/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
 Overfull \hbox (6.74693pt too wide) in paragraph at lines 35--35
 []\OT1/cmtt/m/n/10 val_owdc = 1 - val_RB/(val_RA+2*val_RB) %output waveform dut
 y cycle[] 
  []
 
-[1
-
-{C:/Users/Administrator/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
-<schmatics.PNG, id=13, 481.8pt x 519.44063pt>
+<schmatics.PNG, id=15, 476.53032pt x 437.76047pt>
 File: schmatics.PNG Graphic file (type png)
 <use schmatics.PNG>
 Package pdftex.def Info: schmatics.PNG  used on input line 43.
-(pdftex.def)             Requested size: 345.0pt x 371.95998pt.
-
-[2]
-<waveform.PNG, id=18, 481.8pt x 555.57562pt>
+(pdftex.def)             Requested size: 345.0pt x 316.94405pt.
+[2 <./schmatics.PNG>]
+<waveform.PNG, id=21, 477.65953pt x 438.51328pt>
 File: waveform.PNG Graphic file (type png)
 <use waveform.PNG>
 Package pdftex.def Info: waveform.PNG  used on input line 47.
-(pdftex.def)             Requested size: 345.0pt x 397.83543pt.
+(pdftex.def)             Requested size: 345.0pt x 316.7263pt.
 
 Overfull \hbox (15.0pt too wide) in paragraph at lines 47--48
 [][] 
  []
 
-[3 <./schmatics.PNG>] [4 <./waveform.PNG>] (document.aux) ) 
+[3 <./waveform.PNG>] (document.aux) ) 
 Here is how much of TeX's memory you used:
- 1167 strings out of 480790
- 17187 string characters out of 2904235
- 252328 words of memory out of 3000000
- 17216 multiletter control sequences out of 15000+200000
- 536146 words of font info for 37 fonts, out of 3000000 for 9000
+ 1169 strings out of 480790
+ 17168 string characters out of 2904235
+ 252345 words of memory out of 3000000
+ 17217 multiletter control sequences out of 15000+200000
+ 536454 words of font info for 38 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 30i,6n,25p,275b,259s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x
-86)/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files (x86)/Mi
-KTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files (x86)/MiKTeX/f
-onts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files (x86)/MiKTeX/fonts/ty
-pe1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX/fonts/type1/pub
-lic/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX/fonts/type1/public/ams
-fonts/cm/cmr17.pfb><C:/Program Files (x86)/MiKTeX/fonts/type1/public/amsfonts/c
-m/cmsy10.pfb><C:/Program Files (x86)/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt
-10.pfb>
-Output written on document.pdf (4 pages, 176648 bytes).
+ 30i,6n,25p,368b,259s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files (x86)/MiKTeX/fonts/type1
+/public/amsfonts/cm/cmbx10.pfb><C:/Program Files (x86)/MiKTeX/fonts/type1/publi
+c/amsfonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX/fonts/type1/public/amsf
+onts/cm/cmmi10.pfb><C:/Program Files (x86)/MiKTeX/fonts/type1/public/amsfonts/c
+m/cmmi7.pfb><C:/Program Files (x86)/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10
+.pfb><C:/Program Files (x86)/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C
+:/Program Files (x86)/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Progr
+am Files (x86)/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files
+ (x86)/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)
+/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on document.pdf (3 pages, 168197 bytes).
 PDF statistics:
- 52 PDF objects out of 1000 (max. 8388607)
+ 57 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
