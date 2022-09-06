@@ -1,0 +1,8 @@
+Comment,Description,Designator,Footprint,LibRef,Quantity
+
+"0.01u","","C1, C2","FP-RAD-TH-D_16_0_5-L_31_5-MFG","CMP-05427-001651-1","2"
+"LED","","D1","FP-HLMP-1301-MFG","CMP-18399-000007-1","1"
+"IO","{1 to OUT, 2 to V_CC, 3 to GNC}","J1","FP-22-28-4030-MFG","CMP-04776-000098-1","1"
+"0.1k","","RA","RESA60-630X240","CMP-1659-00063-1","1"
+"10k","","RB","RESA60-630X240","CMP-1659-00063-1","1"
+"NE555P","","U1","DIP794W45P254L959H508Q8","NE555P","1"

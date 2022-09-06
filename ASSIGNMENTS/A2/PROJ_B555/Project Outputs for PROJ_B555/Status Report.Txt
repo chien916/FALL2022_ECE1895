@@ -1,0 +1,12 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : Project [PROJ_B555.PrjPcb]
+   Generated File[PCBB_B555.TXT]
+   Generated File[PCBB_B555.LDP]
+   Generated File[PCBB_B555.DRR]
+
+
+Files Generated   : 3
+Documents Printed : 0
+
+Finished Output Generation At 15:52:50 On 2022-09-04
