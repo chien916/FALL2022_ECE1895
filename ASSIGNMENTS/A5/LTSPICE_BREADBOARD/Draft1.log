@@ -1,0 +1,24 @@
+Circuit: * D:\Academics\FA2022\JDFU\ASSIGNMENTS\A5\LTSPICE_BREADBOARD\Draft1.asc
+
+WARNING: Node SPEAKER_IN is floating.
+
+WARNING: Less than two connections to node SPEAKER_IN.  This node is used by C100U2.
+Direct Newton iteration for .op point succeeded.
+
+Date: Fri Sep 09 18:15:00 2022
+Total elapsed time: 3.445 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 1117273
+traniter = 1117265
+tranpoints = 254440
+accept = 194285
+rejected = 60155
+matrix size = 15
+fillins = 0
+solver = Normal
+Matrix Compiler1: 434 bytes object code size  0.2/0.1/[0.1]
+Matrix Compiler2: 895 bytes object code size  0.1/0.2/[0.1]
+
