@@ -1,7 +1,7 @@
 Protel Design System Design Rule Check
 PCB File : D:\Academics\FA2022\JDFU\ASSIGNMENTS\A4\PROJ_BUZZ\PCBB_BUZZ.PcbDoc
-Date     : 2022-09-06
-Time     : 22:48:17
+Date     : 2022-09-14
+Time     : 14:13:10
 
 Processing Rule : Clearance Constraint (Gap=8mil) (OnLayer('Top Layer')),(All)
 Rule Violations :0
@@ -21,7 +21,7 @@ Rule Violations :0
 Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
 Rule Violations :0
 
-Processing Rule : Width Constraint (Min=3.5mil) (Max=100mil) (Preferred=15mil) (All)
+Processing Rule : Width Constraint (Min=15mil) (Max=100mil) (Preferred=15mil) (All)
 Rule Violations :0
 
 Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)
