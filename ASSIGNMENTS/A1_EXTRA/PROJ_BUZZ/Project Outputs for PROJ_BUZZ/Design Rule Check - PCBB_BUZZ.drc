@@ -1,0 +1,105 @@
+Protel Design System Design Rule Check
+PCB File : D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc
+Date     : 2022-09-26
+Time     : 11:00:55
+
+Processing Rule : Clearance Constraint (Gap=20mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+   Violation between Un-Routed Net Constraint: Net NetC1NF_1 Between Pad C1NF-1(2230mil,2131.575mil) on Multi-Layer And Pad IC-2(2923.701mil,2240mil) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net NetC1NF_2 Between Pad C1NF-2(2230mil,2328.425mil) on Multi-Layer And Pad IC-1(2923.701mil,2340mil) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net NetC1NF_2 Between Pad SPEAKER-2(1936.85mil,2040mil) on Multi-Layer And Pad C1NF-2(2230mil,2328.425mil) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net NetC1UF_1 Between Pad IC-8(3236.299mil,2340mil) on Multi-Layer And Pad C1UF-1(3770mil,2131.575mil) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net NetC1UF_1 Between Pad C1UF-1(3770mil,2131.575mil) on Multi-Layer And Pad SWITCH-2(4870mil,2125mil) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net NetC1NF_2 Between Pad IC-1(2923.701mil,2340mil) on Multi-Layer And Pad C1UF-2(3770mil,2328.425mil) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net NetC1NF_2 Between Pad C1UF-2(3770mil,2328.425mil) on Multi-Layer And Pad IO-1(5175mil,2135mil) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net NetC1NF_1 Between Pad IC-2(2923.701mil,2240mil) on Multi-Layer And Pad IC-6(3236.299mil,2140mil) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net NetIC_3 Between Pad IC-3(2923.701mil,2140mil) on Multi-Layer And Pad IO-2(5175mil,2235mil) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net NetIC_3 Between Pad SPEAKER-1(1543.15mil,2040mil) on Multi-Layer And Pad IC-3(2923.701mil,2140mil) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net NetC1UF_1 Between Pad IC-4(2923.701mil,2040mil) on Multi-Layer And Pad IC-8(3236.299mil,2340mil) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net NetC1NF_1 Between Pad IC-6(3236.299mil,2140mil) on Multi-Layer And Pad R100K-2(3475mil,2351.378mil) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net NetIC_7 Between Pad IC-7(3236.299mil,2240mil) on Multi-Layer And Pad R_LOW-2(4120mil,2341.378mil) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net NetIC_7 Between Pad IC-7(3236.299mil,2240mil) on Multi-Layer And Pad R100K-1(3475mil,1498.622mil) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net NetC1UF_1 Between Pad SWITCH-2(4870mil,2125mil) on Multi-Layer And Pad IO-3(5175mil,2335mil) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net NetR_HIGH_1 Between Pad R_HIGH-1(4480mil,1488.622mil) on Multi-Layer And Pad SWITCH-1(4870mil,2310mil) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net NetIC_7 Between Pad R_LOW-2(4120mil,2341.378mil) on Multi-Layer And Pad R_HIGH-2(4480mil,2341.378mil) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net NetR_LOW_1 Between Pad R_LOW-1(4120mil,1488.622mil) on Multi-Layer And Pad SWITCH-3(4870mil,1940mil) on Multi-Layer 
+Rule Violations :18
+
+Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=30mil) (Max=10000mil) (Preferred=50mil) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Minimum Annular Ring (Minimum=17mil) (All)
+   Violation between Minimum Annular Ring: (15mil < 17mil) Pad C1NF-1(2230mil,2131.575mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (15mil < 17mil) Pad C1NF-2(2230mil,2328.425mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (15mil < 17mil) Pad C1UF-1(3770mil,2131.575mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (15mil < 17mil) Pad C1UF-2(3770mil,2328.425mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (15mil < 17mil) Pad IC-1(2923.701mil,2340mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (15mil < 17mil) Pad IC-2(2923.701mil,2240mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (15mil < 17mil) Pad IC-3(2923.701mil,2140mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (15mil < 17mil) Pad IC-4(2923.701mil,2040mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (15mil < 17mil) Pad IC-5(3236.299mil,2040mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (15mil < 17mil) Pad IC-6(3236.299mil,2140mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (15mil < 17mil) Pad IC-7(3236.299mil,2240mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (15mil < 17mil) Pad IC-8(3236.299mil,2340mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (15mil < 17mil) Pad IO-1(5175mil,2135mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (15mil < 17mil) Pad IO-2(5175mil,2235mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (15mil < 17mil) Pad IO-3(5175mil,2335mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (15mil < 17mil) Pad R_HIGH-1(4480mil,1488.622mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (15mil < 17mil) Pad R_HIGH-2(4480mil,2341.378mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (15mil < 17mil) Pad R_LOW-1(4120mil,1488.622mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (15mil < 17mil) Pad R_LOW-2(4120mil,2341.378mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (15mil < 17mil) Pad R100K-1(3475mil,1498.622mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (15mil < 17mil) Pad R100K-2(3475mil,2351.378mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (15mil < 17mil) Pad SPEAKER-1(1543.15mil,2040mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (15mil < 17mil) Pad SPEAKER-2(1936.85mil,2040mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (15mil < 17mil) Pad SWITCH-1(4870mil,2310mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (15mil < 17mil) Pad SWITCH-2(4870mil,2125mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)
+   Violation between Minimum Annular Ring: (15mil < 17mil) Pad SWITCH-3(4870mil,1940mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)
+Rule Violations :26
+
+Processing Rule : Hole Size Constraint (Min=39.37mil) (Max=1000mil) (All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=17mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=10mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Silk To Solder Mask (Clearance=10mil) (IsPad),(All)
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 10mil) Between Arc (2881.772mil,2340mil) on Top Overlay And Pad IC-1(2923.701mil,2340mil) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (7.307mil < 10mil) Between Pad R_HIGH-1(4480mil,1488.622mil) on Multi-Layer And Track (4480mil,1534.882mil)(4480mil,1560.669mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.307mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (7.307mil < 10mil) Between Pad R_HIGH-2(4480mil,2341.378mil) on Multi-Layer And Track (4480mil,2269.331mil)(4480mil,2295.118mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.307mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (7.307mil < 10mil) Between Pad R_LOW-1(4120mil,1488.622mil) on Multi-Layer And Track (4120mil,1534.882mil)(4120mil,1560.669mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.307mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (7.307mil < 10mil) Between Pad R_LOW-2(4120mil,2341.378mil) on Multi-Layer And Track (4120mil,2269.331mil)(4120mil,2295.118mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.307mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (7.307mil < 10mil) Between Pad R100K-1(3475mil,1498.622mil) on Multi-Layer And Track (3475mil,1544.882mil)(3475mil,1570.669mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.307mil]
+   Violation between Silk To Solder Mask Clearance Constraint: (7.307mil < 10mil) Between Pad R100K-2(3475mil,2351.378mil) on Multi-Layer And Track (3475mil,2279.331mil)(3475mil,2305.118mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.307mil]
+Rule Violations :7
+
+Processing Rule : Silk to Silk (Clearance=0mil) (All),(All)
+Rule Violations :0
+
+Processing Rule : Net Antennae (Tolerance=0mil) (All)
+Rule Violations :0
+
+Processing Rule : Board Clearance Constraint (Gap=0mil) (All)
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)
+Rule Violations :0
+
+
+Violations Detected : 51
+Waived Violations : 0
+Time Elapsed        : 00:00:01

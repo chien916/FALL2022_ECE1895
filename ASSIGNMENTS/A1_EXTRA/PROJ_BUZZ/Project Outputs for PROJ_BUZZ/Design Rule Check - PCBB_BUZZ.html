@@ -1,0 +1,497 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 8em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD21\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">2022-09-26</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">11:00:55</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:01</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc" class="file"><acronym title="D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc">D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">51</td></tr>
+</table>
+</td>
+</table><a name="ID2ZOG3K3CRQRXKHAFZ5CA35WVLENF52NVDOSLF3LHUWH5SQIYZB4J"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDIMDBWYLJPDVYNJDH5ZROFVCYDN3TTAZNDUI4NUI3DIFAI3XPE3XD">Clearance Constraint (Gap=20mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDV0AHZI2RQ0RNOATFLUUVZYNNIUNXZPOI0JTSXG0A5I1Z2RKDDJB">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDRTOGXATKUPSDPQMWUKZS1H4ATHBUPYLWVQKKXIKPP3ZZYK0BN0ZM">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">18</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDIGQSIXJYS3HFGKRCUG1U4ADHEO5R0LWRICYXAOLPEUALX2IXV0YM">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDJXFCVRLTNULPJVOSS5KYHDILACKHALBNEJXECMPHZVRCX2PMGIJ">Width Constraint (Min=30mil) (Max=10000mil) (Preferred=50mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDKG2KIV0JRH42LMBDCIKC1QCWVJYX4R00DPRA0WMBHT24YINWP5EI">Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDRYNSZQFQP1AEK2WTOGSCNJIUXH1FOK22CTGSS4BITBI5N5M4TJKJ">Minimum Annular Ring (Minimum=17mil) (All)</a></td>
+<td class="column2">26</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDB2MAFZDKXQYGOM3EKT51OGN4THNA0CK3ZCI3O4DMYSZMQBHG1QWK">Hole Size Constraint (Min=39.37mil) (Max=1000mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID2JRV45IQLIFICJ1JEVF1E3KFLDAHR5YDKADHBHHAJSXB3WFDSCUH">Hole To Hole Clearance (Gap=17mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDMDKMHX22KFWIPYBPE4KW2FBZ1GAJVQAMMY4NC4MMPVWPJYAIMUBI">Minimum Solder Mask Sliver (Gap=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID011KPLHSYFIJKBX4JBPJ1ZRM4GKVLNE2IKCWZ5LATAXGWNA2K12C">Silk To Solder Mask (Clearance=10mil) (IsPad),(All)</a></td>
+<td class="column2">7</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDGVFNXTWYRTJ0I0V5VC54KLRR1CBWU25KFSHK1SHR2J0ZQW1PJVFI">Silk to Silk (Clearance=0mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID5A1N1NSLV030GHYGAM5PEX0RQIZA2LHHHOZ3HPXHC4HUNFB5NWO">Net Antennae (Tolerance=0mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDP2AXXWWTYH43PVMRTF5OYMIEVBR1RMCVGMNYK1DF2HLZMJNFHLZB">Board Clearance Constraint (Gap=0mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDGO1AQNDBMDPLB0WPJ2GIABG0HE2X2IYNYR1BVINCYPMAURRV4ZL">Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">51</td>
+</tr>
+</table><br><a name="IDRTOGXATKUPSDPQMWUKZS1H4ATHBUPYLWVQKKXIKPP3ZZYK0BN0ZM"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Un-Routed Net Constraint ( (All) )</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2191mil|Location2.X=2962.701mil|Location1.Y=2092.575mil|Location2.Y=2279mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2191mil|Location2.X=2962.701mil|Location1.Y=2092.575mil|Location2.Y=2279mil|Absolute=True">Un-Routed Net Constraint: Net NetC1NF_1 Between Pad C1NF-1(2230mil,2131.575mil) on Multi-Layer And Pad IC-2(2923.701mil,2240mil) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2191mil|Location2.X=2962.701mil|Location1.Y=2289.425mil|Location2.Y=2379mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2191mil|Location2.X=2962.701mil|Location1.Y=2289.425mil|Location2.Y=2379mil|Absolute=True">Un-Routed Net Constraint: Net NetC1NF_2 Between Pad C1NF-2(2230mil,2328.425mil) on Multi-Layer And Pad IC-1(2923.701mil,2340mil) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1901.85mil|Location2.X=2269mil|Location1.Y=2005mil|Location2.Y=2367.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1901.85mil|Location2.X=2269mil|Location1.Y=2005mil|Location2.Y=2367.425mil|Absolute=True">Un-Routed Net Constraint: Net NetC1NF_2 Between Pad SPEAKER-2(1936.85mil,2040mil) on Multi-Layer And Pad C1NF-2(2230mil,2328.425mil) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3197.299mil|Location2.X=3809mil|Location1.Y=2092.575mil|Location2.Y=2379mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3197.299mil|Location2.X=3809mil|Location1.Y=2092.575mil|Location2.Y=2379mil|Absolute=True">Un-Routed Net Constraint: Net NetC1UF_1 Between Pad IC-8(3236.299mil,2340mil) on Multi-Layer And Pad C1UF-1(3770mil,2131.575mil) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3731mil|Location2.X=4905mil|Location1.Y=2090mil|Location2.Y=2170.575mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3731mil|Location2.X=4905mil|Location1.Y=2090mil|Location2.Y=2170.575mil|Absolute=True">Un-Routed Net Constraint: Net NetC1UF_1 Between Pad C1UF-1(3770mil,2131.575mil) on Multi-Layer And Pad SWITCH-2(4870mil,2125mil) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2884.701mil|Location2.X=3809mil|Location1.Y=2289.425mil|Location2.Y=2379mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2884.701mil|Location2.X=3809mil|Location1.Y=2289.425mil|Location2.Y=2379mil|Absolute=True">Un-Routed Net Constraint: Net NetC1NF_2 Between Pad IC-1(2923.701mil,2340mil) on Multi-Layer And Pad C1UF-2(3770mil,2328.425mil) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3731mil|Location2.X=5214mil|Location1.Y=2096mil|Location2.Y=2367.425mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3731mil|Location2.X=5214mil|Location1.Y=2096mil|Location2.Y=2367.425mil|Absolute=True">Un-Routed Net Constraint: Net NetC1NF_2 Between Pad C1UF-2(3770mil,2328.425mil) on Multi-Layer And Pad IO-1(5175mil,2135mil) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2884.701mil|Location2.X=3275.299mil|Location1.Y=2101mil|Location2.Y=2279mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2884.701mil|Location2.X=3275.299mil|Location1.Y=2101mil|Location2.Y=2279mil|Absolute=True">Un-Routed Net Constraint: Net NetC1NF_1 Between Pad IC-2(2923.701mil,2240mil) on Multi-Layer And Pad IC-6(3236.299mil,2140mil) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2884.701mil|Location2.X=5214mil|Location1.Y=2101mil|Location2.Y=2274mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2884.701mil|Location2.X=5214mil|Location1.Y=2101mil|Location2.Y=2274mil|Absolute=True">Un-Routed Net Constraint: Net NetIC_3 Between Pad IC-3(2923.701mil,2140mil) on Multi-Layer And Pad IO-2(5175mil,2235mil) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1508.15mil|Location2.X=2962.701mil|Location1.Y=2005mil|Location2.Y=2179mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1508.15mil|Location2.X=2962.701mil|Location1.Y=2005mil|Location2.Y=2179mil|Absolute=True">Un-Routed Net Constraint: Net NetIC_3 Between Pad SPEAKER-1(1543.15mil,2040mil) on Multi-Layer And Pad IC-3(2923.701mil,2140mil) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2884.701mil|Location2.X=3275.299mil|Location1.Y=2001mil|Location2.Y=2379mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2884.701mil|Location2.X=3275.299mil|Location1.Y=2001mil|Location2.Y=2379mil|Absolute=True">Un-Routed Net Constraint: Net NetC1UF_1 Between Pad IC-4(2923.701mil,2040mil) on Multi-Layer And Pad IC-8(3236.299mil,2340mil) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3197.299mil|Location2.X=3510mil|Location1.Y=2101mil|Location2.Y=2386.378mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3197.299mil|Location2.X=3510mil|Location1.Y=2101mil|Location2.Y=2386.378mil|Absolute=True">Un-Routed Net Constraint: Net NetC1NF_1 Between Pad IC-6(3236.299mil,2140mil) on Multi-Layer And Pad R100K-2(3475mil,2351.378mil) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3197.299mil|Location2.X=4155mil|Location1.Y=2201mil|Location2.Y=2376.378mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3197.299mil|Location2.X=4155mil|Location1.Y=2201mil|Location2.Y=2376.378mil|Absolute=True">Un-Routed Net Constraint: Net NetIC_7 Between Pad IC-7(3236.299mil,2240mil) on Multi-Layer And Pad R_LOW-2(4120mil,2341.378mil) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3197.299mil|Location2.X=3510mil|Location1.Y=1463.622mil|Location2.Y=2279mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3197.299mil|Location2.X=3510mil|Location1.Y=1463.622mil|Location2.Y=2279mil|Absolute=True">Un-Routed Net Constraint: Net NetIC_7 Between Pad IC-7(3236.299mil,2240mil) on Multi-Layer And Pad R100K-1(3475mil,1498.622mil) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4835mil|Location2.X=5214mil|Location1.Y=2090mil|Location2.Y=2374mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4835mil|Location2.X=5214mil|Location1.Y=2090mil|Location2.Y=2374mil|Absolute=True">Un-Routed Net Constraint: Net NetC1UF_1 Between Pad SWITCH-2(4870mil,2125mil) on Multi-Layer And Pad IO-3(5175mil,2335mil) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4445mil|Location2.X=4905mil|Location1.Y=1453.622mil|Location2.Y=2345mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4445mil|Location2.X=4905mil|Location1.Y=1453.622mil|Location2.Y=2345mil|Absolute=True">Un-Routed Net Constraint: Net NetR_HIGH_1 Between Pad R_HIGH-1(4480mil,1488.622mil) on Multi-Layer And Pad SWITCH-1(4870mil,2310mil) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4085mil|Location2.X=4515mil|Location1.Y=2306.378mil|Location2.Y=2376.378mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4085mil|Location2.X=4515mil|Location1.Y=2306.378mil|Location2.Y=2376.378mil|Absolute=True">Un-Routed Net Constraint: Net NetIC_7 Between Pad R_LOW-2(4120mil,2341.378mil) on Multi-Layer And Pad R_HIGH-2(4480mil,2341.378mil) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4085mil|Location2.X=4905mil|Location1.Y=1453.622mil|Location2.Y=1975mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4085mil|Location2.X=4905mil|Location1.Y=1453.622mil|Location2.Y=1975mil|Absolute=True">Un-Routed Net Constraint: Net NetR_LOW_1 Between Pad R_LOW-1(4120mil,1488.622mil) on Multi-Layer And Pad SWITCH-3(4870mil,1940mil) on Multi-Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDRYNSZQFQP1AEK2WTOGSCNJIUXH1FOK22CTGSS4BITBI5N5M4TJKJ"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Minimum Annular Ring (Minimum=17mil) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2220.875mil|Location2.X=2239.125mil|Location1.Y=2149.95mil|Location2.Y=2168.2mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2220.875mil|Location2.X=2239.125mil|Location1.Y=2149.95mil|Location2.Y=2168.2mil|Absolute=True">Minimum Annular Ring: (15mil &lt; 17mil) Pad C1NF-1(2230mil,2131.575mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2220.875mil|Location2.X=2239.125mil|Location1.Y=2346.8mil|Location2.Y=2365.05mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2220.875mil|Location2.X=2239.125mil|Location1.Y=2346.8mil|Location2.Y=2365.05mil|Absolute=True">Minimum Annular Ring: (15mil &lt; 17mil) Pad C1NF-2(2230mil,2328.425mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3760.875mil|Location2.X=3779.125mil|Location1.Y=2149.95mil|Location2.Y=2168.2mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3760.875mil|Location2.X=3779.125mil|Location1.Y=2149.95mil|Location2.Y=2168.2mil|Absolute=True">Minimum Annular Ring: (15mil &lt; 17mil) Pad C1UF-1(3770mil,2131.575mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3760.875mil|Location2.X=3779.125mil|Location1.Y=2346.8mil|Location2.Y=2365.05mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3760.875mil|Location2.X=3779.125mil|Location1.Y=2346.8mil|Location2.Y=2365.05mil|Absolute=True">Minimum Annular Ring: (15mil &lt; 17mil) Pad C1UF-2(3770mil,2328.425mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2914.576mil|Location2.X=2932.826mil|Location1.Y=2358.375mil|Location2.Y=2376.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2914.576mil|Location2.X=2932.826mil|Location1.Y=2358.375mil|Location2.Y=2376.625mil|Absolute=True">Minimum Annular Ring: (15mil &lt; 17mil) Pad IC-1(2923.701mil,2340mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2914.576mil|Location2.X=2932.826mil|Location1.Y=2258.375mil|Location2.Y=2276.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2914.576mil|Location2.X=2932.826mil|Location1.Y=2258.375mil|Location2.Y=2276.625mil|Absolute=True">Minimum Annular Ring: (15mil &lt; 17mil) Pad IC-2(2923.701mil,2240mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2914.576mil|Location2.X=2932.826mil|Location1.Y=2158.375mil|Location2.Y=2176.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2914.576mil|Location2.X=2932.826mil|Location1.Y=2158.375mil|Location2.Y=2176.625mil|Absolute=True">Minimum Annular Ring: (15mil &lt; 17mil) Pad IC-3(2923.701mil,2140mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2914.576mil|Location2.X=2932.826mil|Location1.Y=2058.375mil|Location2.Y=2076.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2914.576mil|Location2.X=2932.826mil|Location1.Y=2058.375mil|Location2.Y=2076.625mil|Absolute=True">Minimum Annular Ring: (15mil &lt; 17mil) Pad IC-4(2923.701mil,2040mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3227.174mil|Location2.X=3245.424mil|Location1.Y=2058.375mil|Location2.Y=2076.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3227.174mil|Location2.X=3245.424mil|Location1.Y=2058.375mil|Location2.Y=2076.625mil|Absolute=True">Minimum Annular Ring: (15mil &lt; 17mil) Pad IC-5(3236.299mil,2040mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3227.174mil|Location2.X=3245.424mil|Location1.Y=2158.375mil|Location2.Y=2176.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3227.174mil|Location2.X=3245.424mil|Location1.Y=2158.375mil|Location2.Y=2176.625mil|Absolute=True">Minimum Annular Ring: (15mil &lt; 17mil) Pad IC-6(3236.299mil,2140mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3227.174mil|Location2.X=3245.424mil|Location1.Y=2258.375mil|Location2.Y=2276.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3227.174mil|Location2.X=3245.424mil|Location1.Y=2258.375mil|Location2.Y=2276.625mil|Absolute=True">Minimum Annular Ring: (15mil &lt; 17mil) Pad IC-7(3236.299mil,2240mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3227.174mil|Location2.X=3245.424mil|Location1.Y=2358.375mil|Location2.Y=2376.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3227.174mil|Location2.X=3245.424mil|Location1.Y=2358.375mil|Location2.Y=2376.625mil|Absolute=True">Minimum Annular Ring: (15mil &lt; 17mil) Pad IC-8(3236.299mil,2340mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5165.875mil|Location2.X=5184.125mil|Location1.Y=2153.375mil|Location2.Y=2171.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5165.875mil|Location2.X=5184.125mil|Location1.Y=2153.375mil|Location2.Y=2171.625mil|Absolute=True">Minimum Annular Ring: (15mil &lt; 17mil) Pad IO-1(5175mil,2135mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5165.875mil|Location2.X=5184.125mil|Location1.Y=2253.375mil|Location2.Y=2271.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5165.875mil|Location2.X=5184.125mil|Location1.Y=2253.375mil|Location2.Y=2271.625mil|Absolute=True">Minimum Annular Ring: (15mil &lt; 17mil) Pad IO-2(5175mil,2235mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5165.875mil|Location2.X=5184.125mil|Location1.Y=2353.375mil|Location2.Y=2371.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5165.875mil|Location2.X=5184.125mil|Location1.Y=2353.375mil|Location2.Y=2371.625mil|Absolute=True">Minimum Annular Ring: (15mil &lt; 17mil) Pad IO-3(5175mil,2335mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4470.875mil|Location2.X=4489.125mil|Location1.Y=1506.997mil|Location2.Y=1525.247mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4470.875mil|Location2.X=4489.125mil|Location1.Y=1506.997mil|Location2.Y=1525.247mil|Absolute=True">Minimum Annular Ring: (15mil &lt; 17mil) Pad R_HIGH-1(4480mil,1488.622mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4470.875mil|Location2.X=4489.125mil|Location1.Y=2359.753mil|Location2.Y=2378.003mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4470.875mil|Location2.X=4489.125mil|Location1.Y=2359.753mil|Location2.Y=2378.003mil|Absolute=True">Minimum Annular Ring: (15mil &lt; 17mil) Pad R_HIGH-2(4480mil,2341.378mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4110.875mil|Location2.X=4129.125mil|Location1.Y=1506.997mil|Location2.Y=1525.247mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4110.875mil|Location2.X=4129.125mil|Location1.Y=1506.997mil|Location2.Y=1525.247mil|Absolute=True">Minimum Annular Ring: (15mil &lt; 17mil) Pad R_LOW-1(4120mil,1488.622mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4110.875mil|Location2.X=4129.125mil|Location1.Y=2359.753mil|Location2.Y=2378.003mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4110.875mil|Location2.X=4129.125mil|Location1.Y=2359.753mil|Location2.Y=2378.003mil|Absolute=True">Minimum Annular Ring: (15mil &lt; 17mil) Pad R_LOW-2(4120mil,2341.378mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3465.875mil|Location2.X=3484.125mil|Location1.Y=1516.997mil|Location2.Y=1535.247mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3465.875mil|Location2.X=3484.125mil|Location1.Y=1516.997mil|Location2.Y=1535.247mil|Absolute=True">Minimum Annular Ring: (15mil &lt; 17mil) Pad R100K-1(3475mil,1498.622mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3465.875mil|Location2.X=3484.125mil|Location1.Y=2369.753mil|Location2.Y=2388.003mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3465.875mil|Location2.X=3484.125mil|Location1.Y=2369.753mil|Location2.Y=2388.003mil|Absolute=True">Minimum Annular Ring: (15mil &lt; 17mil) Pad R100K-2(3475mil,2351.378mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1534.025mil|Location2.X=1552.275mil|Location1.Y=2058.375mil|Location2.Y=2076.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1534.025mil|Location2.X=1552.275mil|Location1.Y=2058.375mil|Location2.Y=2076.625mil|Absolute=True">Minimum Annular Ring: (15mil &lt; 17mil) Pad SPEAKER-1(1543.15mil,2040mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1927.725mil|Location2.X=1945.975mil|Location1.Y=2058.375mil|Location2.Y=2076.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1927.725mil|Location2.X=1945.975mil|Location1.Y=2058.375mil|Location2.Y=2076.625mil|Absolute=True">Minimum Annular Ring: (15mil &lt; 17mil) Pad SPEAKER-2(1936.85mil,2040mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4860.875mil|Location2.X=4879.125mil|Location1.Y=2328.375mil|Location2.Y=2346.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4860.875mil|Location2.X=4879.125mil|Location1.Y=2328.375mil|Location2.Y=2346.625mil|Absolute=True">Minimum Annular Ring: (15mil &lt; 17mil) Pad SWITCH-1(4870mil,2310mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4860.875mil|Location2.X=4879.125mil|Location1.Y=2143.375mil|Location2.Y=2161.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4860.875mil|Location2.X=4879.125mil|Location1.Y=2143.375mil|Location2.Y=2161.625mil|Absolute=True">Minimum Annular Ring: (15mil &lt; 17mil) Pad SWITCH-2(4870mil,2125mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4860.875mil|Location2.X=4879.125mil|Location1.Y=1958.375mil|Location2.Y=1976.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4860.875mil|Location2.X=4879.125mil|Location1.Y=1958.375mil|Location2.Y=1976.625mil|Absolute=True">Minimum Annular Ring: (15mil &lt; 17mil) Pad SWITCH-3(4870mil,1940mil) on Multi-Layer (Annular Ring=15mil) On (Top Layer)</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="ID011KPLHSYFIJKBX4JBPJ1ZRM4GKVLNE2IKCWZ5LATAXGWNA2K12C"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk To Solder Mask (Clearance=10mil) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2881.875mil|Location2.X=2889.542mil|Location1.Y=2336.167mil|Location2.Y=2343.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2881.875mil|Location2.X=2889.542mil|Location1.Y=2336.167mil|Location2.Y=2343.833mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 10mil) Between Arc (2881.772mil,2340mil) on Top Overlay And Pad IC-1(2923.701mil,2340mil) on Multi-Layer [Top Overlay] to [Top Solder] clearance [0mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4474.375mil|Location2.X=4485.625mil|Location1.Y=1521.666mil|Location2.Y=1532.916mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4474.375mil|Location2.X=4485.625mil|Location1.Y=1521.666mil|Location2.Y=1532.916mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.307mil &lt; 10mil) Between Pad R_HIGH-1(4480mil,1488.622mil) on Multi-Layer And Track (4480mil,1534.882mil)(4480mil,1560.669mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.307mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4474.375mil|Location2.X=4485.625mil|Location1.Y=2297.084mil|Location2.Y=2308.334mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4474.375mil|Location2.X=4485.625mil|Location1.Y=2297.084mil|Location2.Y=2308.334mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.307mil &lt; 10mil) Between Pad R_HIGH-2(4480mil,2341.378mil) on Multi-Layer And Track (4480mil,2269.331mil)(4480mil,2295.118mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.307mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4114.375mil|Location2.X=4125.625mil|Location1.Y=1521.666mil|Location2.Y=1532.916mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4114.375mil|Location2.X=4125.625mil|Location1.Y=1521.666mil|Location2.Y=1532.916mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.307mil &lt; 10mil) Between Pad R_LOW-1(4120mil,1488.622mil) on Multi-Layer And Track (4120mil,1534.882mil)(4120mil,1560.669mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.307mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4114.375mil|Location2.X=4125.625mil|Location1.Y=2297.084mil|Location2.Y=2308.334mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4114.375mil|Location2.X=4125.625mil|Location1.Y=2297.084mil|Location2.Y=2308.334mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.307mil &lt; 10mil) Between Pad R_LOW-2(4120mil,2341.378mil) on Multi-Layer And Track (4120mil,2269.331mil)(4120mil,2295.118mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.307mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3469.375mil|Location2.X=3480.625mil|Location1.Y=1531.666mil|Location2.Y=1542.916mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3469.375mil|Location2.X=3480.625mil|Location1.Y=1531.666mil|Location2.Y=1542.916mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.307mil &lt; 10mil) Between Pad R100K-1(3475mil,1498.622mil) on Multi-Layer And Track (3475mil,1544.882mil)(3475mil,1570.669mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.307mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3469.375mil|Location2.X=3480.625mil|Location1.Y=2307.084mil|Location2.Y=2318.334mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Academics\FA2022\JDFU\ASSIGNMENTS\A1_EXTRA\PROJ_BUZZ\PCBB_BUZZ.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3469.375mil|Location2.X=3480.625mil|Location1.Y=2307.084mil|Location2.Y=2318.334mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.307mil &lt; 10mil) Between Pad R100K-2(3475mil,2351.378mil) on Multi-Layer And Track (3475mil,2279.331mil)(3475mil,2305.118mil) on Top Overlay [Top Overlay] to [Top Solder] clearance [7.307mil]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

@@ -1,0 +1,18 @@
+Change Component Designator: OldDesignator=C0P01UF NewDesignator=C0P01U
+Change Component Designator: OldDesignator=C10UF NewDesignator=C10U
+Change Component Designator: OldDesignator=C100UF1 NewDesignator=C100U1
+Change Component Designator: OldDesignator=C100UF2 NewDesignator=C100U2
+Change Component Designator: OldDesignator=RHIGH NewDesignator=R511
+Change Component Designator: OldDesignator=RLOW NewDesignator=R1K
+Change Net Name : Old Net Name=NetC0P01UF_1 New Net Name=NetC0P01U_1
+Change Net Name : Old Net Name=NetC0P01UF_2 New Net Name=NetC0P01U_2
+Change Net Name : Old Net Name=NetC10UF_1 New Net Name=NetC10U_1
+Change Net Name : Old Net Name=NetC100UF1_1 New Net Name=NetC100U1_1
+Change Net Name : Old Net Name=NetC100UF1_2 New Net Name=NetC100U1_2
+Change Net Name : Old Net Name=NetC100UF2_1 New Net Name=NetC100U2_1
+Change Net Name : Old Net Name=NetC100UF2_2 New Net Name=NetC100U2_2
+Change Net Name : Old Net Name=NetRHIGH_1 New Net Name=NetR511_1
+Change Net Name : Old Net Name=NetRLOW_1 New Net Name=NetR1K_1
+Added Member To Class: ClassName=SCHE_BUZZ Member=Component C100U1 C1206C107M9PACTU
+Added Member To Class: ClassName=SCHE_BUZZ Member=Component C100U2 C1206C107M9PACTU
+Added Room: Name=SCHE_BUZZ

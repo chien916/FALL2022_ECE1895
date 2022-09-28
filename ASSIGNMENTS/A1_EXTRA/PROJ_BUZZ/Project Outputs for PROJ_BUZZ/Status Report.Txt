@@ -1,0 +1,12 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : Project [PROJ_BUZZ.PrjPcb]
+   Generated File[PCBB_BUZZ.TXT]
+   Generated File[PCBB_BUZZ.LDP]
+   Generated File[PCBB_BUZZ.DRR]
+
+
+Files Generated   : 3
+Documents Printed : 0
+
+Finished Output Generation At 14:16:57 On 2022-09-14

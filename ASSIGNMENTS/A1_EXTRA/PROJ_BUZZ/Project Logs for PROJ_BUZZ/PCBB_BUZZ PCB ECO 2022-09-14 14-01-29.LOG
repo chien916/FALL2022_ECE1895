@@ -1,0 +1,90 @@
+Removed Pin From Net: NetName=NetC1NF_1 Pin=?????-1
+Removed Pin From Net: NetName=NetC1UF_2 Pin=?????-2
+Removed Pin From Net: NetName=NetC1NF_1 Pin=?????-1
+Removed Pin From Net: NetName=NetC1NF_2 Pin=?????-2
+Removed Member From Class: ClassName=SCHE_BUZZ Member=?????
+Removed Member From Class: ClassName=SCHE_BUZZ Member=?????
+Change Component Designator: OldDesignator=?????? NewDesignator=R100K
+Change Component Designator: OldDesignator=?????? NewDesignator=IC
+Change Component Designator: OldDesignator=???? NewDesignator=R_LOW
+Change Component Designator: OldDesignator=?? NewDesignator=SWITCH
+Change Component Designator: OldDesignator=??? NewDesignator=SPEAKER
+Change Component Designator: OldDesignator=?????? NewDesignator=IO
+Change Component Designator: OldDesignator=???? NewDesignator=R_HIGH
+Added Component: Designator=C1NF(KEMT-C330C105M5U5TA)
+Add component (AddParameter): Name = "Applications"; Value = "GeneralPurpose"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Capacitance"; Value = "1µF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Catalog Drawings"; Value = "C330(std)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Category"; Value = "Capacitors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet URL"; Value = "http://www.kemet.com/Lists/ProductCatalog/Attachments/599/KEM_C1051_GOLDMAX_Z5U.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Version"; Value = "12/2015"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Family"; Value = "CeramicCapacitors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Features"; Value = "-"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height - Seated (Max)"; Value = "0.360"(9.14mm)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Lead Spacing"; Value = "0.200"(5.08mm)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Lead Style"; Value = "Straight"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Kemet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer URL"; Value = "http://www.kemet.com/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Technology"; Value = "ThroughHole"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Type"; Value = "ThroughHole"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Online Catalog"; Value = "GoldenMax™Series"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Temperature"; Value = "10°C~85°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Other Names"; Value = "399-4390"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package / Case"; Value = "Radial"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Description"; Value = "2-Pin Through Hole Device, Body 7.11 x 4.07 mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Reference"; Value = "C330C105M5U5TA"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Bulk"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PCN Design/Specification"; Value = "C3yySeriesGoldenMaxLeadConfiguration02/Feb/2015"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Product Training Modules"; Value = "CapacitorBasics-TypicalUsesforCapacitors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ratings"; Value = "-"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Series"; Value = "GoldenMax™"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Size / Dimension"; Value = "0.300"Lx0.150"W(7.62mmx3.81mm)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Standard Package"; Value = "250"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Coefficient"; Value = "Z5U"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Thickness (Max)"; Value = "-"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "±20%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage - Rated"; Value = "50V"; VariantName = "[No Variations]"
+Added Component: Designator=C1UF(KEMT-C330C105M5U5TA)
+Add component (AddParameter): Name = "Applications"; Value = "GeneralPurpose"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Capacitance"; Value = "1µF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Catalog Drawings"; Value = "C330(std)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Category"; Value = "Capacitors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet URL"; Value = "http://www.kemet.com/Lists/ProductCatalog/Attachments/599/KEM_C1051_GOLDMAX_Z5U.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Version"; Value = "12/2015"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Family"; Value = "CeramicCapacitors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Features"; Value = "-"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height - Seated (Max)"; Value = "0.360"(9.14mm)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Lead Spacing"; Value = "0.200"(5.08mm)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Lead Style"; Value = "Straight"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Kemet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer URL"; Value = "http://www.kemet.com/"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Technology"; Value = "ThroughHole"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounting Type"; Value = "ThroughHole"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Online Catalog"; Value = "GoldenMax™Series"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Operating Temperature"; Value = "10°C~85°C"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Other Names"; Value = "399-4390"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package / Case"; Value = "Radial"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Description"; Value = "2-Pin Through Hole Device, Body 7.11 x 4.07 mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package Reference"; Value = "C330C105M5U5TA"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Packaging"; Value = "Bulk"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PCN Design/Specification"; Value = "C3yySeriesGoldenMaxLeadConfiguration02/Feb/2015"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Product Training Modules"; Value = "CapacitorBasics-TypicalUsesforCapacitors"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ratings"; Value = "-"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Series"; Value = "GoldenMax™"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Size / Dimension"; Value = "0.300"Lx0.150"W(7.62mmx3.81mm)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Standard Package"; Value = "250"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Temperature Coefficient"; Value = "Z5U"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Thickness (Max)"; Value = "-"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "±20%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Voltage - Rated"; Value = "50V"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetC1NF_2 Pin=C1NF-1
+Added Pin To Net: NetName=NetC1NF_1 Pin=C1NF-2
+Added Pin To Net: NetName=NetC1UF_2 Pin=C1UF-1
+Added Pin To Net: NetName=NetC1NF_1 Pin=C1UF-2
+Change Net Name : Old Net Name=NetC1NF_1 New Net Name=NetC1NF_2
+Change Net Name : Old Net Name=NetC1NF_2 New Net Name=NetC1NF_1
+Change Net Name : Old Net Name=NetC1UF_2 New Net Name=NetC1UF_1
+Added Member To Class: ClassName=SCHE_BUZZ Member=Component C1NF 1n
+Added Member To Class: ClassName=SCHE_BUZZ Member=Component C1UF 1u
+Added Member To Class: ClassName=SCHE_BUZZ Member=Component SPEAKER PS1720P02
+Added Room: Name=SCHE_BUZZ
