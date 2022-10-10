@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29 32-bit) (preloaded format=pdflatex 2022.8.30)  18 SEP 2022 21:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29 32-bit) (preloaded format=pdflatex 2022.8.30)  1 OCT 2022 21:27
 entering extended mode
 **./document.tex
 (document.tex
@@ -21,6 +21,27 @@ File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 \belowcaptionskip=\skip48
 \bibindent=\dimen134
 )
+("C:\Program Files (x86)\MiKTeX\tex/latex/xcolor\xcolor.sty"
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+("C:\Program Files (x86)\MiKTeX\tex/latex/graphics-cfg\color.cfg"
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+
+("C:\Program Files (x86)\MiKTeX\tex/latex/graphics-def\pdftex.def"
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
 ("C:\Program Files (x86)\MiKTeX\tex/latex/graphics\graphicx.sty"
 Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
 
@@ -38,10 +59,7 @@ Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 105.
-
-("C:\Program Files (x86)\MiKTeX\tex/latex/graphics-def\pdftex.def"
-File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
-))
+)
 \Gin@req@height=\dimen135
 \Gin@req@width=\dimen136
 )
@@ -53,20 +71,20 @@ File: l3backend-pdfmode.def 2020-06-29 L3 backend support: PDF mode
 (document.aux)
 \openout1 = `document.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
 
 ("C:\Program Files (x86)\MiKTeX\tex/context/base/mkii\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -87,15 +105,16 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 6.
+(Font)              <12> on input line 7.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 6.
+(Font)              <8> on input line 7.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 6.
+(Font)              <6> on input line 7.
+\GPT@outputbox=\box47
 <SCHE.png, id=1, 2569.6pt x 1445.4pt>
 File: SCHE.png Graphic file (type png)
 <use SCHE.png>
-Package pdftex.def Info: SCHE.png  used on input line 17.
+Package pdftex.def Info: SCHE.png  used on input line 20.
 (pdftex.def)             Requested size: 345.0pt x 194.06194pt.
 
 [1
@@ -104,30 +123,30 @@ Package pdftex.def Info: SCHE.png  used on input line 17.
 <PCBB.png, id=12, 2569.6pt x 1445.4pt>
 File: PCBB.png Graphic file (type png)
 <use PCBB.png>
-Package pdftex.def Info: PCBB.png  used on input line 19.
+Package pdftex.def Info: PCBB.png  used on input line 22.
 (pdftex.def)             Requested size: 345.0pt x 194.06194pt.
 <OSHP.png, id=13, 2569.6pt x 1445.4pt>
 File: OSHP.png Graphic file (type png)
 <use OSHP.png>
-Package pdftex.def Info: OSHP.png  used on input line 21.
+Package pdftex.def Info: OSHP.png  used on input line 24.
 (pdftex.def)             Requested size: 345.0pt x 194.06194pt.
 
 [2 <./SCHE.png> <./PCBB.png>] [3 <./OSHP.png>] (document.aux) ) 
 Here is how much of TeX's memory you used:
- 1175 strings out of 480790
- 17135 string characters out of 2904235
- 252328 words of memory out of 3000000
- 17226 multiletter control sequences out of 15000+200000
+ 1643 strings out of 480790
+ 22430 string characters out of 2904235
+ 262590 words of memory out of 3000000
+ 17688 multiletter control sequences out of 15000+200000
  536593 words of font info for 38 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 30i,6n,25p,537b,189s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 30i,6n,37p,537b,189s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program File
 s (x86)/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files (x86
 )/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKT
 eX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX/font
 s/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX/fonts/type1
 /public/amsfonts/cm/cmr17.pfb>
-Output written on document.pdf (3 pages, 885743 bytes).
+Output written on document.pdf (3 pages, 885309 bytes).
 PDF statistics:
  39 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
