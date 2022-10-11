@@ -7,19 +7,19 @@
 #define REFRESH_DELAY 2
 
 
-class Display{
-private:
+class Display {
+  private:
 
-public:
-	virtual void message(char* msg);
+  public:
+	virtual void message(char* msg) const;
 
-	virtual void flash(Pixel& pixel);
+	virtual void flash(Pixel& pixel) const;
 
 	template<int S>
-	void flash(Pixel(&pixelArray)[S]) {
-	   for(Pixel& it:pixelArray){
-		   this->flash(it);
-	   }
+	void flash(Pixel(&pixelArray)[S]) const {
+		for(Pixel& it : pixelArray) {
+			this->flash(it);
+		}
 	}
 };
 

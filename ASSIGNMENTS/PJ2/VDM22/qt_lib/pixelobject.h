@@ -74,37 +74,37 @@
 #define PLANE_ARRAY_SIZE PLANE_WIDTH*LINE_WIDTH*PLANE_WIDTH*LINE_WIDTH*5
 
 
-class PixelObject{
-private:
+class PixelObject {
+  private:
 	bool cReferenceVisible = false;
 	bool bReferenceVisible = false;
 	bool planeVisible = false;
 	Pixel cReference[CR_ARRAY_SIZE];
 	Pixel bReference[BR_ARRAY_SIZE];
-	Pixel plane[PLANE_WIDTH*LINE_WIDTH];
-public:
+	Pixel plane[PLANE_WIDTH * LINE_WIDTH];
+  public:
 	/**
 	 * @brief 设置C镜头参考线是否可见
 	 * @param v 是否可见
 	 */
-	void cReferenceSetVisibility(const bool v){
-		this->cReferenceVisible=v;
+	void cReferenceSetVisibility(const bool v) {
+		this->cReferenceVisible = v;
 	}
 
 	/**
 	 * @brief 设置B镜头参考线是否可见
 	 * @param v 是否可见
 	 */
-	void bReferenceSetVisibility(const bool v){
-		this->bReferenceVisible=v;
+	void bReferenceSetVisibility(const bool v) {
+		this->bReferenceVisible = v;
 	}
 
 	/**
 	 * @brief 设置飞机是否可见
 	 * @param v 是否可见
 	 */
-	void planeSetVisibility(const bool v){
-		this->planeVisible=v;
+	void planeSetVisibility(const bool v) {
+		this->planeVisible = v;
 	}
 
 	/**
@@ -112,7 +112,7 @@ public:
 	 * @param x 预期的中点横坐标
 	 * @param y 预期的中点纵坐标
 	 */
-	void cReferenceSetCenter(const int x,const int y){
+	void cReferenceSetCenter(const int x, const int y) {
 
 	}
 
@@ -121,7 +121,7 @@ public:
 	 * @param x 预期的中点横坐标
 	 * @param y 预期的中点纵坐标
 	 */
-	void bReferenceSetCenter(const int x,const int y){
+	void bReferenceSetCenter(const int x, const int y) {
 
 	}
 
@@ -130,7 +130,7 @@ public:
 	 * @param x 预期的中点横坐标
 	 * @param y 预期的中点纵坐标
 	 */
-	void planeSetCenter(const int x,const int y){
+	void planeSetCenter(const int x, const int y) {
 
 	}
 

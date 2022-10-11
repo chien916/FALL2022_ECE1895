@@ -3,7 +3,7 @@
 
 #include <QObject>
 
-#include "lib/pixelobject.h"
+#include "pixelobject.h"
 class QPixelObject: public PixelObject, QObject{
 	Q_OBJECT
 public:
