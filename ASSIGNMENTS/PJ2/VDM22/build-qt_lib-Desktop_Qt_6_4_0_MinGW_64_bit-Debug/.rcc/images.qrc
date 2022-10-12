@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="/images">
+    <file alias="image1.png">D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/image1.png</file>
+    <file alias="image2.png">D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/image2.png</file>
+  </qresource>
+</RCC>
+

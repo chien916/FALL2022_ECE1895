@@ -4,15 +4,15 @@
 #include <QObject>
 
 #include "pixelobject.h"
-class QPixelObject: public PixelObject, QObject{
+class QPixelObject: public PixelObject, QObject {
 	Q_OBJECT
-public:
-	QPixelObject(QObject *parent):QObject(parent){}
-signals:
+  public:
+	QPixelObject(QObject *parent): QObject(parent) {}
+  signals:
 
-public slots:
+  public slots:
 
-private:
+  private:
 };
 
 #endif // QPIXELOBJECT_H

@@ -76,63 +76,34 @@
 
 class PixelObject {
   private:
-	bool cReferenceVisible = false;
-	bool bReferenceVisible = false;
-	bool planeVisible = false;
+
 	Pixel cReference[CR_ARRAY_SIZE];
 	Pixel bReference[BR_ARRAY_SIZE];
 	Pixel plane[PLANE_WIDTH * LINE_WIDTH];
   public:
-	/**
-	 * @brief 设置C镜头参考线是否可见
-	 * @param v 是否可见
-	 */
-	void cReferenceSetVisibility(const bool v) {
-		this->cReferenceVisible = v;
-	}
 
-	/**
-	 * @brief 设置B镜头参考线是否可见
-	 * @param v 是否可见
-	 */
-	void bReferenceSetVisibility(const bool v) {
-		this->bReferenceVisible = v;
-	}
-
-	/**
-	 * @brief 设置飞机是否可见
-	 * @param v 是否可见
-	 */
-	void planeSetVisibility(const bool v) {
-		this->planeVisible = v;
-	}
-
+	bool cReferenceVisible = false;
+	bool bReferenceVisible = false;
+	bool planeVisible = false;
 	/**
 	 * @brief 将C镜头参考线重新定位到指定位置
 	 * @param x 预期的中点横坐标
 	 * @param y 预期的中点纵坐标
 	 */
-	void cReferenceSetCenter(const int x, const int y) {
-
-	}
-
+	void cReferenceSetCenter(const int x, const int y);
 	/**
 	 * @brief 将B镜头参考线重新定位到指定位置
 	 * @param x 预期的中点横坐标
 	 * @param y 预期的中点纵坐标
 	 */
-	void bReferenceSetCenter(const int x, const int y) {
-
-	}
+	void bReferenceSetCenter(const int x, const int y);
 
 	/**
 	 * @brief 将飞机重新定位到指定位置
 	 * @param x 预期的中点横坐标
 	 * @param y 预期的中点纵坐标
 	 */
-	void planeSetCenter(const int x, const int y) {
-
-	}
+	void planeSetCenter(const int x, const int y) ;
 
 };
 

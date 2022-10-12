@@ -4,8 +4,7 @@
 #include "qt_lib/control.h"
 
 class AControl : public Control {
-public:
-
+  
 };
 
 #endif

@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/">
+    <file alias="PingFant.ttf">D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/PingFant.ttf</file>
+  </qresource>
+</RCC>
+

@@ -1,0 +1,28 @@
+{
+    "classes": [
+        {
+            "className": "QDisplay",
+            "methods": [
+                {
+                    "access": "public",
+                    "name": "helloWorld",
+                    "returnType": "void"
+                }
+            ],
+            "object": true,
+            "qualifiedClassName": "QDisplay",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QQuickPaintedItem"
+                },
+                {
+                    "access": "public",
+                    "name": "Display"
+                }
+            ]
+        }
+    ],
+    "inputFile": "qdisplay.h",
+    "outputRevision": 68
+}

@@ -4,11 +4,15 @@ project(qt_lib VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_AUTOMOC TRUE)
 
-find_package(Qt6 6.2 COMPONENTS Quick REQUIRED)
+find_package(Qt6 6.2 COMPONENTS Quick Core REQUIRED)
+
+
 
 qt_add_executable(appqt_lib
     main.cpp
+    myquickpainteditem.h
 )
 
 qt_add_qml_module(appqt_lib
@@ -26,7 +30,7 @@ set_target_properties(appqt_lib PROPERTIES
 )
 
 target_link_libraries(appqt_lib
-    PRIVATE Qt6::Quick)
+   PRIVATE Qt6::Quick )
 
 install(TARGETS appqt_lib
     BUNDLE DESTINATION .
