@@ -1,7 +1,7 @@
 #ifndef PIXELOBJECT_H
 #define PIXELOBJECT_H
 
-#include "pixel.h"
+#include "interface/pixel.h"
 
 
 /**

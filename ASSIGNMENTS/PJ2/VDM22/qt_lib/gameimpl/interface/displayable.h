@@ -1,12 +1,12 @@
 #ifndef PIXELENTITY_H
 #define PIXELENTITY_H
 #include "pixel.h"
-#include "exception.h"
+#include "message.h"
 
-template <unsigned int S>//S:有几个Pixel
+template <unsigned int P>//S:有几个Pixel
 class Displayable {
   private:
-	Pixel pixelArray[S];
+	Pixel pixelArray[P];
 	bool visibility{false};
   public:
 	Pixel& operator[](const unsigned int ind);
@@ -22,8 +22,8 @@ class Displayable {
  * @brief Displayable::getVisibility
  * @return 物体是否可见
  */
-template<unsigned int S>
-inline bool Displayable<S>::getVisibility() const {
+template<unsigned int P>
+inline bool Displayable<P>::getVisibility() const {
 	return visibility;
 }
 /**
@@ -32,8 +32,8 @@ inline bool Displayable<S>::getVisibility() const {
  * @brief Displayable::setVisibility
  * @param newVisibility 物体是否可见
  */
-template<unsigned int S>
-inline void Displayable<S>::setVisibility(bool newVisibility) {
+template<unsigned int P>
+inline void Displayable<P>::setVisibility(bool newVisibility) {
 	visibility = newVisibility;
 }
 
@@ -43,9 +43,9 @@ inline void Displayable<S>::setVisibility(bool newVisibility) {
  * @param ind 像素矩阵索引
  * @return 参考--代表此物体像素矩阵中的第ind个元素
  */
-template<unsigned int S>
-inline Pixel &Displayable<S>::operator[](const unsigned int ind) {
-	if(ind >= S) Exception((char*)("Displayable[] -> outOfBound"));
+template<unsigned int P>
+inline Pixel &Displayable<P>::operator[](const unsigned int ind) {
+	if(ind >= P) Message('c',(char*)("Displayable[] -> outOfBound"));
 	return pixelArray[ind];
 }
 
@@ -55,9 +55,9 @@ inline Pixel &Displayable<S>::operator[](const unsigned int ind) {
  * @brief Displayable::size
  * @return 代表此物体的像素矩阵中元素的数量
  */
-template<unsigned int S>
-inline unsigned int Displayable<S>::size() {
-	return S;
+template<unsigned int P>
+inline unsigned int Displayable<P>::size() {
+	return P;
 }
 
 /**
@@ -67,8 +67,8 @@ inline unsigned int Displayable<S>::size() {
  * @param horizontalShift 平行（X坐标方向）移动单位数量 正值向右 负值向左
  * @param verticalShift 垂直（Y坐标方向）移动单位数量 正值向上 负值向下
  */
-template<unsigned int S>
-inline void Displayable<S>::shift(const int horizontalShift, const int verticalShift) {
+template<unsigned int P>
+inline void Displayable<P>::shift(const int horizontalShift, const int verticalShift) {
 	for(Pixel& it : pixelArray) {
 		it.set(it.getX() + horizontalShift, it.getY());
 	}

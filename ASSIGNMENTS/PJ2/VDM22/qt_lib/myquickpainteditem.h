@@ -7,7 +7,7 @@
 #include <QQuickPaintedItem>
 #include <QPainter>
 #include <QRandomGenerator>
-#include "base/pixel.h"
+#include "gameimpl/interface/pixel.h"
 
 class MyQuickPaintedItem:  public QQuickPaintedItem {
 	Q_OBJECT

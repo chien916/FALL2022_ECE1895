@@ -3,7 +3,7 @@
 #include <QQuickView>
 #include <QObject>
 #include "myquickpainteditem.h"
-#include "base/exception.h"
+#include "gameimpl/interface/message.h"
 
 int main(int argc, char *argv[]) {
 	qmlRegisterType<MyQuickPaintedItem>("com.yinhao.myquickpainteditem", 1, 0, "MyQuickPaintedItem");
