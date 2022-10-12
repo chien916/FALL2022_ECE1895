@@ -19,7 +19,7 @@ class Displayable {
 /**
  *  获取——物体是否可见
  *  注意！这只是一个用于判断的属性，具体是否可见需要在Display中实现
- * @brief Displayable::getVisibility()
+ * @brief Displayable::getVisibility
  * @return 物体是否可见
  */
 template<unsigned int S>
@@ -29,7 +29,7 @@ inline bool Displayable<S>::getVisibility() const {
 /**
  *  设定——物体是否可见
  *  注意！这只是一个用于判断的属性，具体是否可见需要在Display中实现
- * @brief Displayable::setVisibility()
+ * @brief Displayable::setVisibility
  * @param newVisibility 物体是否可见
  */
 template<unsigned int S>
@@ -62,9 +62,10 @@ inline unsigned int Displayable<S>::size() {
 
 /**
  * 将代表此物体的像素矩阵中所有元素移动指定个单位
+ * 注意！在QML画板上的坐标是正值向下向右，负值向上向左；在QML中垂直方向移动行为和此函数相反
  * @brief Displayable::shift
- * @param horizontalShift 平行（X坐标方向）移动单位数量
- * @param verticalShift 垂直（Y坐标方向）移动单位数量
+ * @param horizontalShift 平行（X坐标方向）移动单位数量 正值向右 负值向左
+ * @param verticalShift 垂直（Y坐标方向）移动单位数量 正值向上 负值向下
  */
 template<unsigned int S>
 inline void Displayable<S>::shift(const int horizontalShift, const int verticalShift) {
