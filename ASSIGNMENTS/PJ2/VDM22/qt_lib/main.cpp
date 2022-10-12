@@ -3,9 +3,11 @@
 #include <QQuickView>
 #include <QObject>
 #include "myquickpainteditem.h"
+#include "base/exception.h"
 
 int main(int argc, char *argv[]) {
 	qmlRegisterType<MyQuickPaintedItem>("com.yinhao.myquickpainteditem", 1, 0, "MyQuickPaintedItem");
+
 	QGuiApplication app(argc, argv);
 	QQmlApplicationEngine engine;
 

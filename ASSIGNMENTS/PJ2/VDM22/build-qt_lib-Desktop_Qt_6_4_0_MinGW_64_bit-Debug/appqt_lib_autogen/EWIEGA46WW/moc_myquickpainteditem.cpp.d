@@ -376,4 +376,4 @@ D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_Min
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/vadefs.h \
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wchar.h \
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wctype.h \
-  D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/pixel.h
+  D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/base/pixel.h
