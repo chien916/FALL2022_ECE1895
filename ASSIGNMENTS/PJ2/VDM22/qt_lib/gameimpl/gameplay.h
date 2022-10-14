@@ -1,9 +1,9 @@
-#ifndef PIXELOBJECT_H
-#define PIXELOBJECT_H
-
-#include "interface/pixel.h"
+#ifndef GAMEPLAY_H
+#define GAMEPLAY_H
 
 
+#include "interface/displayable.h"
+#include "interface/communicator.h"
 /**
  * 线宽和线高定义
  *
@@ -57,13 +57,13 @@
  *    ===
  *    ===
  */
-#define LINE_WIDTH 5
-#define CR_HEIGHT 11
+#define LINE_WIDTH 1
+#define CR_HEIGHT 10
 #define CR_WIDTH 5
 #define BR_HEIGHT 5
 #define BR_SUBHEIGHT 5
 #define BR_WIDTH 5
-#define PLANE_WIDTH 3
+#define PLANE_WIDTH 5
 
 /**
  * 像素数组大小定义（自动判断）
@@ -73,38 +73,24 @@
 	+BR_WIDTH*LINE_WIDTH*2*BR_HEIGHT*LINE_WIDTH
 #define PLANE_ARRAY_SIZE PLANE_WIDTH*LINE_WIDTH*PLANE_WIDTH*LINE_WIDTH*5
 
-
-class PixelObject {
+template <unsigned char B, typename T>
+class GamePlay {
   private:
+	Displayable<CR_ARRAY_SIZE, T> cReferenceDisplayable{};
+	Displayable<BR_ARRAY_SIZE, T> bReferenceDisplayable{};
+	Displayable<PLANE_ARRAY_SIZE, T> planeDisplayable{};
+	struct Displayable<CR_ARRAY_SIZE, T>::Pixel cReferenceCenter{0,0};
 
-	Pixel cReference[CR_ARRAY_SIZE];
-	Pixel bReference[BR_ARRAY_SIZE];
-	Pixel plane[PLANE_WIDTH * LINE_WIDTH];
+	Communicator<B> *gameCommunicatorPointer{nullptr};
   public:
-
-	bool cReferenceVisible = false;
-	bool bReferenceVisible = false;
-	bool planeVisible = false;
-	/**
-	 * @brief 将C镜头参考线重新定位到指定位置
-	 * @param x 预期的中点横坐标
-	 * @param y 预期的中点纵坐标
-	 */
-	void cReferenceSetCenter(const int x, const int y);
-	/**
-	 * @brief 将B镜头参考线重新定位到指定位置
-	 * @param x 预期的中点横坐标
-	 * @param y 预期的中点纵坐标
-	 */
-	void bReferenceSetCenter(const int x, const int y);
-
-	/**
-	 * @brief 将飞机重新定位到指定位置
-	 * @param x 预期的中点横坐标
-	 * @param y 预期的中点纵坐标
-	 */
-	void planeSetCenter(const int x, const int y) ;
-
+	GamePlay(Communicator<B>*gameCommunicatorPointer);
 };
 
-#endif // PIXELOBJECT_H
+template <unsigned char B, typename T>
+inline GamePlay<B, T>::GamePlay(Communicator<B> *gameCommunicatorPointer) {
+	this->gameCommunicatorPointer = gameCommunicatorPointer;
+	//C镜下的坐标初始化
+
+}
+
+#endif // GAMEPLAY_H

@@ -3,7 +3,14 @@
 #include <QQuickView>
 #include <QObject>
 #include "myquickpainteditem.h"
-#include "gameimpl/interface/message.h"
+
+void setup() {
+
+}
+
+void loop() {
+
+}
 
 int main(int argc, char *argv[]) {
 	qmlRegisterType<MyQuickPaintedItem>("com.yinhao.myquickpainteditem", 1, 0, "MyQuickPaintedItem");
@@ -18,7 +25,9 @@ int main(int argc, char *argv[]) {
 			QCoreApplication::exit(-1);
 	}, Qt::QueuedConnection);
 	engine.load(url);
-
-
+	setup();
+	while(true) {
+		loop();
+	}
 	return app.exec();
 }

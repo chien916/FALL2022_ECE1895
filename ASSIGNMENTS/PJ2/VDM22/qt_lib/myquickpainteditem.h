@@ -7,7 +7,7 @@
 #include <QQuickPaintedItem>
 #include <QPainter>
 #include <QRandomGenerator>
-#include "gameimpl/interface/pixel.h"
+#include "gameimpl/interface/displayable.h"
 
 class MyQuickPaintedItem:  public QQuickPaintedItem {
 	Q_OBJECT
@@ -16,9 +16,11 @@ class MyQuickPaintedItem:  public QQuickPaintedItem {
 	void paint(QPainter *painter) override;
 	void clearBuffer();
 	void uploadBufferToScreen();
-	void uploadPixelToBuffer(Pixel &pixel);
+	template <unsigned char P, typename T>
+	void uploadDisplayableToBuffer(Displayable<P, T> &displayable);
   private:
 	QImage imageToBePrinted{256, 256, QImage::Format_Mono};
+
 	// Display interface
   public:
 	void message(char *msg) const ;
@@ -26,13 +28,23 @@ class MyQuickPaintedItem:  public QQuickPaintedItem {
 	Q_INVOKABLE void helloWorld();
 };
 
+template<unsigned char P, typename T>
+inline void MyQuickPaintedItem::uploadDisplayableToBuffer(Displayable<P, T> &displayable) {
+	for(struct Displayable<P, T>::Pixel it : displayable.pixelArray) {
+		int convertedX = static_cast<int>(it.x) + 128L;
+		int convertedY = static_cast<int>(it.y) + 128L;
+		bool convertedXInRange = convertedX >= 0L && convertedX <= imageToBePrinted.width();
+		bool convertedYInRange = convertedY >= 0L && convertedY <= imageToBePrinted.height();
+		if(convertedXInRange && convertedYInRange) {
+			imageToBePrinted.setPixel(convertedX, convertedY, 1U);
+		}
+	}
+	update();
+}
 inline void MyQuickPaintedItem::message(char *msg) const {
 	qDebug("msg");
 }
 
-inline void MyQuickPaintedItem::uploadPixelToBuffer(Pixel &pixel)  {
-	imageToBePrinted.setPixel(pixel.getX(), pixel.getY(), 1U);
-}
 
 inline void MyQuickPaintedItem::helloWorld() {
 	clearBuffer();
@@ -53,6 +65,8 @@ inline void MyQuickPaintedItem::clearBuffer() {
 	imageToBePrinted.fill(0);//把所有像素点设置为低电平
 	update();
 }
+
+
 
 
 
