@@ -28,14 +28,14 @@ Window {
 		clip: true
 	}
 	MyQuickPaintedItem{
-		id: qdisplay_radarScreen
+		id: myQuickPaintedItem_radarScreen
+		objectName: "myQuickPaintedItem_radarScreen"
 		anchors{
 			top : rectangle_display.top
 			bottom : rectangle_display.bottom
 			left : rectangle_display.left
 			right : rectangle_display.right
 		}
-
 		layer.enabled: true
 		layer.effect: OpacityMask{
 			maskSource: Rectangle{
@@ -208,7 +208,7 @@ Window {
 		text: "锁定器下移/Piper Down"
 		font.family: "Microsoft YaHei UI"
 		palette.button: "#252525"
-		onClicked: qdisplay_radarScreen.helloWorld()
+		onClicked: myQuickPaintedItem_radarScreen.helloWorld()
 	}
 
 }

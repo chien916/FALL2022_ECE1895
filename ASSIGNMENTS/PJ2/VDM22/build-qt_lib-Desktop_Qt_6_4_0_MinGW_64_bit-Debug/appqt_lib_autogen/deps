@@ -993,7 +993,7 @@ appqt_lib_autogen/timestamp: \
 	D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug/CMakeFiles/3.23.2/CMakeSystem.cmake \
 	D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug/appqt_lib_autogen/moc_predefs.h \
 	D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/CMakeLists.txt \
-	D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/gameimpl/interface/displayable.h \
+	D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/displayable.h \
 	D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/main.cpp \
 	D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/myquickpainteditem.h \
 	C:/Qt/Tools/CMake_64/bin/cmake.exe

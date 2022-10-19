@@ -95,7 +95,7 @@ public:
   }
 private:
   void platformSpecificPrint(char *messageText) override final {
-    if(this->serialUsage){
+    if (this->serialUsage) {
       Serial.print(messageText);
     }
   }
@@ -106,7 +106,10 @@ private:
 public:
   void platformSpecificUpdateBufferToPins() override final {
   }
-  void platformSpecificUpdatePinsToBuffer() override final{}
-    :
+  void platformSpecificUpdatePinsToBuffer() override final {
+    this->digitalInputCounterMeasureBuffer = 
+  }
+
+
 };
 #endif
