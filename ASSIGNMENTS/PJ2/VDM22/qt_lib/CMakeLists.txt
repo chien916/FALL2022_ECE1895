@@ -12,6 +12,7 @@ find_package(Qt6 6.2 COMPONENTS Quick Core REQUIRED)
 
 qt_add_executable(appqt_lib
     main.cpp
+    mygameserver.h
     myquickpainteditem.h
 )
 

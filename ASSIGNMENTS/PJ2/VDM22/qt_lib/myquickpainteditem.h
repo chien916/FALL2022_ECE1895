@@ -7,52 +7,47 @@
 #include <QQuickPaintedItem>
 #include <QPainter>
 #include <QRandomGenerator>
-#include "displayable.h"
 
 class MyQuickPaintedItem:  public QQuickPaintedItem {
 	Q_OBJECT
+  private:
+	void paint(QPainter *painter) override;
   public:
 	MyQuickPaintedItem(QQuickItem *parent = nullptr);
-	void paint(QPainter *painter) override;
-	void clearBuffer();
-	void uploadBufferToScreen();
-	template <unsigned int P, typename T>
-	void uploadDisplayableToBuffer(Displayable<P, T> &displayable);
+	bool clearScreen();
+	bool displayPixelOnScreen(const int x, const int y);
+//	template <unsigned int P, typename T>
+//	void uploadDisplayableToBuffer(Displayable<P, T> &displayable);
   private:
 	QImage imageToBePrinted{256, 256, QImage::Format_Mono};
 
-	// Display interface
   public:
-	void message(char *msg) const ;
 	Q_INVOKABLE void helloWorld();
 };
 
-template<unsigned int P, typename T>
-inline void MyQuickPaintedItem::uploadDisplayableToBuffer(Displayable<P, T> &displayable) {
-	for(struct Displayable<P, T>::Pixel it : displayable.pixelArray) {
-		int convertedX = static_cast<int>(it.x) + 128L;
-		int convertedY = -static_cast<int>(it.y) + 128L;
-		bool convertedXInRange = convertedX >= 0L && convertedX <= imageToBePrinted.width();
-		bool convertedYInRange = convertedY >= 0L && convertedY <= imageToBePrinted.height();
-		if(convertedXInRange && convertedYInRange && displayable.visibility) {
-			imageToBePrinted.setPixel(convertedX, convertedY, 1U);
-		}
-	}
-	update();
-}
-inline void MyQuickPaintedItem::message(char *msg) const {
-	qDebug("msg");
-}
+//template<unsigned int P, typename T>
+//inline void MyQuickPaintedItem::uploadDisplayableToBuffer(Displayable<P, T> &displayable) {
+//	for(struct Displayable<P, T>::Pixel it : displayable.pixelArray) {
+//		int convertedX = static_cast<int>(it.x) + 128L;
+//		int convertedY = -static_cast<int>(it.y) + 128L;
+//		bool convertedXInRange = convertedX >= 0L && convertedX <= imageToBePrinted.width();
+//		bool convertedYInRange = convertedY >= 0L && convertedY <= imageToBePrinted.height();
+//		if(convertedXInRange && convertedYInRange && displayable.visibility) {
+//			imageToBePrinted.setPixel(convertedX, convertedY, 1U);
+//		}
+//	}
+//	update();
+//}
 
 
 inline void MyQuickPaintedItem::helloWorld() {
-	clearBuffer();
+	clearScreen();
 	imageToBePrinted.fill(1);//把所有像素点设置为低电平
 	update();
 }
 
 inline MyQuickPaintedItem::MyQuickPaintedItem(QQuickItem *parent) : QQuickPaintedItem(parent) {
-	clearBuffer();
+	clearScreen();
 }
 
 inline void MyQuickPaintedItem::paint(QPainter *painter) {
@@ -60,13 +55,24 @@ inline void MyQuickPaintedItem::paint(QPainter *painter) {
 	painter->drawImage(0, 0, imageToBePrinted);
 }
 
-inline void MyQuickPaintedItem::clearBuffer() {
+inline bool MyQuickPaintedItem::clearScreen() {
 	imageToBePrinted.fill(0);//把所有像素点设置为低电平
 	update();
+	return true;
 }
 
-inline void MyQuickPaintedItem::uploadBufferToScreen() {
+inline bool MyQuickPaintedItem::displayPixelOnScreen(const int x, const int y) {
+	bool status{true};
+	int convertedX = static_cast<int>(x) + 128L;
+	int convertedY = -static_cast<int>(x) + 128L;
+	status &= convertedX >= 0L;
+	status &= convertedX <= imageToBePrinted.width();
+	status &= convertedY >= 0L ;
+	status &= convertedY <= imageToBePrinted.height();
+	if(status)
+		imageToBePrinted.setPixel(convertedX, convertedY, 1U);
 	update();
+	return status;
 }
 
 

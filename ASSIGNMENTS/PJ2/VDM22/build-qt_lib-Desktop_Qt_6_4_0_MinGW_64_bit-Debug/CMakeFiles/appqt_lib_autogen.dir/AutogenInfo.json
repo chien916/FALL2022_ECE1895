@@ -852,6 +852,12 @@
 	"HEADERS" : 
 	[
 		[
+			"D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/mygameserver.h",
+			"Mu",
+			"EWIEGA46WW/moc_mygameserver.cpp",
+			null
+		],
+		[
 			"D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/myquickpainteditem.h",
 			"Mu",
 			"EWIEGA46WW/moc_myquickpainteditem.cpp",

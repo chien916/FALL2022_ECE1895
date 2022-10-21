@@ -377,7 +377,7 @@ build .qt_plugins/Qt6_QmlPlugins_Imports_appqt_lib.cmake | ${cmake_ninja_workdir
 #############################################
 # Phony custom command for CMakeFiles\appqt_lib_autogen_timestamp_deps
 
-build CMakeFiles/appqt_lib_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/appqt_lib_autogen_timestamp_deps: phony .rcc/qmlcache/appqt_lib_qmlcache_loader.cpp C$:/Qt/6.4.0/mingw_64/./bin/moc.exe C$:/Qt/6.4.0/mingw_64/lib/libQt6Quick.a C$:/Qt/6.4.0/mingw_64/lib/libQt6Qml.a
+build CMakeFiles/appqt_lib_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/appqt_lib_autogen_timestamp_deps: phony .rcc/qmlcache/appqt_lib_qmlcache_loader.cpp C$:/Qt/6.4.0/mingw_64/./bin/moc.exe C$:/Qt/6.4.0/mingw_64/lib/libQt6Qml.a C$:/Qt/6.4.0/mingw_64/lib/libQt6Quick.a
 
 
 #############################################

@@ -3,10 +3,12 @@ appqt_lib_autogen/timestamp: \
 	C:/Qt/6.4.0/mingw_64/include/QtCore/QList \
 	C:/Qt/6.4.0/mingw_64/include/QtCore/QMetaType \
 	C:/Qt/6.4.0/mingw_64/include/QtCore/QObject \
+	C:/Qt/6.4.0/mingw_64/include/QtCore/QPointer \
 	C:/Qt/6.4.0/mingw_64/include/QtCore/QRandomGenerator \
 	C:/Qt/6.4.0/mingw_64/include/QtCore/QRect \
 	C:/Qt/6.4.0/mingw_64/include/QtCore/QSize \
 	C:/Qt/6.4.0/mingw_64/include/QtCore/QSizeF \
+	C:/Qt/6.4.0/mingw_64/include/QtCore/QString \
 	C:/Qt/6.4.0/mingw_64/include/QtCore/qalgorithms.h \
 	C:/Qt/6.4.0/mingw_64/include/QtCore/qanystringview.h \
 	C:/Qt/6.4.0/mingw_64/include/QtCore/qarraydata.h \
@@ -141,9 +143,18 @@ appqt_lib_autogen/timestamp: \
 	C:/Qt/6.4.0/mingw_64/include/QtNetwork/qtnetwork-config.h \
 	C:/Qt/6.4.0/mingw_64/include/QtNetwork/qtnetworkexports.h \
 	C:/Qt/6.4.0/mingw_64/include/QtNetwork/qtnetworkglobal.h \
+	C:/Qt/6.4.0/mingw_64/include/QtQml/QQmlApplicationEngine \
+	C:/Qt/6.4.0/mingw_64/include/QtQml/qjsengine.h \
+	C:/Qt/6.4.0/mingw_64/include/QtQml/qjsmanagedvalue.h \
+	C:/Qt/6.4.0/mingw_64/include/QtQml/qjsnumbercoercion.h \
+	C:/Qt/6.4.0/mingw_64/include/QtQml/qjsprimitivevalue.h \
 	C:/Qt/6.4.0/mingw_64/include/QtQml/qjsvalue.h \
 	C:/Qt/6.4.0/mingw_64/include/QtQml/qqml.h \
+	C:/Qt/6.4.0/mingw_64/include/QtQml/qqmlabstracturlinterceptor.h \
+	C:/Qt/6.4.0/mingw_64/include/QtQml/qqmlapplicationengine.h \
 	C:/Qt/6.4.0/mingw_64/include/QtQml/qqmlcomponent.h \
+	C:/Qt/6.4.0/mingw_64/include/QtQml/qqmldebug.h \
+	C:/Qt/6.4.0/mingw_64/include/QtQml/qqmlengine.h \
 	C:/Qt/6.4.0/mingw_64/include/QtQml/qqmlerror.h \
 	C:/Qt/6.4.0/mingw_64/include/QtQml/qqmllist.h \
 	C:/Qt/6.4.0/mingw_64/include/QtQml/qqmlparserstatus.h \
@@ -154,6 +165,7 @@ appqt_lib_autogen/timestamp: \
 	C:/Qt/6.4.0/mingw_64/include/QtQml/qtqmlexports.h \
 	C:/Qt/6.4.0/mingw_64/include/QtQml/qtqmlglobal.h \
 	C:/Qt/6.4.0/mingw_64/include/QtQmlIntegration/qqmlintegration.h \
+	C:/Qt/6.4.0/mingw_64/include/QtQuick/QQuickItem \
 	C:/Qt/6.4.0/mingw_64/include/QtQuick/QQuickPaintedItem \
 	C:/Qt/6.4.0/mingw_64/include/QtQuick/qquickitem.h \
 	C:/Qt/6.4.0/mingw_64/include/QtQuick/qquickpainteditem.h \
@@ -809,6 +821,7 @@ appqt_lib_autogen/timestamp: \
 	C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/hash_bytes.h \
 	C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/invoke.h \
 	C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/ios_base.h \
+	C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/istream.tcc \
 	C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/iterator_concepts.h \
 	C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/list.tcc \
 	C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_classes.h \
@@ -898,6 +911,8 @@ appqt_lib_autogen/timestamp: \
 	C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/initializer_list \
 	C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ios \
 	C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iosfwd \
+	C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iostream \
+	C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/istream \
 	C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iterator \
 	C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/limits \
 	C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/list \
@@ -993,7 +1008,11 @@ appqt_lib_autogen/timestamp: \
 	D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug/CMakeFiles/3.23.2/CMakeSystem.cmake \
 	D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug/appqt_lib_autogen/moc_predefs.h \
 	D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/CMakeLists.txt \
+	D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/communicator.h \
 	D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/displayable.h \
 	D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/main.cpp \
+	D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/mygameserver.h \
 	D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/myquickpainteditem.h \
+	D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/playable.h \
+	D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/qtcommunicator.h \
 	C:/Qt/Tools/CMake_64/bin/cmake.exe

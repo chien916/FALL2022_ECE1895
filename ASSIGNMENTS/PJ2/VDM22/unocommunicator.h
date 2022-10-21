@@ -3,7 +3,13 @@
 #ifndef UNOCOMMUNICATOR_H
 #define UNOCOMMUNICATOR_H
 
-#include "qt_lib/gameimpl/interface/communicator.h"
+#include "qt_lib/communicator.h"
+
+#define UNO_TEMPALTE_B 8
+#define UNO_TEMPALTE_T int
+#define UNO_TEMPALTE_D float
+#define UNO_TEMPALTE_A float
+#define UNO_TEMPALTE_PARAM UNO_TEMPALTE_B,UNO_TEMPALTE_T,UNO_TEMPALTE_D,UNO_TEMPALTE_A
 //数字针脚和模式
 
 
@@ -63,53 +69,54 @@
 //模拟针脚和模式
 #define ANALOGINPUT_STICKXAXIS 27
 #define ANALOGINPUT_STICKYAXIS 28
-template<unsigned char B>
-class UnoCommunicator : public Communicator<B> {
-public:
-  bool serialUsage{ false };
-  UnoCommunicator(bool serialUsage)
-    : Communicator<B>() {
-    this->serialUsage = serialUsage;
-    pinMode(DIGITALOUTPUT_DAC_DB0, OUTPUT);
-    pinMode(DIGITALOUTPUT_DAC_DB1, OUTPUT);
-    pinMode(DIGITALOUTPUT_DAC_DB2, OUTPUT);
-    pinMode(DIGITALOUTPUT_DAC_DB3, OUTPUT);
-    pinMode(DIGITALOUTPUT_DAC_DB4, OUTPUT);
-    pinMode(DIGITALOUTPUT_DAC_DB5, OUTPUT);
-    pinMode(DIGITALOUTPUT_DAC_DB6, OUTPUT);
-    pinMode(DIGITALOUTPUT_DAC_DB7, OUTPUT);
-    pinMode(DIGITALOUTPUT_DAC_AB, OUTPUT);
-    pinMode(DIGITALOUTPUT_DAC_LDAC, OUTPUT);
-    pinMode(DIGITALOUTPUT_DAC_WR, OUTPUT);
-    pinMode(DIGITALOUTPUT_BUZZER, OUTPUT);
-    if (this->serialUsage) {
-      Serial.begin(9600);
-    } else {
-      pinMode(DIGITALOUTPUT_RWR1, OUTPUT);
-      pinMode(DIGITALOUTPUT_RWR2, OUTPUT);
-    }
-    pinMode(DIGITALINPUT_LAUNCHBUTTON, INPUT);
-    pinMode(DIGITALINPUT_COUNTERMEASURE, INPUT);
-    pinMode(DIGITALINPUT_PIPERUP, INPUT);
-    pinMode(DIGITALINPUT_PIPERDOWN, INPUT);
-  }
-private:
-  void platformSpecificPrint(char *messageText) override final {
-    if (this->serialUsage) {
-      Serial.print(messageText);
-    }
-  }
-  void platformSpecificExit() override final {
-    exit(1);
-  }
 
-public:
-  void platformSpecificUpdateBufferToPins() override final {
-  }
-  void platformSpecificUpdatePinsToBuffer() override final {
-    this->digitalInputCounterMeasureBuffer = 
-  }
+class UnoCommunicator: Communicator<UNO_TEMPALTE_PARAM> {
 
+  public:
+	bool serialUsage{ false };
 
+	// Communicator interface
+  private:
+	void platformSpecificPrint(char *messageText) override final {
+		Serial.print(messageText);
+	}
+	void platformSpecificExit() override final {
+		exit(1);
+	}
+
+  public:
+	UnoCommunicator(bool serialUsage) {
+		this->serialUsage = serialUsage;
+		pinMode(DIGITALOUTPUT_DAC_DB0, OUTPUT);
+		pinMode(DIGITALOUTPUT_DAC_DB1, OUTPUT);
+		pinMode(DIGITALOUTPUT_DAC_DB2, OUTPUT);
+		pinMode(DIGITALOUTPUT_DAC_DB3, OUTPUT);
+		pinMode(DIGITALOUTPUT_DAC_DB4, OUTPUT);
+		pinMode(DIGITALOUTPUT_DAC_DB5, OUTPUT);
+		pinMode(DIGITALOUTPUT_DAC_DB6, OUTPUT);
+		pinMode(DIGITALOUTPUT_DAC_DB7, OUTPUT);
+		pinMode(DIGITALOUTPUT_DAC_AB, OUTPUT);
+		pinMode(DIGITALOUTPUT_DAC_LDAC, OUTPUT);
+		pinMode(DIGITALOUTPUT_DAC_WR, OUTPUT);
+		pinMode(DIGITALOUTPUT_BUZZER, OUTPUT);
+		if (this->serialUsage) {
+			Serial.begin(9600);
+		} else {
+			pinMode(DIGITALOUTPUT_RWR1, OUTPUT);
+			pinMode(DIGITALOUTPUT_RWR2, OUTPUT);
+		}
+		pinMode(DIGITALINPUT_LAUNCHBUTTON, INPUT);
+		pinMode(DIGITALINPUT_COUNTERMEASURE, INPUT);
+		pinMode(DIGITALINPUT_PIPERUP, INPUT);
+		pinMode(DIGITALINPUT_PIPERDOWN, INPUT);
+	}
+	bool platformSpecificUpdateBufferToPins() override final {
+	}
+	bool platformSpecificUpdatePinsToBuffer() override final {
+	}
+	bool platformSpecificFlashPixelToScreen(const UNO_TEMPALTE_T x, const UNO_TEMPALTE_T y) override final {
+	}
 };
+
+
 #endif

@@ -3,12 +3,14 @@
 
 
 /**
+ * 接口——交流器
  * @brief The Communicator class
  * @tparam B 数字信号位宽
  * @tparam D 用于代表数字信号的数据类型
  * @tparam A 用于代表模拟信号的数据类型
+ * @tparam T 存储像素坐标的基本数据类型
  */
-template <unsigned char B, typename D, typename A>
+template <unsigned char B, typename T, typename D, typename A>
 class Communicator {
   private:
 	///**
@@ -28,8 +30,6 @@ class Communicator {
 
 
   public:
-
-	void buildCheckMessage(char* messageText, bool result);
 
 	/**
 	 * 显示消息到屏幕
@@ -85,41 +85,37 @@ class Communicator {
 	 * 将缓冲器中的输出针脚电平更新到针脚上
 	 * @brief platformSpecificUpdateBufferToPins
 	 */
-	virtual void platformSpecificUpdateBufferToPins() = 0;
+	virtual bool platformSpecificUpdateBufferToPins() = 0;
 
 	/**
 	 * 平台差异化接口
 	 * 将针脚上的电平更新到缓冲器中
 	 * @brief platformSpecificUpdateBufferToPins
 	 */
-	virtual void platformSpecificUpdatePinsToBuffer() = 0;
+	virtual bool platformSpecificUpdatePinsToBuffer() = 0;
+
+	/**
+	 * 平台差异化接口
+	 * 将某个像素点亮
+	 * @brief platformSpecificFlashPixelToScreen
+	 */
+	virtual bool platformSpecificFlashPixelToScreen(const T x,const T y) = 0;
 };
 
-template<unsigned char B, typename D, typename A>
-inline void Communicator<B, D, A>::buildCheckMessage(char *messageText, bool result) {
-	platformSpecificPrint(messageText);
-	if(result){
-		platformSpecificPrint("-->OK");
-	}else{
-		platformSpecificPrint("-->FAILED");
-		platformSpecificExit();
-	}
-}
-
-template <unsigned char B, typename D, typename A>
-inline void Communicator<B, D, A>::buildVerboseMessage(char *messageText) {
+template <unsigned char B, typename T, typename D, typename A>
+inline void Communicator<B, T, D, A>::buildVerboseMessage(char *messageText) {
 	platformSpecificPrint(messageText);
 }
 
-template <unsigned char B, typename D, typename A>
-inline void Communicator<B, D, A>::buildCriticalMessage(char *messageText) {
+template <unsigned char B, typename T, typename D, typename A>
+inline void Communicator<B, T, D, A>::buildCriticalMessage(char *messageText) {
 	this->buildVerboseMessage(messageText);
 	platformSpecificExit();
 }
 
 
-template <unsigned char B, typename D, typename A>
-inline A Communicator<B, D, A>::digitalToAnalog(const D &digitalSignal) {
+template <unsigned char B, typename T, typename D, typename A>
+inline A Communicator<B, T, D, A>::digitalToAnalog(const D &digitalSignal) {
 	A analogSignal = 0;
 	for(unsigned char ind = 0; ind < B; ++ind) {
 		analogSignal += digitalSignal & (1 << ind) ? (1 << ind) : 0;
@@ -128,8 +124,8 @@ inline A Communicator<B, D, A>::digitalToAnalog(const D &digitalSignal) {
 }
 
 
-template <unsigned char B, typename D, typename A>
-inline D Communicator<B, D, A>::analogToDigital(const A &analogSignal) {
+template <unsigned char B, typename T, typename D, typename A>
+inline D Communicator<B, T, D, A>::analogToDigital(const A &analogSignal) {
 	D digitalSignal = 0;
 	A analogSignalCopy = analogSignal;
 	for(unsigned char ind = 0; ind < B; ++ind) {

@@ -2,6 +2,55 @@
     {
         "classes": [
             {
+                "className": "MyGameServer",
+                "methods": [
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "buttonId",
+                                "type": "QString"
+                            },
+                            {
+                                "name": "value",
+                                "type": "bool"
+                            }
+                        ],
+                        "name": "onButtonValueChanged",
+                        "returnType": "bool"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "sliderId",
+                                "type": "QString"
+                            },
+                            {
+                                "name": "value",
+                                "type": "qreal"
+                            }
+                        ],
+                        "name": "onSliderValueChanged",
+                        "returnType": "bool"
+                    }
+                ],
+                "object": true,
+                "qualifiedClassName": "MyGameServer",
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "mygameserver.h",
+        "outputRevision": 68
+    },
+    {
+        "classes": [
+            {
                 "className": "MyQuickPaintedItem",
                 "methods": [
                     {

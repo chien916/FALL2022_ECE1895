@@ -3,6 +3,7 @@ import QtQuick.Controls.Fusion
 import QtQuick.Layouts
 import Qt5Compat.GraphicalEffects
 import com.yinhao.myquickpainteditem
+import com.yinhao.mygameserver
 //import QtQuick.Extras
 
 Window {
@@ -15,6 +16,7 @@ Window {
 	minimumWidth: 340
 	visible: true
 	title: qsTr("VDM22")
+
 	Rectangle{
 		id: rectangle_display
 		width: 256
@@ -27,6 +29,9 @@ Window {
 		radius: width*1
 		clip: true
 	}
+
+
+
 	MyQuickPaintedItem{
 		id: myQuickPaintedItem_radarScreen
 		objectName: "myQuickPaintedItem_radarScreen"
@@ -57,6 +62,7 @@ Window {
 
 
 
+
 	Text {
 		id: text_stickXAxis
 		anchors.left: parent.left
@@ -79,6 +85,7 @@ Window {
 
 	Slider{
 		id: slider_stickX
+		objectName: "slider_stickX"
 		palette.highlight: "#252525"
 		anchors.horizontalCenter: text_stickXAxis.horizontalCenter
 		anchors.top: text_stickXAxis.bottom
@@ -86,10 +93,17 @@ Window {
 		anchors.bottom: button_launchButton.top
 		anchors.bottomMargin: 10
 		orientation: Qt.Vertical
+		value: 0.5
+		onValueChanged: myGameServer.onSliderValueChanged("slider_stickX",value*5)
+		onPressedChanged: {
+			if(!pressed)
+				value = 0.5
+		}
 	}
 
 	Slider{
 		id: slider_stickY
+		objectName: "slider_stickY"
 		palette.highlight: "#252525"
 		anchors.horizontalCenter: text_stickYAxis.horizontalCenter
 		anchors.top: text_stickYAxis.bottom
@@ -97,6 +111,12 @@ Window {
 		anchors.bottom: button_launchButton.top
 		anchors.bottomMargin: 10
 		orientation: Qt.Vertical
+		value: 0.5
+		onValueChanged: myGameServer.onSliderValueChanged("slider_stickY",value*5)
+		onPressedChanged: {
+			if(!pressed)
+				value = 0.5
+		}
 	}
 
 	Text{
@@ -128,6 +148,7 @@ Window {
 	}
 	Rectangle{
 		id: rectangle_rwr1Led
+		objectName: "rectangle_rwr1Led"
 		color: "black"
 		height: 10
 		width: 50
@@ -141,6 +162,7 @@ Window {
 
 	Rectangle{
 		id: rectangle_rwr2Led
+		objectName: "rectangle_rwr2Led"
 		color: "black"
 		height: 10
 		width: 50
@@ -153,6 +175,7 @@ Window {
 
 	Rectangle{
 		id: rectangle_buzzer
+		objectName: "rectangle_buzzer"
 		color: "black"
 		height: 10
 		width: 50
@@ -174,6 +197,8 @@ Window {
 		text: qsTr("发射/Launch")
 		font.family: "Microsoft YaHei UI"
 		palette.button: "#252525"
+		onPressed: myGameServer.onButtonValueChanged("button_launchButton",true)
+		onReleased: myGameServer.onButtonValueChanged("button_launchButton",false)
 	}
 	Button{
 		id: button_counterMeasureButton
@@ -185,6 +210,8 @@ Window {
 		text: "反制/Counter Measure"
 		font.family: "Microsoft YaHei UI"
 		palette.button: "#252525"
+		onPressed: myGameServer.onButtonValueChanged("button_counterMeasureButton",true)
+		onReleased: myGameServer.onButtonValueChanged("button_counterMeasureButton",false)
 	}
 	Button{
 		id: button_piperUpButton
@@ -196,7 +223,8 @@ Window {
 		text: "锁定器上移/Piper Up"
 		font.family: "Microsoft YaHei UI"
 		palette.button: "#252525"
-
+		onPressed: myGameServer.onButtonValueChanged("button_piperUpButton",true)
+		onReleased: myGameServer.onButtonValueChanged("button_piperUpButton",false)
 	}
 	Button{
 		id: button_piperDownButton
@@ -208,7 +236,8 @@ Window {
 		text: "锁定器下移/Piper Down"
 		font.family: "Microsoft YaHei UI"
 		palette.button: "#252525"
-		onClicked: myQuickPaintedItem_radarScreen.helloWorld()
+		onPressed: myGameServer.onButtonValueChanged("button_piperDownButton",true)
+		onReleased: myGameServer.onButtonValueChanged("button_piperDownButton",false)
 	}
 
 }
