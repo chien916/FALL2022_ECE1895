@@ -49,8 +49,8 @@ class Communicator {
 	bool digitalInputCounterMeasureBuffer{false};
 	bool digitalInputPiperUpButtonBuffer{false};
 	bool digitalInputPiperDownButtonBuffer{false};
-	A analogInputStickXAxisBuffer{0};
-	A analogInputStickYAxisBuffer{0};
+	A analogInputStickXAxisBuffer{2.5};
+	A analogInputStickYAxisBuffer{2.5};
 
 	/**
 	 * 属性——即将要发送到针脚的数字信号电平缓冲区
@@ -99,7 +99,32 @@ class Communicator {
 	 * 将某个像素点亮
 	 * @brief platformSpecificFlashPixelToScreen
 	 */
-	virtual bool platformSpecificFlashPixelToScreen(const T x,const T y) = 0;
+	virtual bool platformSpecificFlashPixelToScreen(const T x, const T y) = 0;
+
+	/*
+	 * a = static_cast<char>(x)
+	 * _REGISTER_GPIO3 |= a>>4
+	 * _REGISTER_GPIO4 |= a<<4
+	 * x pinWrite()
+	 *
+
+	/**
+	 * 平台差异化接口
+	 * 将屏幕清空
+	 * @brief platformSpecificClearScreen
+	 */
+	virtual bool platformSpecificClearScreen() = 0;
+
+	/**
+	 * 平台差异化接口
+	 * 随机取一个区间数字
+	 * @brief platformRandomGenerator
+	 * @param lowerLimit 最低值
+	 * @param upperLimit 最高值
+	 * @param generatedNumber 结果保存的参考索引
+	 */
+	virtual T platformSpecificRandomGenerator(const T lowerLimit, const T upperLimit) = 0;
+
 };
 
 template <unsigned char B, typename T, typename D, typename A>

@@ -19,7 +19,7 @@ qt_add_executable(appqt_lib
 qt_add_qml_module(appqt_lib
     URI qt_lib
     VERSION 1.0
-    QML_FILES main.qml 
+    QML_FILES main.qml debugwindow.qml
 )
 
 set_target_properties(appqt_lib PROPERTIES

@@ -7,6 +7,7 @@ import com.yinhao.mygameserver
 //import QtQuick.Extras
 
 Window {
+	property var controllable : false
 	flags: Qt.Dialog
 	height: 470
 	width: 340
@@ -16,7 +17,6 @@ Window {
 	minimumWidth: 340
 	visible: true
 	title: qsTr("VDM22")
-
 	Rectangle{
 		id: rectangle_display
 		width: 256
@@ -28,10 +28,9 @@ Window {
 		border.width: 2
 		radius: width*1
 		clip: true
+		//		focus: true
+		//		Keys.onPressed: myGameServer.onKeyboardKeysPressed(event)
 	}
-
-
-
 	MyQuickPaintedItem{
 		id: myQuickPaintedItem_radarScreen
 		objectName: "myQuickPaintedItem_radarScreen"
@@ -51,13 +50,13 @@ Window {
 				radius: 256
 			}
 		}
-//		clip: true
-//		anchors{
-//			right: rectangle_display.right
-//			left: rectangle_display.left
-//			top:rectangle_display.top
-//			bottom: rectangle_display.bottom
-//		}
+		//		clip: true
+		//		anchors{
+		//			right: rectangle_display.right
+		//			left: rectangle_display.left
+		//			top:rectangle_display.top
+		//			bottom: rectangle_display.bottom
+		//		}
 	}
 
 
@@ -94,11 +93,13 @@ Window {
 		anchors.bottomMargin: 10
 		orientation: Qt.Vertical
 		value: 0.5
-		onValueChanged: myGameServer.onSliderValueChanged("slider_stickX",value*5)
+		onValueChanged: myGameServer.onSliderValueChanged("slider_stickX",value)
 		onPressedChanged: {
 			if(!pressed)
 				value = 0.5
 		}
+		opacity: controllable? 1.0 : 0.3
+		enabled: controllable
 	}
 
 	Slider{
@@ -112,11 +113,13 @@ Window {
 		anchors.bottomMargin: 10
 		orientation: Qt.Vertical
 		value: 0.5
-		onValueChanged: myGameServer.onSliderValueChanged("slider_stickY",value*5)
+		onValueChanged: myGameServer.onSliderValueChanged("slider_stickY",value)
 		onPressedChanged: {
 			if(!pressed)
 				value = 0.5
 		}
+		opacity: controllable? 1.0 : 0.3
+		enabled: controllable
 	}
 
 	Text{
@@ -194,11 +197,12 @@ Window {
 		anchors.right: parent.right
 		anchors.margins: 10
 		anchors.bottom: button_counterMeasureButton.top
-		text: qsTr("发射/Launch")
+		text:"发射/Launch"
 		font.family: "Microsoft YaHei UI"
 		palette.button: "#252525"
 		onPressed: myGameServer.onButtonValueChanged("button_launchButton",true)
 		onReleased: myGameServer.onButtonValueChanged("button_launchButton",false)
+		enabled: controllable
 	}
 	Button{
 		id: button_counterMeasureButton
@@ -212,6 +216,7 @@ Window {
 		palette.button: "#252525"
 		onPressed: myGameServer.onButtonValueChanged("button_counterMeasureButton",true)
 		onReleased: myGameServer.onButtonValueChanged("button_counterMeasureButton",false)
+		enabled: controllable
 	}
 	Button{
 		id: button_piperUpButton
@@ -225,6 +230,7 @@ Window {
 		palette.button: "#252525"
 		onPressed: myGameServer.onButtonValueChanged("button_piperUpButton",true)
 		onReleased: myGameServer.onButtonValueChanged("button_piperUpButton",false)
+		enabled: controllable
 	}
 	Button{
 		id: button_piperDownButton
@@ -238,6 +244,7 @@ Window {
 		palette.button: "#252525"
 		onPressed: myGameServer.onButtonValueChanged("button_piperDownButton",true)
 		onReleased: myGameServer.onButtonValueChanged("button_piperDownButton",false)
+		enabled: controllable
 	}
 
 }

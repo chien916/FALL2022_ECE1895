@@ -32,6 +32,17 @@
                     ],
                     "name": "onSliderValueChanged",
                     "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "qKeyEvent",
+                            "type": "QKeyEvent*"
+                        }
+                    ],
+                    "name": "onKeyboardKeysPressed",
+                    "returnType": "bool"
                 }
             ],
             "object": true,

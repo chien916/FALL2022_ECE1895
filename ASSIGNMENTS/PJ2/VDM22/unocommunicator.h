@@ -6,8 +6,8 @@
 #include "qt_lib/communicator.h"
 
 #define UNO_TEMPALTE_B 8
-#define UNO_TEMPALTE_T int
-#define UNO_TEMPALTE_D float
+#define UNO_TEMPALTE_T int16_t
+#define UNO_TEMPALTE_D int16_t
 #define UNO_TEMPALTE_A float
 #define UNO_TEMPALTE_PARAM UNO_TEMPALTE_B,UNO_TEMPALTE_T,UNO_TEMPALTE_D,UNO_TEMPALTE_A
 //数字针脚和模式
@@ -70,53 +70,84 @@
 #define ANALOGINPUT_STICKXAXIS 27
 #define ANALOGINPUT_STICKYAXIS 28
 
-class UnoCommunicator: Communicator<UNO_TEMPALTE_PARAM> {
+class UnoCommunicator:public Communicator<UNO_TEMPALTE_PARAM> {
 
   public:
 	bool serialUsage{ false };
-
-	// Communicator interface
   private:
-	void platformSpecificPrint(char *messageText) override final {
-		Serial.print(messageText);
-	}
-	void platformSpecificExit() override final {
-		exit(1);
-	}
-
+	void platformSpecificPrint(char *messageText) override final;
+	void platformSpecificExit() override final ;
   public:
-	UnoCommunicator(bool serialUsage) {
-		this->serialUsage = serialUsage;
-		pinMode(DIGITALOUTPUT_DAC_DB0, OUTPUT);
-		pinMode(DIGITALOUTPUT_DAC_DB1, OUTPUT);
-		pinMode(DIGITALOUTPUT_DAC_DB2, OUTPUT);
-		pinMode(DIGITALOUTPUT_DAC_DB3, OUTPUT);
-		pinMode(DIGITALOUTPUT_DAC_DB4, OUTPUT);
-		pinMode(DIGITALOUTPUT_DAC_DB5, OUTPUT);
-		pinMode(DIGITALOUTPUT_DAC_DB6, OUTPUT);
-		pinMode(DIGITALOUTPUT_DAC_DB7, OUTPUT);
-		pinMode(DIGITALOUTPUT_DAC_AB, OUTPUT);
-		pinMode(DIGITALOUTPUT_DAC_LDAC, OUTPUT);
-		pinMode(DIGITALOUTPUT_DAC_WR, OUTPUT);
-		pinMode(DIGITALOUTPUT_BUZZER, OUTPUT);
-		if (this->serialUsage) {
-			Serial.begin(9600);
-		} else {
-			pinMode(DIGITALOUTPUT_RWR1, OUTPUT);
-			pinMode(DIGITALOUTPUT_RWR2, OUTPUT);
-		}
-		pinMode(DIGITALINPUT_LAUNCHBUTTON, INPUT);
-		pinMode(DIGITALINPUT_COUNTERMEASURE, INPUT);
-		pinMode(DIGITALINPUT_PIPERUP, INPUT);
-		pinMode(DIGITALINPUT_PIPERDOWN, INPUT);
-	}
-	bool platformSpecificUpdateBufferToPins() override final {
-	}
-	bool platformSpecificUpdatePinsToBuffer() override final {
-	}
-	bool platformSpecificFlashPixelToScreen(const UNO_TEMPALTE_T x, const UNO_TEMPALTE_T y) override final {
-	}
+	UnoCommunicator(bool serialUsage);
+	bool platformSpecificUpdateBufferToPins() override final ;
+	bool platformSpecificUpdatePinsToBuffer() override final ;
+	bool platformSpecificFlashPixelToScreen(const UNO_TEMPALTE_T x, const UNO_TEMPALTE_T y) override final;
+	bool platformSpecificClearScreen() override final;
+	UNO_TEMPALTE_T platformSpecificRandomGenerator(const UNO_TEMPALTE_T lowerLimit, const UNO_TEMPALTE_T upperLimit) override final;
 };
 
+
+inline UnoCommunicator::UnoCommunicator(bool serialUsage) {
+
+	this->serialUsage = serialUsage;
+	pinMode(DIGITALOUTPUT_DAC_DB0, OUTPUT);
+	pinMode(DIGITALOUTPUT_DAC_DB1, OUTPUT);
+	pinMode(DIGITALOUTPUT_DAC_DB2, OUTPUT);
+	pinMode(DIGITALOUTPUT_DAC_DB3, OUTPUT);
+	pinMode(DIGITALOUTPUT_DAC_DB4, OUTPUT);
+	pinMode(DIGITALOUTPUT_DAC_DB5, OUTPUT);
+	pinMode(DIGITALOUTPUT_DAC_DB6, OUTPUT);
+	pinMode(DIGITALOUTPUT_DAC_DB7, OUTPUT);
+	pinMode(DIGITALOUTPUT_DAC_AB, OUTPUT);
+	pinMode(DIGITALOUTPUT_DAC_LDAC, OUTPUT);
+	pinMode(DIGITALOUTPUT_DAC_WR, OUTPUT);
+	pinMode(DIGITALOUTPUT_BUZZER, OUTPUT);
+	if (this->serialUsage) {
+		Serial.begin(9600);
+	} else {
+		pinMode(DIGITALOUTPUT_RWR1, OUTPUT);
+		pinMode(DIGITALOUTPUT_RWR2, OUTPUT);
+	}
+	pinMode(DIGITALINPUT_LAUNCHBUTTON, INPUT);
+	pinMode(DIGITALINPUT_COUNTERMEASURE, INPUT);
+	pinMode(DIGITALINPUT_PIPERUP, INPUT);
+	pinMode(DIGITALINPUT_PIPERDOWN, INPUT);
+
+}
+
+inline bool UnoCommunicator::platformSpecificUpdateBufferToPins()
+{
+
+}
+
+inline bool UnoCommunicator::platformSpecificUpdatePinsToBuffer()
+{
+
+}
+
+inline bool UnoCommunicator::platformSpecificFlashPixelToScreen(const UNO_TEMPALTE_T x, const UNO_TEMPALTE_T y)
+{
+
+}
+
+inline bool UnoCommunicator::platformSpecificClearScreen()
+{
+
+}
+
+inline UNO_TEMPALTE_T UnoCommunicator::platformSpecificRandomGenerator(const UNO_TEMPALTE_T lowerLimit, const UNO_TEMPALTE_T upperLimit)
+{
+	return static_cast<UNO_TEMPALTE_T>(random(lowerLimit,upperLimit));
+}
+
+inline void UnoCommunicator::platformSpecificPrint(char *messageText)
+{
+	Serial.print(messageText);
+}
+
+inline void UnoCommunicator::platformSpecificExit()
+{
+	exit(1);
+}
 
 #endif

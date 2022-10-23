@@ -31,14 +31,14 @@ class Displayable {
 		return P;
 	}
 
-	/**
-	 * 将代表此物体的像素矩阵中所有元素移动指定个单位
-	 * 注意！在QML画板上的坐标是正值向下向右，负值向上向左；在QML中垂直方向移动行为和此函数相反
-	 * @brief Displayable::shift
-	 * @param horizontalShift 平行（X坐标方向）移动单位数量 正值向右 负值向左
-	 * @param verticalShift 垂直（Y坐标方向）移动单位数量 正值向上 负值向下
-	 */
-	bool shift(const T horizontalShift, const T verticalShift);
+//	/**
+//	 * 将代表此物体的像素矩阵中所有元素移动指定个单位
+//	 * 注意！在QML画板上的坐标是正值向下向右，负值向上向左；在QML中垂直方向移动行为和此函数相反
+//	 * @brief Displayable::shift
+//	 * @param horizontalShift 平行（X坐标方向）移动单位数量 正值向右 负值向左
+//	 * @param verticalShift 垂直（Y坐标方向）移动单位数量 正值向上 负值向下
+//	 */
+//	bool shift(const T horizontalShift, const T verticalShift);
 
 	/**
 	 * 在像素矩阵中更新一个带厚度的水平线段
@@ -75,14 +75,14 @@ inline bool Displayable<P, T>::initializePixelInformation(const T (&xYStartEndTu
 	return iterationCount == P;
 }
 
-template<unsigned int P, typename T>
-inline bool Displayable<P, T>::shift(const T horizontalShift, const T verticalShift) {
-	for(Pixel& it : pixelArray) {
-		it.x += horizontalShift;
-		it.y += verticalShift;
-	}
-	return true;
-}
+//template<unsigned int P, typename T>
+//inline bool Displayable<P, T>::shift(const T horizontalShift, const T verticalShift) {
+//	for(T ind=0;ind<P;++ind){
+//		pixelArray[ind].x += horizontalShift;
+//		pixelArray[ind].y += verticalShift;
+//	}
+//	return true;
+//}
 
 
 

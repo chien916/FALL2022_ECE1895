@@ -2,21 +2,19 @@
 #include "qt_lib/playable.h"
 #include "unocommunicator.h"
 
-Playable<8,short,short,short> playable;
+Playable<UNO_TEMPALTE_PARAM> playable;
 UnoCommunicator unoCommunicator{true};
 void setup() {
   // initialize digital pin LED_BUILTIN as an output.
   pinMode(LED_BUILTIN, OUTPUT);
   Serial.begin(9600);
-  Serial.print(int(sizeof((unsigned char)(4))));
-  playable.initializeCReferenceDisplayable();
-  playable.initializeBReferenceDisplayable(1);
-  playable.initializePlaneDisplayable(0,0);
+  playable.setCommunicator(&unoCommunicator);
+  playable.currentScopeMode = MODE_NOTSTARTED;
 }
 
 // the loop function runs over and over again forever
 void loop() {
-
+  playable.executeCycle();
   // digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
   // delay(300);           
   // Serial.print("NL\n");            // wait for a second

@@ -47,7 +47,7 @@ cmake_ninja_workdir = D$:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_l
 #############################################
 # Order-only phony target for appqt_lib
 
-build cmake_object_order_depends_target_appqt_lib: phony || .rcc/qmlcache/appqt_lib_main_qml.cpp .rcc/qmlcache/appqt_lib_qmlcache_loader.cpp .rcc/qrc_appqt_lib_raw_qml_0.cpp .rcc/qrc_qmake_qt_lib.cpp appqt_lib_autogen appqt_lib_autogen/mocs_compilation.cpp appqt_lib_autogen/timestamp appqt_lib_autogen_timestamp_deps appqt_lib_qmlimportscan appqt_lib_qmltyperegistrations.cpp appqt_lib_tooling meta_types/appqt_lib_json_file_list.txt meta_types/appqt_lib_json_file_list.txt.timestamp meta_types/qt6appqt_lib_debug_metatypes.json meta_types/qt6appqt_lib_debug_metatypes.json.gen qt_lib/appqt_lib.qmltypes
+build cmake_object_order_depends_target_appqt_lib: phony || .rcc/qmlcache/appqt_lib_debugwindow_qml.cpp .rcc/qmlcache/appqt_lib_main_qml.cpp .rcc/qmlcache/appqt_lib_qmlcache_loader.cpp .rcc/qrc_appqt_lib_raw_qml_0.cpp .rcc/qrc_qmake_qt_lib.cpp appqt_lib_autogen appqt_lib_autogen/mocs_compilation.cpp appqt_lib_autogen/timestamp appqt_lib_autogen_timestamp_deps appqt_lib_qmlimportscan appqt_lib_qmltyperegistrations.cpp appqt_lib_tooling meta_types/appqt_lib_json_file_list.txt meta_types/appqt_lib_json_file_list.txt.timestamp meta_types/qt6appqt_lib_debug_metatypes.json meta_types/qt6appqt_lib_debug_metatypes.json.gen qt_lib/appqt_lib.qmltypes
 
 build CMakeFiles/appqt_lib.dir/appqt_lib_autogen/mocs_compilation.cpp.obj: CXX_COMPILER__appqt_lib_Debug D$:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug/appqt_lib_autogen/mocs_compilation.cpp || cmake_object_order_depends_target_appqt_lib
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
@@ -97,6 +97,14 @@ build CMakeFiles/appqt_lib.dir/.rcc/qmlcache/appqt_lib_main_qml.cpp.obj: CXX_COM
   OBJECT_DIR = CMakeFiles\appqt_lib.dir
   OBJECT_FILE_DIR = CMakeFiles\appqt_lib.dir\.rcc\qmlcache
 
+build CMakeFiles/appqt_lib.dir/.rcc/qmlcache/appqt_lib_debugwindow_qml.cpp.obj: CXX_COMPILER__appqt_lib_Debug D$:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug/.rcc/qmlcache/appqt_lib_debugwindow_qml.cpp || cmake_object_order_depends_target_appqt_lib
+  DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
+  DEP_FILE = CMakeFiles\appqt_lib.dir\.rcc\qmlcache\appqt_lib_debugwindow_qml.cpp.obj.d
+  FLAGS = -DQT_QML_DEBUG -g
+  INCLUDES = -ID:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug/appqt_lib_autogen/include -ID:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib -isystem C:/Qt/6.4.0/mingw_64/include/QtQml/6.4.0 -isystem C:/Qt/6.4.0/mingw_64/include/QtQml/6.4.0/QtQml -isystem C:/Qt/6.4.0/mingw_64/include/QtCore/6.4.0 -isystem C:/Qt/6.4.0/mingw_64/include/QtCore/6.4.0/QtCore -isystem C:/Qt/6.4.0/mingw_64/include/QtCore -isystem C:/Qt/6.4.0/mingw_64/include -isystem C:/Qt/6.4.0/mingw_64/mkspecs/win32-g++ -isystem C:/Qt/6.4.0/mingw_64/include/QtQml -isystem C:/Qt/6.4.0/mingw_64/include/QtQmlIntegration -isystem C:/Qt/6.4.0/mingw_64/include/QtNetwork -isystem C:/Qt/6.4.0/mingw_64/include/QtQuick -isystem C:/Qt/6.4.0/mingw_64/include/QtGui -isystem C:/Qt/6.4.0/mingw_64/include/QtQmlModels -isystem C:/Qt/6.4.0/mingw_64/include/QtOpenGL
+  OBJECT_DIR = CMakeFiles\appqt_lib.dir
+  OBJECT_FILE_DIR = CMakeFiles\appqt_lib.dir\.rcc\qmlcache
+
 build CMakeFiles/appqt_lib.dir/.rcc/qrc_appqt_lib_raw_qml_0.cpp.obj: CXX_COMPILER__appqt_lib_Debug D$:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug/.rcc/qrc_appqt_lib_raw_qml_0.cpp || cmake_object_order_depends_target_appqt_lib
   DEFINES = -DMINGW_HAS_SECURE_API=1 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NEEDS_QMAIN -DQT_NETWORK_LIB -DQT_OPENGL_LIB -DQT_QMLINTEGRATION_LIB -DQT_QMLMODELS_LIB -DQT_QML_LIB -DQT_QUICK_LIB -DUNICODE -DWIN32 -DWIN64 -D_ENABLE_EXTENDED_ALIGNED_STORAGE -D_UNICODE -D_WIN64
   DEP_FILE = CMakeFiles\appqt_lib.dir\.rcc\qrc_appqt_lib_raw_qml_0.cpp.obj.d
@@ -113,7 +121,7 @@ build CMakeFiles/appqt_lib.dir/.rcc/qrc_appqt_lib_raw_qml_0.cpp.obj: CXX_COMPILE
 #############################################
 # Link the executable appqt_lib.exe
 
-build appqt_lib.exe: CXX_EXECUTABLE_LINKER__appqt_lib_Debug CMakeFiles/appqt_lib.dir/appqt_lib_autogen/mocs_compilation.cpp.obj CMakeFiles/appqt_lib.dir/main.cpp.obj CMakeFiles/appqt_lib.dir/appqt_lib_qmltyperegistrations.cpp.obj CMakeFiles/appqt_lib.dir/.rcc/qrc_qmake_qt_lib.cpp.obj CMakeFiles/appqt_lib.dir/.rcc/qmlcache/appqt_lib_qmlcache_loader.cpp.obj CMakeFiles/appqt_lib.dir/.rcc/qmlcache/appqt_lib_main_qml.cpp.obj CMakeFiles/appqt_lib.dir/.rcc/qrc_appqt_lib_raw_qml_0.cpp.obj | C$:/Qt/6.4.0/mingw_64/lib/libQt6Quick.a C$:/Qt/6.4.0/mingw_64/lib/libQt6QmlModels.a C$:/Qt/6.4.0/mingw_64/lib/libQt6Qml.a C$:/Qt/6.4.0/mingw_64/lib/libQt6Network.a C$:/Qt/6.4.0/mingw_64/lib/libQt6OpenGL.a C$:/Qt/6.4.0/mingw_64/lib/libQt6Gui.a C$:/Qt/6.4.0/mingw_64/lib/libQt6Core.a C$:/Qt/6.4.0/mingw_64/lib/libQt6EntryPoint.a || appqt_lib_autogen appqt_lib_autogen_timestamp_deps appqt_lib_qmlimportscan appqt_lib_tooling
+build appqt_lib.exe: CXX_EXECUTABLE_LINKER__appqt_lib_Debug CMakeFiles/appqt_lib.dir/appqt_lib_autogen/mocs_compilation.cpp.obj CMakeFiles/appqt_lib.dir/main.cpp.obj CMakeFiles/appqt_lib.dir/appqt_lib_qmltyperegistrations.cpp.obj CMakeFiles/appqt_lib.dir/.rcc/qrc_qmake_qt_lib.cpp.obj CMakeFiles/appqt_lib.dir/.rcc/qmlcache/appqt_lib_qmlcache_loader.cpp.obj CMakeFiles/appqt_lib.dir/.rcc/qmlcache/appqt_lib_main_qml.cpp.obj CMakeFiles/appqt_lib.dir/.rcc/qmlcache/appqt_lib_debugwindow_qml.cpp.obj CMakeFiles/appqt_lib.dir/.rcc/qrc_appqt_lib_raw_qml_0.cpp.obj | C$:/Qt/6.4.0/mingw_64/lib/libQt6Quick.a C$:/Qt/6.4.0/mingw_64/lib/libQt6QmlModels.a C$:/Qt/6.4.0/mingw_64/lib/libQt6Qml.a C$:/Qt/6.4.0/mingw_64/lib/libQt6Network.a C$:/Qt/6.4.0/mingw_64/lib/libQt6OpenGL.a C$:/Qt/6.4.0/mingw_64/lib/libQt6Gui.a C$:/Qt/6.4.0/mingw_64/lib/libQt6Core.a C$:/Qt/6.4.0/mingw_64/lib/libQt6EntryPoint.a || appqt_lib_autogen appqt_lib_autogen_timestamp_deps appqt_lib_qmlimportscan appqt_lib_tooling
   FLAGS = -DQT_QML_DEBUG -g
   LINK_FLAGS = -mwindows
   LINK_LIBRARIES = C:/Qt/6.4.0/mingw_64/lib/libQt6Quick.a  C:/Qt/6.4.0/mingw_64/lib/libQt6QmlModels.a  C:/Qt/6.4.0/mingw_64/lib/libQt6Qml.a  C:/Qt/6.4.0/mingw_64/lib/libQt6Network.a  -lws2_32  C:/Qt/6.4.0/mingw_64/lib/libQt6OpenGL.a  C:/Qt/6.4.0/mingw_64/lib/libQt6Gui.a  C:/Qt/6.4.0/mingw_64/lib/libQt6Core.a  -lmpr  -luserenv  -lmingw32  C:/Qt/6.4.0/mingw_64/lib/libQt6EntryPoint.a  -lshell32  -ld3d11  -ldxgi  -ldxguid  -luser32  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
@@ -170,7 +178,7 @@ build all_qmllint_json: phony appqt_lib_qmllint_json
 #############################################
 # Utility command for appqt_lib_tooling
 
-build appqt_lib_tooling: phony qt_lib/main.qml
+build appqt_lib_tooling: phony qt_lib/main.qml qt_lib/debugwindow.qml
 
 
 #############################################
@@ -303,9 +311,18 @@ build .rcc/qmlcache/appqt_lib_main_qml.cpp | ${cmake_ninja_workdir}.rcc/qmlcache
 
 
 #############################################
+# Custom command for .rcc\qmlcache\appqt_lib_debugwindow_qml.cpp
+
+build .rcc/qmlcache/appqt_lib_debugwindow_qml.cpp | ${cmake_ninja_workdir}.rcc/qmlcache/appqt_lib_debugwindow_qml.cpp: CUSTOM_COMMAND C$:/Qt/6.4.0/mingw_64/bin/qmlcachegen.exe D$:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/debugwindow.qml .rcc/qmake_qt_lib.qrc .rcc/appqt_lib_raw_qml_0.qrc qt_lib/appqt_lib.qmltypes qt_lib/qmldir || appqt_lib_autogen appqt_lib_autogen_timestamp_deps appqt_lib_qmlimportscan appqt_lib_tooling
+  COMMAND = cmd.exe /C "cd /D D:\Academics\FA2022\JDFU\ASSIGNMENTS\PJ2\VDM22\build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug && C:\Qt\Tools\CMake_64\bin\cmake.exe -E make_directory D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug/.rcc/qmlcache && C:\Qt\6.4.0\mingw_64\.\bin\qmlcachegen.exe --resource-path /qt_lib/debugwindow.qml -I D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug -i D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug/qt_lib/qmldir --resource D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug/.rcc/qmake_qt_lib.qrc --resource D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug/.rcc/appqt_lib_raw_qml_0.qrc -o D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug/.rcc/qmlcache/appqt_lib_debugwindow_qml.cpp D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/debugwindow.qml"
+  DESC = Generating .rcc/qmlcache/appqt_lib_debugwindow_qml.cpp
+  restat = 1
+
+
+#############################################
 # Custom command for .rcc\qrc_appqt_lib_raw_qml_0.cpp
 
-build .rcc/qrc_appqt_lib_raw_qml_0.cpp | ${cmake_ninja_workdir}.rcc/qrc_appqt_lib_raw_qml_0.cpp: CUSTOM_COMMAND D$:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/main.qml .rcc/appqt_lib_raw_qml_0.qrc C$:/Qt/6.4.0/mingw_64/./bin/rcc.exe || appqt_lib_autogen appqt_lib_autogen_timestamp_deps appqt_lib_qmlimportscan appqt_lib_tooling
+build .rcc/qrc_appqt_lib_raw_qml_0.cpp | ${cmake_ninja_workdir}.rcc/qrc_appqt_lib_raw_qml_0.cpp: CUSTOM_COMMAND D$:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/main.qml D$:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/debugwindow.qml .rcc/appqt_lib_raw_qml_0.qrc C$:/Qt/6.4.0/mingw_64/./bin/rcc.exe || appqt_lib_autogen appqt_lib_autogen_timestamp_deps appqt_lib_qmlimportscan appqt_lib_tooling
   COMMAND = cmd.exe /C "cd /D D:\Academics\FA2022\JDFU\ASSIGNMENTS\PJ2\VDM22\build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug && C:\Qt\6.4.0\mingw_64\.\bin\rcc.exe --output D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug/.rcc/qrc_appqt_lib_raw_qml_0.cpp --name appqt_lib_raw_qml_0 D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug/.rcc/appqt_lib_raw_qml_0.qrc --no-zstd"
   DESC = Running rcc for resource appqt_lib_raw_qml_0
   restat = 1
@@ -339,15 +356,15 @@ build CMakeFiles/appqt_lib_qmltyperegistration | ${cmake_ninja_workdir}CMakeFile
 #############################################
 # Custom command for CMakeFiles\appqt_lib_qmllint
 
-build CMakeFiles/appqt_lib_qmllint | ${cmake_ninja_workdir}CMakeFiles/appqt_lib_qmllint: CUSTOM_COMMAND C$:/Qt/6.4.0/mingw_64/bin/qmllint.exe D$:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/main.qml || all_qmltyperegistrations appqt_lib_autogen_timestamp_deps appqt_lib_qmltyperegistration
-  COMMAND = cmd.exe /C "cd /D D:\Academics\FA2022\JDFU\ASSIGNMENTS\PJ2\VDM22\qt_lib && C:\Qt\6.4.0\mingw_64\bin\qmllint.exe -I D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug --resource D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug/.rcc/qmake_qt_lib.qrc --resource D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug/.rcc/appqt_lib_raw_qml_0.qrc D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/main.qml"
+build CMakeFiles/appqt_lib_qmllint | ${cmake_ninja_workdir}CMakeFiles/appqt_lib_qmllint: CUSTOM_COMMAND C$:/Qt/6.4.0/mingw_64/bin/qmllint.exe D$:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/main.qml D$:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/debugwindow.qml || all_qmltyperegistrations appqt_lib_autogen_timestamp_deps appqt_lib_qmltyperegistration
+  COMMAND = cmd.exe /C "cd /D D:\Academics\FA2022\JDFU\ASSIGNMENTS\PJ2\VDM22\qt_lib && C:\Qt\6.4.0\mingw_64\bin\qmllint.exe -I D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug --resource D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug/.rcc/qmake_qt_lib.qrc --resource D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug/.rcc/appqt_lib_raw_qml_0.qrc D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/main.qml D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/debugwindow.qml"
 
 
 #############################################
 # Custom command for CMakeFiles\appqt_lib_qmllint_json
 
-build CMakeFiles/appqt_lib_qmllint_json | ${cmake_ninja_workdir}CMakeFiles/appqt_lib_qmllint_json: CUSTOM_COMMAND C$:/Qt/6.4.0/mingw_64/bin/qmllint.exe D$:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/main.qml || all_qmltyperegistrations appqt_lib_autogen_timestamp_deps appqt_lib_qmltyperegistration
-  COMMAND = cmd.exe /C "cd /D D:\Academics\FA2022\JDFU\ASSIGNMENTS\PJ2\VDM22\qt_lib && C:\Qt\6.4.0\mingw_64\bin\qmllint.exe -I D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug --resource D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug/.rcc/qmake_qt_lib.qrc --resource D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug/.rcc/appqt_lib_raw_qml_0.qrc D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/main.qml --json D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug/appqt_lib_qmllint.json"
+build CMakeFiles/appqt_lib_qmllint_json | ${cmake_ninja_workdir}CMakeFiles/appqt_lib_qmllint_json: CUSTOM_COMMAND C$:/Qt/6.4.0/mingw_64/bin/qmllint.exe D$:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/main.qml D$:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/debugwindow.qml || all_qmltyperegistrations appqt_lib_autogen_timestamp_deps appqt_lib_qmltyperegistration
+  COMMAND = cmd.exe /C "cd /D D:\Academics\FA2022\JDFU\ASSIGNMENTS\PJ2\VDM22\qt_lib && C:\Qt\6.4.0\mingw_64\bin\qmllint.exe -I D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug --resource D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug/.rcc/qmake_qt_lib.qrc --resource D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug/.rcc/appqt_lib_raw_qml_0.qrc D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/main.qml D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/debugwindow.qml --json D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug/appqt_lib_qmllint.json"
 
 
 #############################################
@@ -360,6 +377,15 @@ build qt_lib/main.qml | ${cmake_ninja_workdir}qt_lib/main.qml: CUSTOM_COMMAND D$
 
 
 #############################################
+# Custom command for qt_lib\debugwindow.qml
+
+build qt_lib/debugwindow.qml | ${cmake_ninja_workdir}qt_lib/debugwindow.qml: CUSTOM_COMMAND D$:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/debugwindow.qml
+  COMMAND = cmd.exe /C "cd /D D:\Academics\FA2022\JDFU\ASSIGNMENTS\PJ2\VDM22\qt_lib && C:\Qt\Tools\CMake_64\bin\cmake.exe -E copy D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/debugwindow.qml D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug/qt_lib/debugwindow.qml"
+  DESC = Generating qt_lib/debugwindow.qml
+  restat = 1
+
+
+#############################################
 # Phony custom command for CMakeFiles\appqt_lib_qmlimportscan
 
 build CMakeFiles/appqt_lib_qmlimportscan | ${cmake_ninja_workdir}CMakeFiles/appqt_lib_qmlimportscan: phony .qt_plugins/Qt6_QmlPlugins_Imports_appqt_lib.cmake
@@ -368,7 +394,7 @@ build CMakeFiles/appqt_lib_qmlimportscan | ${cmake_ninja_workdir}CMakeFiles/appq
 #############################################
 # Custom command for .qt_plugins\Qt6_QmlPlugins_Imports_appqt_lib.cmake
 
-build .qt_plugins/Qt6_QmlPlugins_Imports_appqt_lib.cmake | ${cmake_ninja_workdir}.qt_plugins/Qt6_QmlPlugins_Imports_appqt_lib.cmake: CUSTOM_COMMAND C$:/Qt/6.4.0/mingw_64/bin/qmlimportscanner.exe .rcc/qmake_qt_lib.qrc .rcc/appqt_lib_raw_qml_0.qrc D$:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/main.qml
+build .qt_plugins/Qt6_QmlPlugins_Imports_appqt_lib.cmake | ${cmake_ninja_workdir}.qt_plugins/Qt6_QmlPlugins_Imports_appqt_lib.cmake: CUSTOM_COMMAND C$:/Qt/6.4.0/mingw_64/bin/qmlimportscanner.exe .rcc/qmake_qt_lib.qrc .rcc/appqt_lib_raw_qml_0.qrc D$:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/main.qml D$:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/debugwindow.qml
   COMMAND = cmd.exe /C "cd /D D:\Academics\FA2022\JDFU\ASSIGNMENTS\PJ2\VDM22\qt_lib && C:\Qt\6.4.0\mingw_64\.\bin\qmlimportscanner.exe @D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug/.qt_plugins/Qt6_QmlPlugins_Imports_appqt_lib.rsp"
   DESC = Running qmlimportscanner for appqt_lib
   restat = 1
@@ -377,7 +403,7 @@ build .qt_plugins/Qt6_QmlPlugins_Imports_appqt_lib.cmake | ${cmake_ninja_workdir
 #############################################
 # Phony custom command for CMakeFiles\appqt_lib_autogen_timestamp_deps
 
-build CMakeFiles/appqt_lib_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/appqt_lib_autogen_timestamp_deps: phony .rcc/qmlcache/appqt_lib_qmlcache_loader.cpp C$:/Qt/6.4.0/mingw_64/./bin/moc.exe C$:/Qt/6.4.0/mingw_64/lib/libQt6Qml.a C$:/Qt/6.4.0/mingw_64/lib/libQt6Quick.a
+build CMakeFiles/appqt_lib_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/appqt_lib_autogen_timestamp_deps: phony .rcc/qmlcache/appqt_lib_qmlcache_loader.cpp C$:/Qt/6.4.0/mingw_64/./bin/moc.exe C$:/Qt/6.4.0/mingw_64/lib/libQt6Quick.a C$:/Qt/6.4.0/mingw_64/lib/libQt6Qml.a
 
 
 #############################################

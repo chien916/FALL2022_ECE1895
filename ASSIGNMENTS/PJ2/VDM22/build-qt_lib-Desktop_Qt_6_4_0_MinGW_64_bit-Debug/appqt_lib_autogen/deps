@@ -9,6 +9,8 @@ appqt_lib_autogen/timestamp: \
 	C:/Qt/6.4.0/mingw_64/include/QtCore/QSize \
 	C:/Qt/6.4.0/mingw_64/include/QtCore/QSizeF \
 	C:/Qt/6.4.0/mingw_64/include/QtCore/QString \
+	C:/Qt/6.4.0/mingw_64/include/QtCore/QThread \
+	C:/Qt/6.4.0/mingw_64/include/QtCore/QTimer \
 	C:/Qt/6.4.0/mingw_64/include/QtCore/qalgorithms.h \
 	C:/Qt/6.4.0/mingw_64/include/QtCore/qanystringview.h \
 	C:/Qt/6.4.0/mingw_64/include/QtCore/qarraydata.h \
@@ -17,6 +19,7 @@ appqt_lib_autogen/timestamp: \
 	C:/Qt/6.4.0/mingw_64/include/QtCore/qatomic.h \
 	C:/Qt/6.4.0/mingw_64/include/QtCore/qatomic_cxx11.h \
 	C:/Qt/6.4.0/mingw_64/include/QtCore/qbasicatomic.h \
+	C:/Qt/6.4.0/mingw_64/include/QtCore/qbasictimer.h \
 	C:/Qt/6.4.0/mingw_64/include/QtCore/qbindingstorage.h \
 	C:/Qt/6.4.0/mingw_64/include/QtCore/qbytearray.h \
 	C:/Qt/6.4.0/mingw_64/include/QtCore/qbytearrayalgorithms.h \
@@ -35,7 +38,9 @@ appqt_lib_autogen/timestamp: \
 	C:/Qt/6.4.0/mingw_64/include/QtCore/qcoreapplication_platform.h \
 	C:/Qt/6.4.0/mingw_64/include/QtCore/qcoreevent.h \
 	C:/Qt/6.4.0/mingw_64/include/QtCore/qdatastream.h \
+	C:/Qt/6.4.0/mingw_64/include/QtCore/qdeadlinetimer.h \
 	C:/Qt/6.4.0/mingw_64/include/QtCore/qdebug.h \
+	C:/Qt/6.4.0/mingw_64/include/QtCore/qelapsedtimer.h \
 	C:/Qt/6.4.0/mingw_64/include/QtCore/qeventloop.h \
 	C:/Qt/6.4.0/mingw_64/include/QtCore/qflags.h \
 	C:/Qt/6.4.0/mingw_64/include/QtCore/qforeach.h \
@@ -97,6 +102,8 @@ appqt_lib_autogen/timestamp: \
 	C:/Qt/6.4.0/mingw_64/include/QtCore/qtcore-config.h \
 	C:/Qt/6.4.0/mingw_64/include/QtCore/qtcoreexports.h \
 	C:/Qt/6.4.0/mingw_64/include/QtCore/qtextstream.h \
+	C:/Qt/6.4.0/mingw_64/include/QtCore/qthread.h \
+	C:/Qt/6.4.0/mingw_64/include/QtCore/qtimer.h \
 	C:/Qt/6.4.0/mingw_64/include/QtCore/qtmetamacros.h \
 	C:/Qt/6.4.0/mingw_64/include/QtCore/qtypeinfo.h \
 	C:/Qt/6.4.0/mingw_64/include/QtCore/qurl.h \
@@ -821,7 +828,6 @@ appqt_lib_autogen/timestamp: \
 	C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/hash_bytes.h \
 	C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/invoke.h \
 	C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/ios_base.h \
-	C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/istream.tcc \
 	C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/iterator_concepts.h \
 	C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/list.tcc \
 	C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/locale_classes.h \
@@ -908,11 +914,10 @@ appqt_lib_autogen/timestamp: \
 	C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ext/string_conversions.h \
 	C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ext/type_traits.h \
 	C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/functional \
+	C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/future \
 	C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/initializer_list \
 	C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ios \
 	C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iosfwd \
-	C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iostream \
-	C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/istream \
 	C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iterator \
 	C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/limits \
 	C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/list \

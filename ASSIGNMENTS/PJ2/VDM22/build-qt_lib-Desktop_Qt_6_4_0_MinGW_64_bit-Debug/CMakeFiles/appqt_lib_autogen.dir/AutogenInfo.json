@@ -939,6 +939,7 @@
 	"MOC_RELAXED_MODE" : false,
 	"MOC_SKIP" : 
 	[
+		"D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug/.rcc/qmlcache/appqt_lib_debugwindow_qml.cpp",
 		"D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug/.rcc/qmlcache/appqt_lib_main_qml.cpp",
 		"D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug/.rcc/qrc_appqt_lib_raw_qml_0.cpp",
 		"D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug/.rcc/qrc_qmake_qt_lib.cpp",
