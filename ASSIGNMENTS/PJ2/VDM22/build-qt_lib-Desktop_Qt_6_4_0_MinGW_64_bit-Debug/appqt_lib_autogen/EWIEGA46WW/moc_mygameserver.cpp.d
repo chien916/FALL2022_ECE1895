@@ -180,6 +180,12 @@ D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_Min
   C:/Qt/6.4.0/mingw_64/include/QtQuick/qtquick-config.h \
   C:/Qt/6.4.0/mingw_64/include/QtQuick/qtquickexports.h \
   C:/Qt/6.4.0/mingw_64/include/QtQuick/qtquickglobal.h \
+  C:/Qt/6.4.0/mingw_64/include/QtSerialPort/QSerialPort \
+  C:/Qt/6.4.0/mingw_64/include/QtSerialPort/QSerialPortInfo \
+  C:/Qt/6.4.0/mingw_64/include/QtSerialPort/qserialport.h \
+  C:/Qt/6.4.0/mingw_64/include/QtSerialPort/qserialportglobal.h \
+  C:/Qt/6.4.0/mingw_64/include/QtSerialPort/qserialportinfo.h \
+  C:/Qt/6.4.0/mingw_64/include/QtSerialPort/qtserialportexports.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed/limits.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed/syslimits.h \
   C:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/algorithm \

@@ -179,6 +179,12 @@ appqt_lib_autogen/timestamp: \
   C:/Qt/6.4.0/mingw_64/include/QtQuick/qtquick-config.h \
   C:/Qt/6.4.0/mingw_64/include/QtQuick/qtquickexports.h \
   C:/Qt/6.4.0/mingw_64/include/QtQuick/qtquickglobal.h \
+  C:/Qt/6.4.0/mingw_64/include/QtSerialPort/QSerialPort \
+  C:/Qt/6.4.0/mingw_64/include/QtSerialPort/QSerialPortInfo \
+  C:/Qt/6.4.0/mingw_64/include/QtSerialPort/qserialport.h \
+  C:/Qt/6.4.0/mingw_64/include/QtSerialPort/qserialportglobal.h \
+  C:/Qt/6.4.0/mingw_64/include/QtSerialPort/qserialportinfo.h \
+  C:/Qt/6.4.0/mingw_64/include/QtSerialPort/qtserialportexports.h \
   C:/Qt/6.4.0/mingw_64/lib/cmake/Qt6/FindWrapAtomic.cmake \
   C:/Qt/6.4.0/mingw_64/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake \
   C:/Qt/6.4.0/mingw_64/lib/cmake/Qt6/Qt6Config.cmake \
@@ -752,6 +758,14 @@ appqt_lib_autogen/timestamp: \
   C:/Qt/6.4.0/mingw_64/lib/cmake/Qt6Quick/Qt6QuickTargets-relwithdebinfo.cmake \
   C:/Qt/6.4.0/mingw_64/lib/cmake/Qt6Quick/Qt6QuickTargets.cmake \
   C:/Qt/6.4.0/mingw_64/lib/cmake/Qt6Quick/Qt6QuickVersionlessTargets.cmake \
+  C:/Qt/6.4.0/mingw_64/lib/cmake/Qt6SerialPort/Qt6SerialPortAdditionalTargetInfo.cmake \
+  C:/Qt/6.4.0/mingw_64/lib/cmake/Qt6SerialPort/Qt6SerialPortConfig.cmake \
+  C:/Qt/6.4.0/mingw_64/lib/cmake/Qt6SerialPort/Qt6SerialPortConfigVersion.cmake \
+  C:/Qt/6.4.0/mingw_64/lib/cmake/Qt6SerialPort/Qt6SerialPortConfigVersionImpl.cmake \
+  C:/Qt/6.4.0/mingw_64/lib/cmake/Qt6SerialPort/Qt6SerialPortDependencies.cmake \
+  C:/Qt/6.4.0/mingw_64/lib/cmake/Qt6SerialPort/Qt6SerialPortTargets-relwithdebinfo.cmake \
+  C:/Qt/6.4.0/mingw_64/lib/cmake/Qt6SerialPort/Qt6SerialPortTargets.cmake \
+  C:/Qt/6.4.0/mingw_64/lib/cmake/Qt6SerialPort/Qt6SerialPortVersionlessTargets.cmake \
   C:/Qt/6.4.0/mingw_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateAdditionalTargetInfo.cmake \
   C:/Qt/6.4.0/mingw_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateConfig.cmake \
   C:/Qt/6.4.0/mingw_64/lib/cmake/Qt6ZlibPrivate/Qt6ZlibPrivateConfigVersion.cmake \

@@ -7,7 +7,8 @@ import com.yinhao.mygameserver
 //import QtQuick.Extras
 
 Window {
-	property var controllable : false
+	id:window_mainWindow
+	property bool controllable : true
 	flags: Qt.Dialog
 	height: 470
 	width: 340
@@ -28,8 +29,69 @@ Window {
 		border.width: 2
 		radius: width*1
 		clip: true
+		focus: true
 		//		focus: true
 		//		Keys.onPressed: myGameServer.onKeyboardKeysPressed(event)
+		Keys.onPressed: {
+			switch(event.key){
+			case Qt.Key_R:
+				myGameServer.onButtonValueChanged("SPACE",1)
+				break
+			case Qt.Key_W:
+				myGameServer.onSliderValueChanged("slider_stickY",1)
+				break
+			case Qt.Key_S:
+				myGameServer.onSliderValueChanged("slider_stickY",0)
+				break
+			case Qt.Key_A:
+				myGameServer.onSliderValueChanged("slider_stickX",1)
+				break
+			case Qt.Key_D:
+				myGameServer.onSliderValueChanged("slider_stickX",0)
+				break
+			case Qt.Key_J:
+				myGameServer.onButtonValueChanged("button_launchButton",true)
+				break
+			case Qt.Key_K:
+				myGameServer.onButtonValueChanged("button_counterMeasureButton",true)
+				break
+			case Qt.Key_U:
+				myGameServer.onButtonValueChanged("button_piperUpButton",true)
+				break
+			case Qt.Key_M:
+				myGameServer.onButtonValueChanged("button_piperDownButton",true)
+				break
+			}
+
+		}
+		Keys.onReleased: {
+			switch(event.key){
+			case Qt.Key_W:
+				myGameServer.onSliderValueChanged("slider_stickY",0.5)
+				break
+			case Qt.Key_S:
+				myGameServer.onSliderValueChanged("slider_stickY",0.5)
+				break
+			case Qt.Key_A:
+				myGameServer.onSliderValueChanged("slider_stickX",0.5)
+				break
+			case Qt.Key_D:
+				myGameServer.onSliderValueChanged("slider_stickX",0.5)
+				break
+			case Qt.Key_J:
+				myGameServer.onButtonValueChanged("button_launchButton",false)
+				break
+			case Qt.Key_K:
+				myGameServer.onButtonValueChanged("button_counterMeasureButton",false)
+				break
+			case Qt.Key_U:
+				myGameServer.onButtonValueChanged("button_piperUpButton",false)
+				break
+			case Qt.Key_M:
+				myGameServer.onButtonValueChanged("button_piperDownButton",false)
+				break
+			}
+		}
 	}
 	MyQuickPaintedItem{
 		id: myQuickPaintedItem_radarScreen
@@ -137,7 +199,7 @@ Window {
 		font.pointSize: 5
 		anchors.bottomMargin: 1
 		anchors.horizontalCenter: rectangle_rwr2Led.horizontalCenter
-		text: qsTr("指示灯1/RWR2")
+		text: qsTr("指示灯2/RWR2")
 		font.family: "Microsoft YaHei UI"
 	}
 	Text{
@@ -197,7 +259,7 @@ Window {
 		anchors.right: parent.right
 		anchors.margins: 10
 		anchors.bottom: button_counterMeasureButton.top
-		text:"发射/Launch"
+		text:"发射/Launch (J)"
 		font.family: "Microsoft YaHei UI"
 		palette.button: "#252525"
 		onPressed: myGameServer.onButtonValueChanged("button_launchButton",true)
@@ -211,7 +273,7 @@ Window {
 		anchors.right: parent.right
 		anchors.bottom: button_piperUpButton.top
 		anchors.margins: 10
-		text: "反制/Counter Measure"
+		text: "反制/Counter Measure (K)"
 		font.family: "Microsoft YaHei UI"
 		palette.button: "#252525"
 		onPressed: myGameServer.onButtonValueChanged("button_counterMeasureButton",true)
@@ -225,7 +287,7 @@ Window {
 		anchors.right: parent.right
 		anchors.bottom: button_piperDownButton.top
 		anchors.margins:10
-		text: "锁定器上移/Piper Up"
+		text: "锁定器上移/Piper Up (U)"
 		font.family: "Microsoft YaHei UI"
 		palette.button: "#252525"
 		onPressed: myGameServer.onButtonValueChanged("button_piperUpButton",true)
@@ -239,7 +301,7 @@ Window {
 		anchors.left: parent.left
 		anchors.right: parent.right
 		anchors.margins: 10
-		text: "锁定器下移/Piper Down"
+		text: "锁定器下移/Piper Down (M)"
 		font.family: "Microsoft YaHei UI"
 		palette.button: "#252525"
 		onPressed: myGameServer.onButtonValueChanged("button_piperDownButton",true)

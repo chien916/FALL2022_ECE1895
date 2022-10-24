@@ -1,4 +1,5 @@
 import QtQuick
+import com.yinhao.mygameserver
 
 Window {
 	height: 500
@@ -9,8 +10,12 @@ Window {
 	minimumWidth: 500
 	visible: true
 	Rectangle{
+
+		//		activeFocus: true
 		anchors.fill: parent
 		color: "#252525"
+
 	}
 
 }
+

@@ -15,11 +15,14 @@
 
 #define MAXABS_COORDINATE 120
 
-#define PIPER_MOD 3
-#define REFERENCE_MOD 5
-#define AUTOMOVE_TIMEOUT 100
-#define AUTOMOVE_MOD 30
-#define DISTANCE_MOD 20
+
+#define PIPER_FREQ 1000
+#define REFERENCE_FREQ 1000
+#define TIMER_PERIOD 10000
+#define AUTOMOVE_FREQ 100
+#define DISTANCE_FREQ 100
+#define BLINK_FREQ 60
+#define ATTACK_PROBABLITY 0
 /**
  * 像素数组大小定义（自动判断）
  */
@@ -29,11 +32,11 @@
 #define PLANE_ARRAY_SIZE PLANE_WIDTH*4+1
 
 enum ScopeMode {MODE_CSCOPE, MODE_BSCOPE, MODE_NOTSTARTED, MODE_GAMEOVER};
+enum AttackState {STATE_NEVERATTACKED, STATE_BEINGATTACKED, STATE_HAVEBEENATTACKED};
 
 template <unsigned char B, typename T, typename D, typename A>
 class Playable {
   public:
-
 	Communicator<B, T, D, A>* communicatorPointer;
 
 	T planeCenter[2] {0, 0};
@@ -42,11 +45,18 @@ class Playable {
 
 	T cReferenceYCenter{0};
 
+	T cScopeTargetedShift{0};
+
 	T bReferenceDistance{0};
 
 	T bScopeTargetedShift[2] {0, 0};
 
-	unsigned char automoveTimer{0};
+	T bScopeAttackTimer{0};
+
+	AttackState bScopeBeingAttacked {STATE_NEVERATTACKED};
+
+	T automoveTimer{0};
+
 
 
 	bool initializeCReferenceDisplayable(T yCenter);
@@ -64,11 +74,8 @@ class Playable {
 
 	bool setCommunicator(Communicator<B, T, D, A> * communicatorPointer);
 	bool flashAllDisplayable();
-//	bool startNewGame();
 	bool processInputAndGenerateOutput();
 	bool executeCycle();
-//	bool shiftPlaneDisplayable(const T horizontalShift, const T verticalShift);
-//	bool shiftBReferenceDisplayable(const T distance);
 };
 
 template<unsigned char B, typename T, typename D, typename A>
@@ -197,44 +204,42 @@ inline bool Playable<B, T, D, A>::flashAllDisplayable() {
 	return status;
 }
 
-//template <unsigned char B, typename T, typename D, typename A>
-//inline bool Playable<B, T, D, A>::startNewGame() {
-//	if(this->communicatorPointer == nullptr) return false;
-//	bool status{true};
-//	//C镜下的坐标初始化
-//	status &= this->initializeCReferenceDisplayable(50);
-//	status &= this->initializeBReferenceDisplayable(0, 0, 0);
-//	status &= this->initializePlaneDisplayable(0, 50);
-//	if(!status) communicatorPointer->buildVerboseMessage("Playable<B, T, D, A>::startNewGame failed");
-//	return status;
-//}
-
 template<unsigned char B, typename T, typename D, typename A>
 inline bool Playable<B, T, D, A>::processInputAndGenerateOutput() {
 	bool status{true};
 	switch(currentScopeMode) {
 	case MODE_NOTSTARTED:
-		status &= initializeCReferenceDisplayable(-MAXABS_COORDINATE + CR_HEIGHT * LINE_WIDTH + LINE_WIDTH);
-		status &= initializePlaneDisplayable(0, MAXABS_COORDINATE - PLANE_WIDTH);
+		status &= initializeCReferenceDisplayable(-50/*-MAXABS_COORDINATE + CR_HEIGHT * LINE_WIDTH + LINE_WIDTH*/);
+		status &= initializePlaneDisplayable(0, 50);
 		cReferenceYCenter = -MAXABS_COORDINATE + CR_HEIGHT * LINE_WIDTH + LINE_WIDTH;
 		planeCenter[0] = 0;
 		planeCenter[1] = MAXABS_COORDINATE - PLANE_WIDTH;
 		planeDisplayable.visibility = true;
 		cReferenceDisplayable.visibility = true;
 		bReferenceDisplayable.visibility = false;
+
+		communicatorPointer->digitalOutputRwr1LedBuffer
+			= communicatorPointer->digitalOutputRwr2LedBuffer
+			  = communicatorPointer->digitalOutputBuzzerBuffer
+				= false;
 		currentScopeMode = MODE_CSCOPE;//状态机下一状态切换
 		break;
 	case MODE_CSCOPE:
 		if(communicatorPointer->digitalInputLaunchButtonBuffer) {//如果用户尝试锁定飞机
-			if((planeCenter[1] <= cReferenceYCenter + CR_HEIGHT * LINE_WIDTH + LINE_WIDTH)
-					& (planeCenter[1] >= cReferenceYCenter - CR_HEIGHT * LINE_WIDTH - LINE_WIDTH)) { //飞机的位置在锁定范围内
+			if((planeCenter[0] <= 0 + CR_HEIGHT * LINE_WIDTH + LINE_WIDTH)
+					&& (planeCenter[0] >= 0 - CR_HEIGHT * LINE_WIDTH - LINE_WIDTH)
+					&& (planeCenter[1] <= cReferenceYCenter + CR_HEIGHT * LINE_WIDTH + LINE_WIDTH)
+					&& (planeCenter[1] >= cReferenceYCenter - CR_HEIGHT * LINE_WIDTH - LINE_WIDTH)
+			  ) { //飞机的位置在锁定范围内
 				currentScopeMode = MODE_BSCOPE;//状态机下一状态切换
 				status &= initializePlaneDisplayable(0, -1);
-				planeCenter[0] = status ? 0 : planeCenter[0];
-				planeCenter[1] = status ? -1 : planeCenter[1];
+				planeCenter[0] = 0;
+				planeCenter[1] = -1;
 				status &= initializeBReferenceDisplayable(0, 0, 0);
 				bReferenceDistance = bScopeTargetedShift[0] = bReferenceCenter[0]
 									 = bScopeTargetedShift[1] = bReferenceCenter[1] = 0;
+				bScopeBeingAttacked = STATE_NEVERATTACKED;
+				bScopeAttackTimer = 0;
 				planeDisplayable.visibility = true;
 				cReferenceDisplayable.visibility = false;
 				bReferenceDisplayable.visibility = true;
@@ -251,7 +256,7 @@ inline bool Playable<B, T, D, A>::processInputAndGenerateOutput() {
 			cReferenceDisplayable.visibility = false;
 			bReferenceDisplayable.visibility = false;
 		}
-		if(automoveTimer % PIPER_MOD == 0 && //如果用户尝试移动锁定器的垂直位置
+		if(automoveTimer % (TIMER_PERIOD / PIPER_FREQ) == 0 && //如果用户尝试移动锁定器的垂直位置
 				(communicatorPointer->digitalInputPiperUpButtonBuffer
 				 || communicatorPointer->digitalInputPiperDownButtonBuffer) ) {
 			status &= initializeCReferenceDisplayable(cReferenceYCenter//c参考器上下移动
@@ -266,21 +271,40 @@ inline bool Playable<B, T, D, A>::processInputAndGenerateOutput() {
 									* static_cast<T>(communicatorPointer->digitalInputPiperDownButtonBuffer))
 								 : 0;
 		}
-		if(automoveTimer % (AUTOMOVE_MOD  / difficultyLevel) == 0) {//如果飞机到时间该往下移动一个单位
+		if(automoveTimer % (TIMER_PERIOD / REFERENCE_FREQ) == 0 && //如果用户尝试左右移动飞机
+				(communicatorPointer->analogInputStickXAxisBuffer - 2.5f != 0)) {
+			T newAnalogInputStickXAxisBuffer = (communicatorPointer->analogInputStickXAxisBuffer - 2.5f);
+			status &= initializePlaneDisplayable(planeCenter[0] - newAnalogInputStickXAxisBuffer , planeCenter[1]);
+			planeCenter[0] -= status ? newAnalogInputStickXAxisBuffer : 0;
+		}
+		if(automoveTimer % (AUTOMOVE_FREQ / difficultyLevel) == 0) { //如果到电脑随机移动B坐标和飞机
+			if(planeCenter[0] == cScopeTargetedShift) {
+				cScopeTargetedShift = communicatorPointer
+										 ->platformSpecificRandomGenerator(-MAXABS_COORDINATE, MAXABS_COORDINATE);
+			}
+			bool shouldAdd = planeCenter[0] < cScopeTargetedShift;
+			T randomShiftAmount = communicatorPointer->platformSpecificRandomGenerator(0, 3) - (shouldAdd ? 0 : 2);
+			status &= initializePlaneDisplayable(planeCenter[0] + randomShiftAmount, planeCenter[1]);
+			planeCenter[0] += status ? randomShiftAmount : 0;
+		}
+		if(automoveTimer % (AUTOMOVE_FREQ / difficultyLevel) == 0) {//如果飞机到时间该往下移动一个单位
 			status &= initializePlaneDisplayable( planeCenter[0], planeCenter[1] - difficultyLevel); //飞机上下移动
 			planeCenter[1] -= status ? difficultyLevel : 0;
-			automoveTimer = 0;
+		}
+		if(automoveTimer % (TIMER_PERIOD / BLINK_FREQ)  == 0) { //如果灯和蜂鸣器该改变状态了
+			communicatorPointer->digitalOutputRwr1LedBuffer = !communicatorPointer->digitalOutputRwr1LedBuffer;
+			communicatorPointer->digitalOutputBuzzerBuffer = !communicatorPointer->digitalOutputBuzzerBuffer;
 		}
 		break;
 	case MODE_BSCOPE:
-		if(communicatorPointer->digitalInputCounterMeasureBuffer) {//如果用户尝试锁定发射导弹
+		if(communicatorPointer->digitalInputLaunchButtonBuffer) {//如果用户尝试锁定发射导弹
 			if(bReferenceDistance > BR_WIDTH * LINE_WIDTH * 0.25
 					&& bReferenceDistance < BR_WIDTH * LINE_WIDTH * 0.75) { //飞机的位置在锁定范围内
 				++difficultyLevel;
 				currentScopeMode = MODE_NOTSTARTED;//状态机下一状态切换
 			}
 		}
-		if(automoveTimer % REFERENCE_MOD == 0 && //如果用户尝试上下左右移动B坐标和飞机
+		if(automoveTimer % (TIMER_PERIOD / REFERENCE_FREQ) == 0 && //如果用户尝试上下左右移动B坐标和飞机
 				(communicatorPointer->analogInputStickXAxisBuffer - 2.5f != 0
 				 || communicatorPointer->analogInputStickYAxisBuffer - 2.5f != 0)) { //用户尝试移动B坐标和飞机
 			T newAnalogInputStickXYAxisBuffer[2] = {(communicatorPointer->analogInputStickXAxisBuffer - 2.5f),
@@ -298,7 +322,7 @@ inline bool Playable<B, T, D, A>::processInputAndGenerateOutput() {
 			bScopeTargetedShift[0] -= status ? newAnalogInputStickXYAxisBuffer[0] : 0;
 			bScopeTargetedShift[1] += status ? newAnalogInputStickXYAxisBuffer[1] : 0;
 		}
-		if(automoveTimer % (AUTOMOVE_MOD / difficultyLevel) == 0) { //如果到电脑随机移动B坐标和飞机
+		if(automoveTimer % (AUTOMOVE_FREQ / difficultyLevel) == 0) { //如果到电脑随机移动B坐标和飞机
 			if(planeCenter[0] == bScopeTargetedShift[0]) {
 				bScopeTargetedShift[0] = communicatorPointer
 										 ->platformSpecificRandomGenerator(-MAXABS_COORDINATE, MAXABS_COORDINATE);
@@ -310,7 +334,7 @@ inline bool Playable<B, T, D, A>::processInputAndGenerateOutput() {
 			bool shouldAdd[2] = {planeCenter[0] < bScopeTargetedShift[0], planeCenter[1] < bScopeTargetedShift[1]};
 			T randomShiftAmount[3] = {communicatorPointer->platformSpecificRandomGenerator(0, 3) - (shouldAdd[0] ? 0 : 2),
 									  communicatorPointer->platformSpecificRandomGenerator(0, 3) - (shouldAdd[1] ? 0 : 2),
-									  (communicatorPointer->platformSpecificRandomGenerator(0, DISTANCE_MOD) < 2) ? 1 : 0
+									  (communicatorPointer->platformSpecificRandomGenerator(0, 101) < DISTANCE_FREQ) ? 1 : 0
 									 };
 			status &= initializeBReferenceDisplayable(bReferenceCenter[0] + randomShiftAmount[0]
 					  , bReferenceCenter[1] + randomShiftAmount[1]
@@ -322,7 +346,7 @@ inline bool Playable<B, T, D, A>::processInputAndGenerateOutput() {
 			planeCenter[0] += status ? randomShiftAmount[0] : 0;
 			planeCenter[1] += status ? randomShiftAmount[1] : 0;
 		}
-		if(bReferenceDistance >= BR_WIDTH * LINE_WIDTH - LINE_WIDTH//如果
+		if(bReferenceDistance >= BR_WIDTH * LINE_WIDTH - LINE_WIDTH//如果B坐标和飞机已经在屏幕外了
 				|| planeCenter[0] <= -MAXABS_COORDINATE
 				|| planeCenter[0] >= MAXABS_COORDINATE
 				|| planeCenter[1] <= -MAXABS_COORDINATE
@@ -332,35 +356,48 @@ inline bool Playable<B, T, D, A>::processInputAndGenerateOutput() {
 			cReferenceDisplayable.visibility = false;
 			bReferenceDisplayable.visibility = false;
 		}
+		switch(bScopeBeingAttacked) {
+		case STATE_NEVERATTACKED:
+			if(automoveTimer % (TIMER_PERIOD / BLINK_FREQ)  == 0) { //如果灯和蜂鸣器该改变状态了
+				communicatorPointer->digitalOutputRwr1LedBuffer = !communicatorPointer->digitalOutputRwr1LedBuffer;
+				communicatorPointer->digitalOutputBuzzerBuffer = !communicatorPointer->digitalOutputBuzzerBuffer;
+				if(communicatorPointer->platformSpecificRandomGenerator(0, 101) < ATTACK_PROBABLITY) {
+					bScopeBeingAttacked = STATE_BEINGATTACKED;
+					communicatorPointer->digitalOutputRwr1LedBuffer
+						= communicatorPointer->digitalOutputRwr2LedBuffer
+						  = communicatorPointer->digitalOutputBuzzerBuffer
+							= true;
+				}
+			}
+			break;
+		case STATE_BEINGATTACKED:
+			if(communicatorPointer->digitalInputCounterMeasureBuffer) { //如果用户及时反制
+				bScopeBeingAttacked = STATE_HAVEBEENATTACKED;
+			}
+			if(automoveTimer % (TIMER_PERIOD / BLINK_FREQ)  == 0) { //如果灯和蜂鸣器该改变状态了
+				++bScopeAttackTimer;
+				if(bScopeAttackTimer >= 10) {//如果用户没有及时反制
+					currentScopeMode = MODE_GAMEOVER;//状态机下一状态切换
+					planeDisplayable.visibility = false;
+					cReferenceDisplayable.visibility = false;
+					bReferenceDisplayable.visibility = false;
+				}
+			}
+			break;
+		case STATE_HAVEBEENATTACKED:
+			break;
+		}
 		break;
 	case MODE_GAMEOVER:
 		automoveTimer = 0;
+		difficultyLevel = 1;
+		communicatorPointer->digitalOutputRwr1LedBuffer
+			= communicatorPointer->digitalOutputRwr2LedBuffer
+			  = communicatorPointer->digitalOutputBuzzerBuffer
+				= false;
 		break;
 	}
-	automoveTimer = (automoveTimer == AUTOMOVE_TIMEOUT) ? 0 : automoveTimer + 1;
-
-//	if(this->currentScopeMode == MODE_CSCOPE) {
-//		if(this->communicatorPointer->digitalInputLaunchButtonBuffer) {
-//			currentScopeMode = MODE_BSCOPE;
-//			status &= this->initializePlaneDisplayable(0, -1);
-//			planeDisplayable.visibility = true;
-//			cReferenceDisplayable.visibility = false;
-//			bReferenceDisplayable.visibility = true;
-//		}
-
-//	} else {
-//		if(this->communicatorPointer->digitalInputLaunchButtonBuffer) {
-//			currentScopeMode = MODE_CSCOPE;
-//			status &= this->initializeCReferenceDisplayable();
-//			status &= this->initializePlaneDisplayable(this->planeCenter[0], this->planeCenter[1]);
-//			planeDisplayable.visibility = true;
-//			cReferenceDisplayable.visibility = true;
-//			bReferenceDisplayable.visibility = false;
-//		} else if(this->communicatorPointer->analogInputStickXAxisBuffer != 0)
-//			status &= this->initializeBReferenceDisplayable(
-//						  this->bReferenceDistance - this->communicatorPointer->analogInputStickXAxisBuffer);
-//		this->bReferenceDistance -= status ? this->communicatorPointer->analogInputStickXAxisBuffer : 0 ;
-//	}
+	automoveTimer = (automoveTimer == TIMER_PERIOD) ? 0 : automoveTimer + 1;
 	return status;
 }
 
@@ -369,29 +406,13 @@ inline bool Playable<B, T, D, A>::executeCycle() {
 	if(this->communicatorPointer == nullptr) return false;
 	bool status{true};
 	status &= communicatorPointer->platformSpecificUpdatePinsToBuffer(); //获取输入
+//	status &= this->flashAllDisplayable(); //更新显示
 	status &= this->processInputAndGenerateOutput(); //游戏处理
+//	status &= this->flashAllDisplayable(); //更新显示
 	status &= communicatorPointer->platformSpecificUpdateBufferToPins(); //推送输出
 	status &= this->flashAllDisplayable(); //更新显示
 	return true;
 }
-
-//template<unsigned char B, typename T, typename D, typename A>
-//inline bool Playable<B, T, D, A>::shiftPlaneDisplayable(const T horizontalShift, const T verticalShift) {
-//	bool status{true};
-//	if(horizontalShift != 0 || verticalShift != 0)
-//		status &= this->initializePlaneDisplayable(this->planeCenter[0] - horizontalShift, this->planeCenter[1] - verticalShift);
-//	if(!status) communicatorPointer->buildVerboseMessage("Playable<B, T, D, A>::shiftPlaneDisplayable() failed");
-//	return status;
-//}
-
-//template<unsigned char B, typename T, typename D, typename A>
-//inline bool Playable<B, T, D, A>::shiftBReferenceDisplayable(const T distanceShift) {
-//	bool status{true};
-//	status &= this->initializeBReferenceDisplayable(this->bReferenceDistance - distanceShift);
-//	this->bReferenceDistance = status ? this->bReferenceDistance - distanceShift : this->bReferenceDistance;
-//	if(!status) communicatorPointer->buildVerboseMessage("Playable<B, T, D, A>::shiftBReferencceDisplayable() failed");
-//	return status;
-//}
 
 
 #endif // GAMEPLAY_H

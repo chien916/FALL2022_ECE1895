@@ -45,10 +45,10 @@ class Communicator {
 	 */
 	void buildCriticalMessage(char* messageText);
 
-	bool digitalInputLaunchButtonBuffer{false};
-	bool digitalInputCounterMeasureBuffer{false};
-	bool digitalInputPiperUpButtonBuffer{false};
-	bool digitalInputPiperDownButtonBuffer{false};
+	bool digitalInputLaunchButtonBuffer{true};
+	bool digitalInputCounterMeasureBuffer{true};
+	bool digitalInputPiperUpButtonBuffer{true};
+	bool digitalInputPiperDownButtonBuffer{true};
 	A analogInputStickXAxisBuffer{2.5};
 	A analogInputStickYAxisBuffer{2.5};
 
@@ -59,26 +59,8 @@ class Communicator {
 	bool digitalOutputBuzzerBuffer{false};
 	bool digitalOutputRwr1LedBuffer{false};
 	bool digitalOutputRwr2LedBuffer{false};
-	A analogOutputStickXAxisSliderVoltageBuffer {0};
-	A analogOutputStickYAxisSliderVoltageBuffer {0};
-
-	/**
-	 * 将B位宽的数字信号转换成模拟信号
-	 * @brief digitalToAnalog
-	 * @param analogSignal 模拟信号
-	 * @return 数字信号
-	 */
-	A digitalToAnalog (const D& analogSignal);
-
-	/**
-	 * 将模拟信号转换成B位宽的数字信号
-	 * @brief analogToDigital
-	 * @param analogSignal 模拟信号
-	 * @return 数字信号
-	 */
-	D analogToDigital(const A& analogSignal);
-
-
+	D analogOutputVectorGraphicsXAxisVoltageBuffer {0};
+	D analogOutputStickYAxisSliderVoltageBuffer {0};
 
 	/**
 	 * 平台差异化接口
@@ -100,13 +82,6 @@ class Communicator {
 	 * @brief platformSpecificFlashPixelToScreen
 	 */
 	virtual bool platformSpecificFlashPixelToScreen(const T x, const T y) = 0;
-
-	/*
-	 * a = static_cast<char>(x)
-	 * _REGISTER_GPIO3 |= a>>4
-	 * _REGISTER_GPIO4 |= a<<4
-	 * x pinWrite()
-	 *
 
 	/**
 	 * 平台差异化接口
@@ -139,24 +114,5 @@ inline void Communicator<B, T, D, A>::buildCriticalMessage(char *messageText) {
 }
 
 
-template <unsigned char B, typename T, typename D, typename A>
-inline A Communicator<B, T, D, A>::digitalToAnalog(const D &digitalSignal) {
-	A analogSignal = 0;
-	for(unsigned char ind = 0; ind < B; ++ind) {
-		analogSignal += digitalSignal & (1 << ind) ? (1 << ind) : 0;
-	}
-	return analogSignal;
-}
-
-
-template <unsigned char B, typename T, typename D, typename A>
-inline D Communicator<B, T, D, A>::analogToDigital(const A &analogSignal) {
-	D digitalSignal = 0;
-	A analogSignalCopy = analogSignal;
-	for(unsigned char ind = 0; ind < B; ++ind) {
-		digitalSignal |= static_cast<bool>(analogSignalCopy % 2);
-		analogSignalCopy >>= 1;
-	}
-}
 
 #endif // COMMUNICATOR_H

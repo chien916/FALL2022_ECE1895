@@ -27,16 +27,16 @@ int main(int argc, char *argv[]) {
 	engine.load(url);
 
 
-	const QUrl url2(u"qrc:/qt_lib/debugwindow.qml"_qs);
-	QObject::connect(
-		&engine,
-		&QQmlApplicationEngine::objectCreated,
-		&app,
-	[url2](QObject * obj, const QUrl & objUrl) {
-		if (!obj && url2 == objUrl)
-			QCoreApplication::exit(-1);
-	}, Qt::QueuedConnection);
-	engine.load(url2);
+//	const QUrl url2(u"qrc:/qt_lib/debugwindow.qml"_qs);
+//	QObject::connect(
+//		&engine,
+//		&QQmlApplicationEngine::objectCreated,
+//		&app,
+//	[url2](QObject * obj, const QUrl & objUrl) {
+//		if (!obj && url2 == objUrl)
+//			QCoreApplication::exit(-1);
+//	}, Qt::QueuedConnection);
+//	engine.load(url2);
 
 	MyGameServer myGameServer{};
 	QtCommunicator qtCommunicator{};

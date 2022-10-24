@@ -15,10 +15,8 @@ class MyGameServer: public QObject {
 
   public:
 	MyGameServer(QObject *parent = nullptr);
-
 	Q_INVOKABLE bool onButtonValueChanged(QString buttonId, bool value);
 	Q_INVOKABLE bool onSliderValueChanged(QString sliderId, qreal value);
-	Q_INVOKABLE bool onKeyboardKeysPressed(QKeyEvent* qKeyEvent);
 	bool setCommunicator(Communicator<QT_TEMPALTE_PARAM> *communicatorPointer);
 
 //	bool resetAndStartNewGame();
@@ -47,6 +45,9 @@ inline bool MyGameServer::onButtonValueChanged(QString buttonId, bool value) {
 	} else if(buttonId == "button_piperDownButton") {
 		dynamic_cast<QtCommunicator*>(playable.communicatorPointer)->buttonIntermediateBuffer[3] = value;
 		//qInfo() << "button_piperDownButton=" << dynamic_cast<QtCommunicator*>(playable.communicatorPointer)->buttonIntermediateBuffer.at(3) ;
+	} else if(buttonId == "SPACE") {
+		playable.currentScopeMode = MODE_NOTSTARTED;
+		//qInfo() << "button_piperDownButton=" << dynamic_cast<QtCommunicator*>(playable.communicatorPointer)->buttonIntermediateBuffer.at(3) ;
 	} else
 		status = false;
 	return status;
@@ -64,20 +65,9 @@ inline bool MyGameServer::onSliderValueChanged(QString sliderId, qreal value) {
 		//qInfo() << "analogInputStickYAxisBuffer=" << dynamic_cast<QtCommunicator*>(playable.communicatorPointer)->sliderIntermediateBuffer.at(1);
 	} else
 		status = false;
-
-//	playable.communicatorPointer->platformSpecificUpdateBufferToPins();
 	return status;
 }
 
-inline bool MyGameServer::onKeyboardKeysPressed(QKeyEvent *qKeyEvent) {
-	if(qKeyEvent->key() == Qt::Key_Space) {}
-//		resetAndStartNewGame();
-	return true;
-}
-
-//inline MyGameServer::MyGameServer(/*QObject *parent*/) { /*: QObject(parent)*/
-
-//}
 
 inline bool MyGameServer::setCommunicator(Communicator<QT_TEMPALTE_PARAM> *communicatorPointer) {
 	if(communicatorPointer == nullptr) return false;
@@ -85,11 +75,6 @@ inline bool MyGameServer::setCommunicator(Communicator<QT_TEMPALTE_PARAM> *commu
 	return true;
 }
 
-//inline bool MyGameServer::resetAndStartNewGame() {
-//	bool status{true};
-//	status &= playable.startNewGame();
-//	return status;
-//}
 
 
 inline void MyGameServer::timerEvent(QTimerEvent *event) {
