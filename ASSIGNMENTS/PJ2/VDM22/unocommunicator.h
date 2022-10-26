@@ -136,26 +136,25 @@ inline bool UnoCommunicator::platformSpecificUpdateBufferToPins() {
 
 inline bool UnoCommunicator::platformSpecificUpdatePinsToBuffer() {
   digitalInputLaunchButtonBuffer = (digitalRead(DIGITALINPUT_LAUNCHBUTTON) == HIGH) ? false : true;
-  if(serialUsage) Serial.println(digitalInputLaunchButtonBuffer?"TRUE":"FALSE");
+  if (serialUsage) Serial.println(digitalInputLaunchButtonBuffer ? "TRUE" : "FALSE");
   digitalInputCounterMeasureBuffer = (digitalRead(DIGITALINPUT_COUNTERMEASURE) == HIGH) ? false : true;
-  if(serialUsage) Serial.println(digitalInputLaunchButtonBuffer?"TRUE":"FALSE");
+  if (serialUsage) Serial.println(digitalInputLaunchButtonBuffer ? "TRUE" : "FALSE");
   digitalInputPiperUpButtonBuffer = (digitalRead(DIGITALINPUT_PIPERUP) == HIGH) ? false : true;
-  if(serialUsage) Serial.println(digitalInputLaunchButtonBuffer?"TRUE":"FALSE");
+  if (serialUsage) Serial.println(digitalInputLaunchButtonBuffer ? "TRUE" : "FALSE");
   digitalInputPiperDownButtonBuffer = (digitalRead(DIGITALINPUT_PIPERDOWN) == HIGH) ? false : true;
-  if(serialUsage) Serial.println(digitalInputLaunchButtonBuffer?"TRUE":"FALSE");
+  if (serialUsage) Serial.println(digitalInputLaunchButtonBuffer ? "TRUE" : "FALSE");
   analogInputStickXAxisBuffer = static_cast<UNO_TEMPALTE_A>(analogRead(ANALOGINPUT_STICKXAXIS) * (5.0 / 1023.0));
   analogInputStickXAxisBuffer = static_cast<UNO_TEMPALTE_A>(analogRead(ANALOGINPUT_STICKYAXIS) * (5.0 / 1023.0));
-
 }
 
 inline bool UnoCommunicator::platformSpecificFlashPixelToScreen(const UNO_TEMPALTE_T x, const UNO_TEMPALTE_T y) {
-  if(x<-120||x>120||y<-120||y>120) return false;
+  if (x < -120 || x > 120 || y < -120 || y > 120) return false;
   digitalOutputVectorGraphicsXYAxisPortControl = false;
-  for (bool stopSignal = false; !stopSignal;) {
+  currentDacState = STATE_DAC_S1;
+  while (currentDacState != STATE_DAC_S6) {
     switch (currentDacState) {
       case STATE_DAC_S1:
         unoDigitalWrite(DIGITALOUTPUT_DAC_AB, digitalOutputVectorGraphicsXYAxisPortControl ? HIGH : LOW);
-        digitalOutputVectorGraphicsXYAxisPortControl = !digitalOutputVectorGraphicsXYAxisPortControl;
         currentDacState = STATE_DAC_S2;
         break;
       case STATE_DAC_S2:
@@ -163,7 +162,7 @@ inline bool UnoCommunicator::platformSpecificFlashPixelToScreen(const UNO_TEMPAL
         currentDacState = STATE_DAC_S3;
         break;
       case STATE_DAC_S3:
-        convertDecimalToBinaryAndStoreInDigitalOutputVoltageBuffer(digitalOutputVectorGraphicsXYAxisPortControl ? y : x);  //注意这里的LSB MSB是反过来的,并且x和y已经被互换、
+        convertDecimalToBinaryAndStoreInDigitalOutputVoltageBuffer(digitalOutputVectorGraphicsXYAxisPortControl ? x : y);  //注意这里的LSB MSB是反过来的,并且x和y已经被互换、
         unoDigitalWrite(DIGITALOUTPUT_DAC_DB0, digitalOutputVectorGraphicsXYAxisVoltageBuffer[0] ? HIGH : LOW);
         unoDigitalWrite(DIGITALOUTPUT_DAC_DB1, digitalOutputVectorGraphicsXYAxisVoltageBuffer[1] ? HIGH : LOW);
         unoDigitalWrite(DIGITALOUTPUT_DAC_DB2, digitalOutputVectorGraphicsXYAxisVoltageBuffer[2] ? HIGH : LOW);
@@ -184,8 +183,43 @@ inline bool UnoCommunicator::platformSpecificFlashPixelToScreen(const UNO_TEMPAL
         break;
       case STATE_DAC_S6:
         unoDigitalWrite(DIGITALOUTPUT_DAC_LDAC, HIGH);
-        stopSignal = !digitalOutputVectorGraphicsXYAxisPortControl;
-        currentDacState = STATE_DAC_S1;
+        break;
+    }
+  }
+  digitalOutputVectorGraphicsXYAxisPortControl = true;
+   currentDacState = STATE_DAC_S1;
+  while (currentDacState != STATE_DAC_S6) {
+    switch (currentDacState) {
+      case STATE_DAC_S1:
+        unoDigitalWrite(DIGITALOUTPUT_DAC_AB, digitalOutputVectorGraphicsXYAxisPortControl ? HIGH : LOW);
+        currentDacState = STATE_DAC_S2;
+        break;
+      case STATE_DAC_S2:
+        unoDigitalWrite(DIGITALOUTPUT_DAC_WR, LOW);
+        currentDacState = STATE_DAC_S3;
+        break;
+      case STATE_DAC_S3:
+        convertDecimalToBinaryAndStoreInDigitalOutputVoltageBuffer(digitalOutputVectorGraphicsXYAxisPortControl ? x : y);  //注意这里的LSB MSB是反过来的,并且x和y已经被互换、
+        unoDigitalWrite(DIGITALOUTPUT_DAC_DB0, digitalOutputVectorGraphicsXYAxisVoltageBuffer[0] ? HIGH : LOW);
+        unoDigitalWrite(DIGITALOUTPUT_DAC_DB1, digitalOutputVectorGraphicsXYAxisVoltageBuffer[1] ? HIGH : LOW);
+        unoDigitalWrite(DIGITALOUTPUT_DAC_DB2, digitalOutputVectorGraphicsXYAxisVoltageBuffer[2] ? HIGH : LOW);
+        unoDigitalWrite(DIGITALOUTPUT_DAC_DB3, digitalOutputVectorGraphicsXYAxisVoltageBuffer[3] ? HIGH : LOW);
+        unoDigitalWrite(DIGITALOUTPUT_DAC_DB4, digitalOutputVectorGraphicsXYAxisVoltageBuffer[4] ? HIGH : LOW);
+        unoDigitalWrite(DIGITALOUTPUT_DAC_DB5, digitalOutputVectorGraphicsXYAxisVoltageBuffer[5] ? HIGH : LOW);
+        unoDigitalWrite(DIGITALOUTPUT_DAC_DB6, digitalOutputVectorGraphicsXYAxisVoltageBuffer[6] ? HIGH : LOW);
+        unoDigitalWrite(DIGITALOUTPUT_DAC_DB7, digitalOutputVectorGraphicsXYAxisVoltageBuffer[7] ? HIGH : LOW);
+        currentDacState = STATE_DAC_S4;
+        break;
+      case STATE_DAC_S4:
+        unoDigitalWrite(DIGITALOUTPUT_DAC_WR, HIGH);
+        currentDacState = STATE_DAC_S5;
+        break;
+      case STATE_DAC_S5:
+        unoDigitalWrite(DIGITALOUTPUT_DAC_LDAC, LOW);
+        currentDacState = STATE_DAC_S6;
+        break;
+      case STATE_DAC_S6:
+        unoDigitalWrite(DIGITALOUTPUT_DAC_LDAC, HIGH);
         break;
     }
   }
@@ -196,7 +230,7 @@ inline bool UnoCommunicator::platformSpecificClearScreen() {
 }
 
 inline UNO_TEMPALTE_T UnoCommunicator::platformSpecificRandomGenerator(const UNO_TEMPALTE_T lowerLimit, const UNO_TEMPALTE_T upperLimit) {
-  UNO_TEMPALTE_T toReturn =  static_cast<UNO_TEMPALTE_T>(random(lowerLimit, upperLimit));
+  UNO_TEMPALTE_T toReturn = static_cast<UNO_TEMPALTE_T>(random(lowerLimit, upperLimit));
   if (serialUsage) Serial.println(toReturn);
   return toReturn;
 }
@@ -210,15 +244,11 @@ inline void UnoCommunicator::platformSpecificExit() {
 }
 
 inline bool UnoCommunicator::convertDecimalToBinaryAndStoreInDigitalOutputVoltageBuffer(const UNO_TEMPALTE_T xOrY) {
-  uint8_t shiftedXOrY = static_cast<uint8_t>(xOrY + 128U);
-  digitalOutputVectorGraphicsXYAxisVoltageBuffer[0] = shiftedXOrY & 0b00000001;
-  digitalOutputVectorGraphicsXYAxisVoltageBuffer[1] = shiftedXOrY & 0b00000010;
-  digitalOutputVectorGraphicsXYAxisVoltageBuffer[2] = shiftedXOrY & 0b00000100;
-  digitalOutputVectorGraphicsXYAxisVoltageBuffer[3] = shiftedXOrY & 0b00001000;
-  digitalOutputVectorGraphicsXYAxisVoltageBuffer[4] = shiftedXOrY & 0b00010000;
-  digitalOutputVectorGraphicsXYAxisVoltageBuffer[5] = shiftedXOrY & 0b00100000;
-  digitalOutputVectorGraphicsXYAxisVoltageBuffer[6] = shiftedXOrY & 0b01000000;
-  digitalOutputVectorGraphicsXYAxisVoltageBuffer[7] = shiftedXOrY & 0b10000000;
+  uint16_t shiftedXOrY = static_cast<uint16_t>(xOrY + 127U);
+  for (size_t i = 0; i < 8; ++i) {
+    digitalOutputVectorGraphicsXYAxisVoltageBuffer[i] = shiftedXOrY % 2;
+    shiftedXOrY = shiftedXOrY / 2;
+  }
   return true;
 }
 

@@ -17,10 +17,9 @@ void loop() {
   // unoCommunicatorPtr->platformSpecificFlashPixelToScreen(5,0);
   // Serial.println("testNormal");
   // // unoCommunicatorPtr->buildVerboseMessage("testBuildVerbsoe");
-  for(int ind=0; ind < 100; ++ind){
-    unoCommunicatorPtr->platformSpecificFlashPixelToScreen(ind,ind);
-  }
-  
+
+    unoCommunicatorPtr->platformSpecificFlashPixelToScreen(100,0);
+  unoCommunicatorPtr->platformSpecificFlashPixelToScreen(0,0);
   // for(size_t ind=0; ind < 15; ++ind) 
   // unoCommunicatorPtr->platformSpecificFlashPixelToScreen(verticalLine[ind][0], verticalLine[ind][1]);
   // unoCommunicatorPtr->unoDigitalWrite(15,15);

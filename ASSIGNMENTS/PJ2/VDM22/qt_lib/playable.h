@@ -16,13 +16,13 @@
 #define MAXABS_COORDINATE 120
 
 
-#define PIPER_FREQ 1000
-#define REFERENCE_FREQ 1000
-#define TIMER_PERIOD 10000
-#define AUTOMOVE_FREQ 100
-#define DISTANCE_FREQ 100
-#define BLINK_FREQ 60
-#define ATTACK_PROBABLITY 0
+#define PIPER_FREQ 100
+#define REFERENCE_FREQ 100
+#define TIMER_PERIOD 1000
+#define AUTOMOVE_FREQ 50
+#define DISTANCE_FREQ 500
+#define BLINK_FREQ 10
+#define ATTACK_PROBABLITY 10
 /**
  * 像素数组大小定义（自动判断）
  */
@@ -189,7 +189,10 @@ inline bool Playable<B, T, D, A>::flashAllDisplayable() {
 	status &= communicatorPointer->platformSpecificClearScreen();
 	if(planeDisplayable.visibility)
 		for(struct Displayable<PLANE_ARRAY_SIZE, T>::Pixel& pixelIt : planeDisplayable.pixelArray) {
-			status &= communicatorPointer->platformSpecificFlashPixelToScreen(pixelIt.x, pixelIt.y);
+
+		status &= communicatorPointer->platformSpecificFlashPixelToScreen(pixelIt.x, pixelIt.y);
+
+
 		}
 	if(bReferenceDisplayable.visibility)
 		for(struct Displayable<BR_ARRAY_SIZE, T>::Pixel& pixelIt : bReferenceDisplayable.pixelArray) {
@@ -211,9 +214,9 @@ inline bool Playable<B, T, D, A>::processInputAndGenerateOutput() {
 	case MODE_NOTSTARTED:
 		status &= initializeCReferenceDisplayable(-50/*-MAXABS_COORDINATE + CR_HEIGHT * LINE_WIDTH + LINE_WIDTH*/);
 		status &= initializePlaneDisplayable(0, 50);
-		cReferenceYCenter = -MAXABS_COORDINATE + CR_HEIGHT * LINE_WIDTH + LINE_WIDTH;
+		cReferenceYCenter = -50/*-MAXABS_COORDINATE + CR_HEIGHT * LINE_WIDTH + LINE_WIDTH*/;
 		planeCenter[0] = 0;
-		planeCenter[1] = MAXABS_COORDINATE - PLANE_WIDTH;
+		planeCenter[1] = 50/*MAXABS_COORDINATE - PLANE_WIDTH*/;
 		planeDisplayable.visibility = true;
 		cReferenceDisplayable.visibility = true;
 		bReferenceDisplayable.visibility = false;
@@ -271,22 +274,22 @@ inline bool Playable<B, T, D, A>::processInputAndGenerateOutput() {
 									* static_cast<T>(communicatorPointer->digitalInputPiperDownButtonBuffer))
 								 : 0;
 		}
-		if(automoveTimer % (TIMER_PERIOD / REFERENCE_FREQ) == 0 && //如果用户尝试左右移动飞机
-				(communicatorPointer->analogInputStickXAxisBuffer - 2.5f != 0)) {
-			T newAnalogInputStickXAxisBuffer = (communicatorPointer->analogInputStickXAxisBuffer - 2.5f);
-			status &= initializePlaneDisplayable(planeCenter[0] - newAnalogInputStickXAxisBuffer , planeCenter[1]);
-			planeCenter[0] -= status ? newAnalogInputStickXAxisBuffer : 0;
-		}
-		if(automoveTimer % (AUTOMOVE_FREQ / difficultyLevel) == 0) { //如果到电脑随机移动B坐标和飞机
-			if(planeCenter[0] == cScopeTargetedShift) {
-				cScopeTargetedShift = communicatorPointer
-										 ->platformSpecificRandomGenerator(-MAXABS_COORDINATE, MAXABS_COORDINATE);
-			}
-			bool shouldAdd = planeCenter[0] < cScopeTargetedShift;
-			T randomShiftAmount = communicatorPointer->platformSpecificRandomGenerator(0, 3) - (shouldAdd ? 0 : 2);
-			status &= initializePlaneDisplayable(planeCenter[0] + randomShiftAmount, planeCenter[1]);
-			planeCenter[0] += status ? randomShiftAmount : 0;
-		}
+//		if(automoveTimer % (TIMER_PERIOD / REFERENCE_FREQ) == 0 && //如果用户尝试左右移动飞机
+//				(communicatorPointer->analogInputStickXAxisBuffer - 2.5f != 0)) {
+//			T newAnalogInputStickXAxisBuffer = (communicatorPointer->analogInputStickXAxisBuffer - 2.5f);
+//			status &= initializePlaneDisplayable(planeCenter[0] - newAnalogInputStickXAxisBuffer , planeCenter[1]);
+//			planeCenter[0] -= status ? newAnalogInputStickXAxisBuffer : 0;
+//		}
+//		if(automoveTimer % (AUTOMOVE_FREQ / difficultyLevel) == 0) { //如果到电脑随机移动B坐标和飞机
+//			if(planeCenter[0] == cScopeTargetedShift) {
+//				cScopeTargetedShift = communicatorPointer
+//										 ->platformSpecificRandomGenerator(-MAXABS_COORDINATE, MAXABS_COORDINATE);
+//			}
+//			bool shouldAdd = planeCenter[0] < cScopeTargetedShift;
+//			T randomShiftAmount = communicatorPointer->platformSpecificRandomGenerator(0, 3) - (shouldAdd ? 0 : 2);
+//			status &= initializePlaneDisplayable(planeCenter[0] + randomShiftAmount, planeCenter[1]);
+//			planeCenter[0] += status ? randomShiftAmount : 0;
+//		}
 		if(automoveTimer % (AUTOMOVE_FREQ / difficultyLevel) == 0) {//如果飞机到时间该往下移动一个单位
 			status &= initializePlaneDisplayable( planeCenter[0], planeCenter[1] - difficultyLevel); //飞机上下移动
 			planeCenter[1] -= status ? difficultyLevel : 0;
