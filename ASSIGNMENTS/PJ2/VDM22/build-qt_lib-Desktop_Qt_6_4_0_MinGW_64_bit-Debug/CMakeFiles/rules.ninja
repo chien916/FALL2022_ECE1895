@@ -42,7 +42,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = C:\Qt\Tools\CMake_64\bin\cmake.exe --regenerate-during-build -SD:\Academics\FA2022\JDFU\ASSIGNMENTS\PJ2\VDM22\qt_lib -BD:\Academics\FA2022\JDFU\ASSIGNMENTS\PJ2\VDM22\build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug
+  command = C:\Qt\Tools\CMake_64\bin\cmake.exe --regenerate-during-build -S"D:\Academics\FA2022\JDFU\ASSIGNMENTS\PJ2\VDM22 copy\qt_lib" -BD:\Academics\FA2022\JDFU\ASSIGNMENTS\PJ2\VDM22\build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug
   description = Re-running CMake...
   generator = 1
 

@@ -1,0 +1,24 @@
+{
+    "classes": [
+        {
+            "className": "MyQuickPaintedItem",
+            "methods": [
+                {
+                    "access": "public",
+                    "name": "helloWorld",
+                    "returnType": "void"
+                }
+            ],
+            "object": true,
+            "qualifiedClassName": "MyQuickPaintedItem",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QQuickPaintedItem"
+                }
+            ]
+        }
+    ],
+    "inputFile": "myquickpainteditem.h",
+    "outputRevision": 68
+}

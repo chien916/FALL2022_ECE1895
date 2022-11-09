@@ -274,12 +274,12 @@ inline bool Playable<B, T, D, A>::processInputAndGenerateOutput() {
 									* static_cast<T>(communicatorPointer->digitalInputPiperDownButtonBuffer))
 								 : 0;
 		}
-//		if(automoveTimer % (TIMER_PERIOD / REFERENCE_FREQ) == 0 && //如果用户尝试左右移动飞机
-//				(communicatorPointer->analogInputStickXAxisBuffer - 2.5f != 0)) {
-//			T newAnalogInputStickXAxisBuffer = (communicatorPointer->analogInputStickXAxisBuffer - 2.5f);
-//			status &= initializePlaneDisplayable(planeCenter[0] - newAnalogInputStickXAxisBuffer , planeCenter[1]);
-//			planeCenter[0] -= status ? newAnalogInputStickXAxisBuffer : 0;
-//		}
+		if(automoveTimer % (TIMER_PERIOD / REFERENCE_FREQ) == 0 && //如果用户尝试左右移动飞机
+				(communicatorPointer->analogInputStickXAxisBuffer - 2.5f != 0)) {
+			T newAnalogInputStickXAxisBuffer = (communicatorPointer->analogInputStickXAxisBuffer - 2.5f);
+			status &= initializePlaneDisplayable(planeCenter[0] - newAnalogInputStickXAxisBuffer , planeCenter[1]);
+			planeCenter[0] -= status ? newAnalogInputStickXAxisBuffer : 0;
+		}
 //		if(automoveTimer % (AUTOMOVE_FREQ / difficultyLevel) == 0) { //如果到电脑随机移动B坐标和飞机
 //			if(planeCenter[0] == cScopeTargetedShift) {
 //				cScopeTargetedShift = communicatorPointer

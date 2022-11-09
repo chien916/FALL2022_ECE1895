@@ -68,8 +68,8 @@
 
 
 //模拟针脚和模式
-#define ANALOGINPUT_STICKXAXIS 18
-#define ANALOGINPUT_STICKYAXIS 19
+#define ANALOGINPUT_STICKXAXIS A4
+#define ANALOGINPUT_STICKYAXIS A5
 
 enum DacState { STATE_DAC_S1,
                 STATE_DAC_S2,
@@ -114,7 +114,7 @@ inline UnoCommunicator::UnoCommunicator(bool serialUsage) {
   pinMode(DIGITALOUTPUT_DAC_AB, OUTPUT);
   pinMode(DIGITALOUTPUT_DAC_LDAC, OUTPUT);
   pinMode(DIGITALOUTPUT_DAC_WR, OUTPUT);
-  pinMode(DIGITALOUTPUT_BUZZER, OUTPUT);
+  // pinMode(DIGITALOUTPUT_BUZZER, OUTPUT);
   if (this->serialUsage) {
     Serial.begin(9600);
     Serial.println("Serial_ON");
@@ -143,8 +143,8 @@ inline bool UnoCommunicator::platformSpecificUpdatePinsToBuffer() {
   if (serialUsage) Serial.println(digitalInputLaunchButtonBuffer ? "TRUE" : "FALSE");
   digitalInputPiperDownButtonBuffer = (digitalRead(DIGITALINPUT_PIPERDOWN) == HIGH) ? false : true;
   if (serialUsage) Serial.println(digitalInputLaunchButtonBuffer ? "TRUE" : "FALSE");
-  analogInputStickXAxisBuffer = static_cast<UNO_TEMPALTE_A>(analogRead(ANALOGINPUT_STICKXAXIS) * (5.0 / 1023.0));
-  analogInputStickXAxisBuffer = static_cast<UNO_TEMPALTE_A>(analogRead(ANALOGINPUT_STICKYAXIS) * (5.0 / 1023.0));
+  // analogInputStickXAxisBuffer = static_cast<UNO_TEMPALTE_A>(analogRead(ANALOGINPUT_STICKXAXIS) * (5.0 / 1023.0));
+  // analogInputStickXAxisBuffer = static_cast<UNO_TEMPALTE_A>(analogRead(ANALOGINPUT_STICKYAXIS) * (5.0 / 1023.0));
 }
 
 inline bool UnoCommunicator::platformSpecificFlashPixelToScreen(const UNO_TEMPALTE_T x, const UNO_TEMPALTE_T y) {

@@ -2,11 +2,11 @@
 	"BUILD_DIR" : "D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug/appqt_lib_autogen",
 	"CMAKE_BINARY_DIR" : "D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug",
 	"CMAKE_CURRENT_BINARY_DIR" : "D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug",
-	"CMAKE_CURRENT_SOURCE_DIR" : "D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib",
+	"CMAKE_CURRENT_SOURCE_DIR" : "D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22 copy/qt_lib",
 	"CMAKE_EXECUTABLE" : "C:/Qt/Tools/CMake_64/bin/cmake.exe",
 	"CMAKE_LIST_FILES" : 
 	[
-		"D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/CMakeLists.txt",
+		"D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22 copy/qt_lib/CMakeLists.txt",
 		"C:/Qt/Tools/QtCreator/share/qtcreator/package-manager/auto-setup.cmake",
 		"D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug/CMakeFiles/3.23.2/CMakeSystem.cmake",
 		"C:/Qt/Tools/CMake_64/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake",
@@ -855,19 +855,19 @@
 		"C:/Qt/6.4.0/mingw_64/lib/cmake/Qt6Core/Qt6CoreConfigureFileTemplate.in",
 		"C:/Qt/6.4.0/mingw_64/lib/cmake/Qt6Qml/Qt6qmldirTemplate.cmake.in"
 	],
-	"CMAKE_SOURCE_DIR" : "D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib",
+	"CMAKE_SOURCE_DIR" : "D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22 copy/qt_lib",
 	"DEP_FILE" : "D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug/appqt_lib_autogen/deps",
 	"DEP_FILE_RULE_NAME" : "appqt_lib_autogen/timestamp",
 	"HEADERS" : 
 	[
 		[
-			"D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/mygameserver.h",
+			"D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22 copy/qt_lib/mygameserver.h",
 			"Mu",
 			"EWIEGA46WW/moc_mygameserver.cpp",
 			null
 		],
 		[
-			"D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/myquickpainteditem.h",
+			"D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22 copy/qt_lib/myquickpainteditem.h",
 			"Mu",
 			"EWIEGA46WW/moc_myquickpainteditem.cpp",
 			null
@@ -905,7 +905,7 @@
 	],
 	"MOC_INCLUDES" : 
 	[
-		"D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib",
+		"D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22 copy/qt_lib",
 		"C:/Qt/6.4.0/mingw_64/include/QtQml/6.4.0",
 		"C:/Qt/6.4.0/mingw_64/include/QtQml/6.4.0/QtQml",
 		"C:/Qt/6.4.0/mingw_64/include/QtCore/6.4.0",
@@ -967,12 +967,12 @@
 	"SOURCES" : 
 	[
 		[
-			"D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug/.rcc/qmlcache/appqt_lib_qmlcache_loader.cpp",
+			"D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22 copy/qt_lib/main.cpp",
 			"Mu",
 			null
 		],
 		[
-			"D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/main.cpp",
+			"D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug/.rcc/qmlcache/appqt_lib_qmlcache_loader.cpp",
 			"Mu",
 			null
 		]

@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="/qt_lib2/">
+    <file alias="main.qml">D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22 copy/qt_lib/main.qml</file>
+    <file alias="debugwindow.qml">D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22 copy/qt_lib/debugwindow.qml</file>
+  </qresource>
+</RCC>
+

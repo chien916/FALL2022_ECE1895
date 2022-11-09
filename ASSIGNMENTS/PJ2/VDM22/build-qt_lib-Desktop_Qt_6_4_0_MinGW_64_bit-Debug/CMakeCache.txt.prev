@@ -122,7 +122,7 @@ CMAKE_INSTALL_MANDIR:PATH=
 CMAKE_INSTALL_OLDINCLUDEDIR:PATH=/usr/include
 
 //Install path prefix, prepended onto install directories.
-CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/qt_lib
+CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/qt_lib2
 
 //Run-time variable data (LOCALSTATEDIR/run)
 CMAKE_INSTALL_RUNSTATEDIR:PATH=
@@ -184,7 +184,7 @@ CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 CMAKE_PROJECT_INCLUDE_BEFORE:FILEPATH=C:/Qt/Tools/QtCreator/share/qtcreator/package-manager/auto-setup.cmake
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=qt_lib
+CMAKE_PROJECT_NAME:STATIC=qt_lib2
 
 //Value Computed by CMake
 CMAKE_PROJECT_VERSION:STATIC=0.1
@@ -336,9 +336,6 @@ Qt6Quick_DIR:PATH=C:/Qt/6.4.0/mingw_64/lib/cmake/Qt6Quick
 //The directory containing a CMake configuration file for Qt6SerialPort.
 Qt6SerialPort_DIR:PATH=C:/Qt/6.4.0/mingw_64/lib/cmake/Qt6SerialPort
 
-//The directory containing a CMake configuration file for Qt6Test.
-Qt6Test_DIR:PATH=C:/Qt/6.4.0/mingw_64/lib/cmake/Qt6Test
-
 //The directory containing a CMake configuration file for Qt6ZlibPrivate.
 Qt6ZlibPrivate_DIR:PATH=C:/Qt/6.4.0/mingw_64/lib/cmake/Qt6ZlibPrivate
 
@@ -361,13 +358,13 @@ Vulkan_LIBRARY:FILEPATH=Vulkan_LIBRARY-NOTFOUND
 WINDEPLOYQT_EXECUTABLE:FILEPATH=C:/Qt/6.4.0/mingw_64/bin/windeployqt.exe
 
 //Value Computed by CMake
-qt_lib_BINARY_DIR:STATIC=D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug
+qt_lib2_BINARY_DIR:STATIC=D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug
 
 //Value Computed by CMake
-qt_lib_IS_TOP_LEVEL:STATIC=ON
+qt_lib2_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
-qt_lib_SOURCE_DIR:STATIC=D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib
+qt_lib2_SOURCE_DIR:STATIC=D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22 copy/qt_lib
 
 
 ########################
@@ -440,7 +437,7 @@ CMAKE_HAVE_LIBC_PTHREAD:INTERNAL=1
 CMAKE_HAVE_PTHREAD_H:INTERNAL=1
 //Source directory with the top level CMakeLists.txt file for this
 // project
-CMAKE_HOME_DIRECTORY:INTERNAL=D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib
+CMAKE_HOME_DIRECTORY:INTERNAL=D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22 copy/qt_lib
 //ADVANCED property for variable: CMAKE_INSTALL_BINDIR
 CMAKE_INSTALL_BINDIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_INSTALL_DATADIR
@@ -824,8 +821,6 @@ QT_FEATURE_ipv6ifname:INTERNAL=OFF
 QT_FEATURE_islamiccivilcalendar:INTERNAL=ON
 //Qt feature: itemmodel (from target Qt6::Core)
 QT_FEATURE_itemmodel:INTERNAL=ON
-//Qt feature: itemmodeltester (from target Qt6::Test)
-QT_FEATURE_itemmodeltester:INTERNAL=ON
 //Qt feature: jalalicalendar (from target Qt6::Core)
 QT_FEATURE_jalalicalendar:INTERNAL=ON
 //Qt feature: journald (from target Qt6::Core)
@@ -1140,8 +1135,6 @@ QT_FEATURE_tabletevent:INTERNAL=ON
 QT_FEATURE_temporaryfile:INTERNAL=ON
 //Qt feature: testlib (from target Qt6::Core)
 QT_FEATURE_testlib:INTERNAL=ON
-//Qt feature: testlib_selfcover (from target Qt6::Test)
-QT_FEATURE_testlib_selfcover:INTERNAL=OFF
 //Qt feature: textdate (from target Qt6::Core)
 QT_FEATURE_textdate:INTERNAL=ON
 //Qt feature: texthtmlparser (from target Qt6::Gui)
@@ -1184,8 +1177,6 @@ QT_FEATURE_use_lld_linker:INTERNAL=OFF
 QT_FEATURE_use_mold_linker:INTERNAL=OFF
 //Qt feature: vaes (from target Qt6::Core)
 QT_FEATURE_vaes:INTERNAL=ON
-//Qt feature: valgrind (from target Qt6::Test)
-QT_FEATURE_valgrind:INTERNAL=OFF
 //Qt feature: validator (from target Qt6::Gui)
 QT_FEATURE_validator:INTERNAL=ON
 //Qt feature: vkgen (from target Qt6::Gui)
@@ -1245,6 +1236,6 @@ Vulkan_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: Vulkan_LIBRARY
 Vulkan_LIBRARY-ADVANCED:INTERNAL=1
 //CMAKE_INSTALL_PREFIX during last run
-_GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=C:/Program Files (x86)/qt_lib
+_GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=C:/Program Files (x86)/qt_lib2
 __qt_qml_macros_module_base_dir:INTERNAL=C:/Qt/6.4.0/mingw_64/lib/cmake/Qt6Qml
 

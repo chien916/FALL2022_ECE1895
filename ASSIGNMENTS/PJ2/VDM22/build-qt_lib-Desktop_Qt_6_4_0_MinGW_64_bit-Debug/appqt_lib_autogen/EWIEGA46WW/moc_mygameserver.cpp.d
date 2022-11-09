@@ -1,4 +1,4 @@
-D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug/appqt_lib_autogen/EWIEGA46WW/moc_mygameserver.cpp: D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/mygameserver.h \
+D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug/appqt_lib_autogen/EWIEGA46WW/moc_mygameserver.cpp: D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22\ copy/qt_lib/mygameserver.h \
   D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug/appqt_lib_autogen/moc_predefs.h \
   C:/Qt/6.4.0/mingw_64/include/QtCore/QDebug \
   C:/Qt/6.4.0/mingw_64/include/QtCore/QList \
@@ -402,8 +402,8 @@ D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_Min
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/vadefs.h \
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wchar.h \
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wctype.h \
-  D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/communicator.h \
-  D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/displayable.h \
-  D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/myquickpainteditem.h \
-  D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/playable.h \
-  D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/qtcommunicator.h
+  D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22\ copy/qt_lib/communicator.h \
+  D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22\ copy/qt_lib/displayable.h \
+  D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22\ copy/qt_lib/myquickpainteditem.h \
+  D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22\ copy/qt_lib/playable.h \
+  D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22\ copy/qt_lib/qtcommunicator.h

@@ -1,8 +1,8 @@
-# Install script for directory: D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib
+# Install script for directory: D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22 copy/qt_lib
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/qt_lib")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/qt_lib2")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

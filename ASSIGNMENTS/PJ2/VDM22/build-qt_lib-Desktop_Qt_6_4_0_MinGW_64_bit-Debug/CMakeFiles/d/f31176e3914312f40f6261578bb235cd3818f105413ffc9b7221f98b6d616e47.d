@@ -1021,17 +1021,17 @@ appqt_lib_autogen/timestamp: \
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/vadefs.h \
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wchar.h \
   C:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wctype.h \
+  D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22\ copy/qt_lib/CMakeLists.txt \
+  D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22\ copy/qt_lib/communicator.h \
+  D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22\ copy/qt_lib/displayable.h \
+  D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22\ copy/qt_lib/main.cpp \
+  D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22\ copy/qt_lib/mygameserver.h \
+  D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22\ copy/qt_lib/myquickpainteditem.h \
+  D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22\ copy/qt_lib/playable.h \
+  D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22\ copy/qt_lib/qtcommunicator.h \
   .rcc/qmlcache/appqt_lib_qmlcache_loader.cpp \
   CMakeFiles/3.23.2/CMakeCXXCompiler.cmake \
   CMakeFiles/3.23.2/CMakeRCCompiler.cmake \
   CMakeFiles/3.23.2/CMakeSystem.cmake \
   appqt_lib_autogen/moc_predefs.h \
-  D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/CMakeLists.txt \
-  D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/communicator.h \
-  D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/displayable.h \
-  D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/main.cpp \
-  D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/mygameserver.h \
-  D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/myquickpainteditem.h \
-  D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/playable.h \
-  D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/qt_lib/qtcommunicator.h \
   C:/Qt/Tools/CMake_64/bin/cmake.exe
