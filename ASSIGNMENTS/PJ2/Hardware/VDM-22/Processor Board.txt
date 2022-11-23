@@ -1,0 +1,21 @@
+Board Information Report
+Filename     : Q:\BOP_F14\Hardware\VDM-22\Processor Board.PcbDoc
+Date         : 10/19/2022
+Time         : 5:01:15 PM
+Time Elapsed : 00:00:00
+
+General
+    Board Size, 69.723mmx95.885mm
+    Components on board, 48
+count : 2
+
+Routing Information
+    Routing completion, 100.00%
+    Connections, 141
+    Connections routed, 141
+    Connections remaining, 0
+count : 4
+
+Net Via Size, Count
+    1mm, 39
+count : 1

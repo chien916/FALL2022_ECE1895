@@ -1,0 +1,16 @@
+Added Component: Designator=JP(AMPHENOL_69192-406HLF)
+Add component (AddParameter): Name = "Check_prices"; Value = "https://www.snapeda.com/parts/69192-406HLF/Amphenol/view-part/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Digi-Key_Part_Number"; Value = "609-4711-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "AMPHENOL ICC / FCI"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "69192-406HLF"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Purchase-URL"; Value = "https://pricing.snapeda.com/search/part/69192-406HLF/?ref=eda"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/69192-406HLF/Amphenol/view-part/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=PUP Pin=JP-01
+Added Pin To Net: NetName=PDOWN Pin=JP-02
+Added Pin To Net: NetName=nRST Pin=JP-03
+Added Pin To Net: NetName=+5 Pin=JP-04
+Added Pin To Net: NetName=CMS Pin=JP-05
+Added Pin To Net: NetName=GND Pin=JP-06
+Added Member To Class: ClassName=Processor Board Member=Component JP 69192-406HLF

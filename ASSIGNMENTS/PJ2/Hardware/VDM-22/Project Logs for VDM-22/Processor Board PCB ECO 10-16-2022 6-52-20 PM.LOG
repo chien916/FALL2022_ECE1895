@@ -1,0 +1,5 @@
+Removed Pin From Net: NetName=AGND Pin=J8-1
+Removed Pin From Net: NetName=OUTB Pin=J8-2
+Removed Pin From Net: NetName=OUTA Pin=J8-3
+Removed Member From Class: ClassName=Processor Board Member=J8
+Change Component Designator: OldDesignator=S? NewDesignator=S1

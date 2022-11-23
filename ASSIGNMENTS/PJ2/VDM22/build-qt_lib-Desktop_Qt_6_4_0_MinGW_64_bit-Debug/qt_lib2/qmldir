@@ -1,4 +1,0 @@
-module qt_lib2
-typeinfo appqt_lib2.qmltypes
-prefer :/qt_lib2/
-

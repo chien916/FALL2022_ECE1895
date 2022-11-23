@@ -1,6 +1,0 @@
-<RCC>
-    <qresource prefix="/new/prefix1"/>
-    <qresource prefix="/">
-        <file>sourcehan.otf</file>
-    </qresource>
-</RCC>

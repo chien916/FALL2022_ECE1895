@@ -1,0 +1,10 @@
+let mysql = require("mysql2");
+let dotenv = require("dotenv");
+dotenv.config();
+let user = process.env.MYSQL_USER;
+let host = process.env.MYSQL_HOST;
+let password = process.env.MYSQL_PASSWORD;
+let database = process.env.MYSQL_DATABASE;
+let port = process.env.MYSQL_PORT;
+let db = mysql.createConnection({user, host, password, database, port});
+module.exports = db;

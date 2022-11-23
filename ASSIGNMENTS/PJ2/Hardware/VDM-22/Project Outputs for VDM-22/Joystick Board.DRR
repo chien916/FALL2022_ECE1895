@@ -1,0 +1,20 @@
+----------------------------------------------------------------------------------------------------------------------------------
+NCDrill File Report For: Joystick Board.PcbDoc   10/19/2022  3:34:17 PM
+----------------------------------------------------------------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : Joystick Board.TXT
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      35mil (0.889mm)                                           Round             6         PTH        0.92inch (23.48mm)
+T2      35mil (0.899mm)                                           Round             4         PTH        0.65inch (16.51mm)
+T3      39mil (1.001mm)                                           Round             8         PTH        1.07inch (27.12mm)
+T4      40mil (1.021mm)                                           Round             8         PTH        0.90inch (22.99mm)
+T5      55mil (1.397mm)                                           Round             4         PTH        1.65inch (41.91mm)
+T6      94mil (2.38mm)                                            Round             4         PTH        1.31inch (33.26mm)
+T7      134mil (3.401mm)                                          Round             2         PTH        2.96inch (75.21mm)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              36
+
+Total Processing Time (hh:mm:ss) : 00:00:00

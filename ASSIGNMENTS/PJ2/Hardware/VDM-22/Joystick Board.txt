@@ -1,0 +1,21 @@
+Board Information Report
+Filename     : Q:\BOP_F14\Hardware\VDM-22\Joystick Board.PcbDoc
+Date         : 10/19/2022
+Time         : 4:58:49 PM
+Time Elapsed : 00:00:00
+
+General
+    Board Size, 69mmx52mm
+    Components on board, 7
+count : 2
+
+Routing Information
+    Routing completion, 100.00%
+    Connections, -9
+    Connections routed, -9
+    Connections remaining, 0
+count : 4
+
+Net Via Size, Count
+    1.27mm, 39
+count : 1

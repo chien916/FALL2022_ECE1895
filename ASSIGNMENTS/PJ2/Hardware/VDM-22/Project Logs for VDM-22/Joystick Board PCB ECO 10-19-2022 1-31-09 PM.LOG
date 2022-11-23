@@ -1,0 +1,148 @@
+Added Component: Designator=BUTTONS(AMPHENOL_UE27AC54100)
+Add component (AddParameter): Name = "Digi-Key_Part_Number"; Value = "UE27AC54100-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Digi-Key_Purchase_URL"; Value = "https://www.digikey.com/product-detail/en/amphenol-icc-commercial-products/UE27AC54100/UE27AC54100-ND/1972253?utm_source=snapeda&utm_medium=aggregator&utm_campaign=symbol"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Amphenol ICC _Commercial Products_"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "UE27AC54100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/UE27AC54100/Amphenol%20Commercial%20Products/view-part/4701388/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=CMS(TE_5-146281-2)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Centerline_Pitch"; Value = "2.54 mm[.1 in]"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "EU_RoHS_Compliance"; Value = "Compliant"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "TE Connectivity"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "5-146281-2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number_of_Positions"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Product_Type"; Value = "Connector"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/5-146281-2/TE%20Connectivity%20AMP%20Connectors/view-part/457165/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=JOY1(XDCR_COM-09032)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "COM-09032"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=JOYSTICK(AMPHENOL_UE27AC54100)
+Add component (AddParameter): Name = "Digi-Key_Part_Number"; Value = "UE27AC54100-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Digi-Key_Purchase_URL"; Value = "https://www.digikey.com/product-detail/en/amphenol-icc-commercial-products/UE27AC54100/UE27AC54100-ND/1972253?utm_source=snapeda&utm_medium=aggregator&utm_campaign=symbol"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "Amphenol ICC _Commercial Products_"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "UE27AC54100"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/UE27AC54100/Amphenol%20Commercial%20Products/view-part/4701388/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=LAUNCH(TE_5-146281-2)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Centerline_Pitch"; Value = "2.54 mm[.1 in]"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "EU_RoHS_Compliance"; Value = "Compliant"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "TE Connectivity"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "5-146281-2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number_of_Positions"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Product_Type"; Value = "Connector"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/5-146281-2/TE%20Connectivity%20AMP%20Connectors/view-part/457165/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=PDOWN(TE_5-146281-2)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Centerline_Pitch"; Value = "2.54 mm[.1 in]"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "EU_RoHS_Compliance"; Value = "Compliant"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "TE Connectivity"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "5-146281-2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number_of_Positions"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Product_Type"; Value = "Connector"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/5-146281-2/TE%20Connectivity%20AMP%20Connectors/view-part/457165/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=PUP(TE_5-146281-2)
+Add component (AddParameter): Name = "Availability"; Value = "Unavailable"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Centerline_Pitch"; Value = "2.54 mm[.1 in]"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "EU_RoHS_Compliance"; Value = "Compliant"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MF"; Value = "TE Connectivity"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MP"; Value = "5-146281-2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Number_of_Positions"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Package"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Price"; Value = "None"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Product_Type"; Value = "Connector"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SnapEDA_Link"; Value = "https://www.snapeda.com/parts/5-146281-2/TE%20Connectivity%20AMP%20Connectors/view-part/457165/?ref=snap"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=+5 Pin=JOY1-H1
+Added Pin To Net: NetName=+5 Pin=JOY1-V1
+Added Pin To Net: NetName=+5 Pin=JOYSTICK-1
+Added Net: Name=+5
+Added Net: Name=+12
+Added Net: Name=AGND
+Added Net: Name=BEEPER
+Added Pin To Net: NetName=CMS Pin=BUTTONS-4
+Added Pin To Net: NetName=CMS Pin=CMS-1
+Added Net: Name=CMS
+Added Net: Name=DB0
+Added Net: Name=DB1
+Added Net: Name=DB2
+Added Net: Name=DB3
+Added Net: Name=DB4
+Added Net: Name=DB5
+Added Net: Name=DB6
+Added Net: Name=DB7
+Added Pin To Net: NetName=GND Pin=BUTTONS-S1
+Added Pin To Net: NetName=GND Pin=BUTTONS-S2
+Added Pin To Net: NetName=GND Pin=CMS-2
+Added Pin To Net: NetName=GND Pin=JOY1-H3
+Added Pin To Net: NetName=GND Pin=JOY1-S1
+Added Pin To Net: NetName=GND Pin=JOY1-S2
+Added Pin To Net: NetName=GND Pin=JOY1-S3
+Added Pin To Net: NetName=GND Pin=JOY1-S4
+Added Pin To Net: NetName=GND Pin=JOY1-V3
+Added Pin To Net: NetName=GND Pin=JOYSTICK-4
+Added Pin To Net: NetName=GND Pin=JOYSTICK-S1
+Added Pin To Net: NetName=GND Pin=JOYSTICK-S2
+Added Pin To Net: NetName=GND Pin=LAUNCH-2
+Added Pin To Net: NetName=GND Pin=PDOWN-2
+Added Pin To Net: NetName=GND Pin=PUP-2
+Added Net: Name=GND
+Added Pin To Net: NetName=Launch Pin=BUTTONS-1
+Added Pin To Net: NetName=Launch Pin=LAUNCH-1
+Added Net: Name=Launch
+Added Net: Name=nAB
+Added Net: Name=NetC8_1
+Added Net: Name=NetC9_1
+Added Net: Name=NetJ5_1
+Added Net: Name=NetJ5_2
+Added Net: Name=NetJ5_3
+Added Net: Name=NetJ5_4
+Added Net: Name=NetJ6_1
+Added Net: Name=NetJ6_2
+Added Net: Name=NetLS_P
+Added Net: Name=NetR1_1
+Added Net: Name=NetR2_1
+Added Net: Name=nLDAC
+Added Net: Name=nRST
+Added Net: Name=nWR
+Added Net: Name=OUTA
+Added Net: Name=OUTB
+Added Pin To Net: NetName=PDOWN Pin=BUTTONS-3
+Added Pin To Net: NetName=PDOWN Pin=PDOWN-1
+Added Net: Name=PDOWN
+Added Net: Name=pLAUNCH
+Added Pin To Net: NetName=PUP Pin=BUTTONS-2
+Added Pin To Net: NetName=PUP Pin=PUP-1
+Added Net: Name=PUP
+Added Net: Name=RXRWRF
+Added Pin To Net: NetName=STICKX Pin=JOY1-H2
+Added Pin To Net: NetName=STICKX Pin=JOYSTICK-3
+Added Net: Name=STICKX
+Added Pin To Net: NetName=STICKY Pin=JOY1-V2
+Added Pin To Net: NetName=STICKY Pin=JOYSTICK-2
+Added Net: Name=STICKY
+Added Net: Name=TXRWRR
+Added Member To Class: ClassName=Joystick Board Member=Component BUTTONS UE27AC54100
+Added Member To Class: ClassName=Joystick Board Member=Component CMS 5-146281-2
+Added Member To Class: ClassName=Joystick Board Member=Component JOY1 COM-09032
+Added Member To Class: ClassName=Joystick Board Member=Component JOYSTICK UE27AC54100
+Added Member To Class: ClassName=Joystick Board Member=Component LAUNCH 5-146281-2
+Added Member To Class: ClassName=Joystick Board Member=Component PDOWN 5-146281-2
+Added Member To Class: ClassName=Joystick Board Member=Component PUP 5-146281-2
+Added Room: Name=Joystick Board

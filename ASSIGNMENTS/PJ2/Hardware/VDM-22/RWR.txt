@@ -1,0 +1,21 @@
+Board Information Report
+Filename     : Q:\BOP_F14\Hardware\VDM-22\RWR.PcbDoc
+Date         : 10/19/2022
+Time         : 5:00:46 PM
+Time Elapsed : 00:00:00
+
+General
+    Board Size, 29mmx30mm
+    Components on board, 9
+count : 2
+
+Routing Information
+    Routing completion, 100.00%
+    Connections, -26
+    Connections routed, -26
+    Connections remaining, 0
+count : 4
+
+Net Via Size, Count
+    1.27mm, 45
+count : 1
