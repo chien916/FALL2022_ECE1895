@@ -24,13 +24,18 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="javascript.nodejs.core.library.configured.version" value="14.18.2" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.18.2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/assets/font" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2021.1.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Academics\FA2022\JDFU\ASSIGNMENTS\PJ3\chess\public\assets\font" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Academics\FA2022\JDFU\ASSIGNMENTS\PJ3\chess\public\js" />
       <recent name="D:\Academics\FA2022\JDFU\ASSIGNMENTS\PJ3\chess\config" />
       <recent name="D:\Academics\FA2022\JDFU\ASSIGNMENTS\PJ3\chess" />
     </key>
@@ -65,14 +70,28 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/config/db.js</url>
-          <line>8</line>
-          <option name="timeStamp" value="1" />
+          <url>file://$PROJECT_DIR$/config/jwt.js</url>
+          <line>23</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/config/redis.js</url>
-          <line>6</line>
-          <option name="timeStamp" value="6" />
+          <url>file://$PROJECT_DIR$/config/jwt.js</url>
+          <line>22</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/config/jwt.js</url>
+          <line>17</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/config/jwt.js</url>
+          <line>50</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

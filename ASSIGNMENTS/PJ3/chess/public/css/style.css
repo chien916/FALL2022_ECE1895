@@ -8,14 +8,17 @@
     --bg-success: #80AF5B;
     --bg-orange: #D19C12;
 }
-
+@font-face {
+    font-family: my-font;
+    src: url("/assets/font/苹果黑体.ttf");
+}
 /* Global Styles */
 
 *, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Microsoft JhengHei', serif;
+    font-family: "my-font", serif;
 }
 
 body{
@@ -41,6 +44,7 @@ a{
     text-decoration: none;
     color: inherit;
 }
+
 
 .flex-center-row{
     display: flex;
@@ -135,7 +139,7 @@ nav{
 }
 
 .nav-brand{
-    font-family: 'Microsoft JhengHei', serif;
+    font-family: "my-font", serif;
     font-size: 2rem;
     display: flex;
     justify-content: center;

@@ -1,13 +1,13 @@
 
 <%- include("../include/header") %>
 <div class="container">
-
+<%- include("../include/partials/responseMessage") %>
     <form action="/api/register"
           method="POST"
           class="flex-center-column auth-form ">
 
         <h1 class="flex-center-row">
-            注册新账户/Sign up
+            注册新的账户/Sign up
             <img src="/assets/icons/user-plus.svg" alt="User">
         </h1>
 
@@ -23,7 +23,7 @@
 
         <div class="input-group">
             <label>密码/Password</label>
-            <input type="password" name="passwords" placeholder="********">
+            <input type="password" name="password" placeholder="********">
         </div>
 
         <div class="input-group">
@@ -31,11 +31,12 @@
             <input type="password" name="confirmPassword" placeholder="********">
         </div>
 
-        <a href="/login" class="redirect-link">已有账户/Already has an account</a>
+        <a href="/login" class="redirect-link">登录已有账号/Log In</a>
 
         <button type="submit" name="submit">注册/Sign Up</button>
 
     </form>
 </div>
 
+<script src="js/responseMessage.js"></script>
 <%- include("../include/footer") %>

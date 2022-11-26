@@ -1,0 +1,2 @@
+D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug/appqt_lib_autogen/include/../EWIEGA46WW/moc_mygameserver.cpp.json
+D:/Academics/FA2022/JDFU/ASSIGNMENTS/PJ2/VDM22/build-qt_lib-Desktop_Qt_6_4_0_MinGW_64_bit-Debug/appqt_lib_autogen/include/../EWIEGA46WW/moc_myquickpainteditem.cpp.json

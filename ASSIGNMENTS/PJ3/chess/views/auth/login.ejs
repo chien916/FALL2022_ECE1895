@@ -1,29 +1,29 @@
 <%- include("../include/header") %>
 <div class="container">
-<form action="/api/login"
-	  method="POST"
-	  class="flex-center-column auth-form ">
-	<h1 class="flex-center-row">
-		登录已有账号/Log In
-		<img src="/assets/icons/user-check.svg" alt="User">
-	</h1>
+    <%- include("../include/partials/responseMessage") %>
+    <form action="/api/login"
+          method="POST"
+          class="flex-center-column auth-form ">
+        <h1 class="flex-center-row">
+            登录已有账号/Log In
+            <img src="/assets/icons/user-check.svg" alt="User">
+        </h1>
+
+        <div class="input-group">
+            <label>电子邮箱/Email</label>
+            <input type="text" name="email" placeholder="li.hua.01@aliyun.com">
+        </div>
+
+        <div class="input-group">
+            <label>密码/Password</label>
+            <input type="password" name="password" placeholder="********">
+        </div>
 
 
+        <a href="/register" class="redirect-link">注册新的账户/Sign up</a>
 
-	<div class="input-group">
-		<label>电子邮箱/Email</label>
-		<input type="text" name="email" placeholder="li.hua.01@aliyun.com">
-	</div>
+        <button type="submit" name="submit">登录/Log In</button>
 
-	<div class="input-group">
-		<label>密码/Password</label>
-		<input type="password" name="passwords" placeholder="********">
-	</div>
-
-
-	<a href="/register" class="redirect-link">创建新账户/Register for new account</a>
-
-	<button type="submit" name="submit">登录/Log In</button>
-
-</form>
+    </form>
 </div>
+<script src="js/responseMessage.js"></script>

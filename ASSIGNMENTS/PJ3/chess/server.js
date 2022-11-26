@@ -12,9 +12,11 @@ let redisClient = require("./config/redis");
 let path = require("path");
 //导入routes模块
 let viewRoutes = require("./routes/views/index");
+let apiRoutes = require("./routes/api/user");
 //变量引入
 let port = process.env.PORT ;
-
+//导入cookie模块
+let cookieParser = require("cookie-parser");
 
 
 app.set("view engine","ejs");
@@ -23,6 +25,7 @@ app.use(express.static(path.join(__dirname,"public")));
 app.use(express.json());
 app.use(express.urlencoded({extended:true}))
 app.use("/",viewRoutes);
+app.use("/api",apiRoutes);
 db.connect((err => {
 	if (err) {
 		console.log(err);
