@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>pingguo.ttf</file>
+        <file>login.qml</file>
+        <file>MyStyle.qml</file>
+        <file>qmldir</file>
+        <file>qtquickcontrols2.conf</file>
+        <file>filechooser.qml</file>
+    </qresource>
+</RCC>

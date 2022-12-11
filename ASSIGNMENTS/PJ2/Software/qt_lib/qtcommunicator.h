@@ -6,8 +6,8 @@
 #include <QPointer>
 #include <QQuickItem>
 #include <QRandomGenerator>
-#include <QSerialPort>
-#include <QSerialPortInfo>
+//#include <QSerialPort>
+//#include <QSerialPortInfo>
 #include "myquickpainteditem.h"
 
 #define SERIAL_ARDUINO_UNO_PRODUCT_IDENTIFIER 67
@@ -37,7 +37,6 @@ class QtCommunicator: public Communicator<QT_TEMPALTE_PARAM> {
 	QVector<qreal> sliderIntermediateBuffer = QVector<qreal>(2, 2.5);
 	bool setMyQuickPaintedItem(MyQuickPaintedItem* myQuickPaintedItemPointer);
 	bool setQQuickItemLeds(QQuickItem* rectangleRwr1Led, QQuickItem* rectangleRwr2Led, QQuickItem* rectangleBuzzer);
-
 	bool platformSpecificUpdateBufferToPins() override final ;
 	bool platformSpecificUpdatePinsToBuffer() override final ;
 	bool platformSpecificFlashPixelToScreen(const QT_TEMPALTE_T x, const QT_TEMPALTE_T y) override final ;

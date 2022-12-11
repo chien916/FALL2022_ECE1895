@@ -74,7 +74,8 @@ let login = (req, res) => {
 		res.redirect("/login?error=null");
 	}
 }
-
+//skipped getInfo function
 exports.register = register;
 exports.login = login;
 // module.exports = register;
+exports.getInfo

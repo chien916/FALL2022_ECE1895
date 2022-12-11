@@ -6,7 +6,7 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_AUTOMOC TRUE)
 
-find_package(Qt6 6.2 COMPONENTS Quick Core SerialPort REQUIRED)
+find_package(Qt6 6.2 COMPONENTS Quick Core  REQUIRED)
 
 
 
@@ -31,7 +31,7 @@ set_target_properties(appqt_lib PROPERTIES
 )
 
 target_link_libraries(appqt_lib
-   PRIVATE Qt6::Quick Qt6::SerialPort)
+   PRIVATE Qt6::Quick )
 
 install(TARGETS appqt_lib
     BUNDLE DESTINATION .

@@ -460,8 +460,8 @@ inline bool Playable<B, T, D, A>::processInputAndGenerateOutput() {
 		if(automoveTimer % (TIMER_PERIOD / REFERENCE_FREQ) == 0 && //如果用户尝试上下左右移动B坐标和飞机
 				(communicatorPointer->analogInputStickXAxisBuffer - 2.5f != 0
 				 || communicatorPointer->analogInputStickYAxisBuffer - 2.5f != 0)) { //用户尝试移动B坐标和飞机
-			T newAnalogInputStickXYAxisBuffer[2] = {(communicatorPointer->analogInputStickXAxisBuffer - 2.5f),
-													(communicatorPointer->analogInputStickYAxisBuffer - 2.5f)
+			T newAnalogInputStickXYAxisBuffer[2] = {static_cast<int>(communicatorPointer->analogInputStickXAxisBuffer - 2.5f),
+													static_cast<int>(communicatorPointer->analogInputStickYAxisBuffer - 2.5f)
 												   };
 			status &= initializeBReferenceDisplayable(bReferenceCenter[0] - newAnalogInputStickXYAxisBuffer[0]
 					  , bReferenceCenter[1] + newAnalogInputStickXYAxisBuffer[1]

@@ -14,18 +14,34 @@ let path = require("path");
 let viewRoutes = require("./routes/views/index");
 let apiRoutes = require("./routes/api/user");
 //变量引入
-let port = process.env.PORT ;
+let port = process.env.PORT;
 //导入cookie模块
 let cookieParser = require("cookie-parser");
 
+let server = require("http").createServer(app);
+//导入socket.io模块
+let socketHelper= require("socket.io").Server;
+let io = new socketHelper(server);//reuse variable
+io.on("connection", (socket) => {
+	console.log("￥成功：socket.io已连接");
+})
 
-app.set("view engine","ejs");
-app.set("views",path.join(__dirname,"views"));
-app.use(express.static(path.join(__dirname,"public")));
+
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
+app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
-app.use(express.urlencoded({extended:true}))
-app.use("/",viewRoutes);
-app.use("/api",apiRoutes);
+app.use(express.urlencoded({extended: true}))
+app.use("/", viewRoutes);
+app.use("/api", apiRoutes);
+
+io.on("connection", (socket) => {
+	io.on("hello",(name)=>{
+		console.log("￥socket.io：hello");
+		socket.emit("hello again",name);
+	})
+
+})
 db.connect((err => {
 	if (err) {
 		console.log(err);
@@ -37,5 +53,5 @@ app.get("/", (req, res) => {
 	res.render("index.ejs");
 })
 app.listen(port, () => {
-	console.log("￥成功：端口%s服务器已连接",port);
+	console.log("￥成功：端口%s服务器已连接", port);
 })
