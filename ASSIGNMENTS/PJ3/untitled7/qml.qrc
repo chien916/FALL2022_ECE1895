@@ -1,6 +1,14 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
-        <file>debugger.qml</file>
+        <file>MyDebugger.qml</file>
+        <file>MyInterface.qml</file>
+        <file>MyStyle.qml</file>
+        <file>pingguo.ttf</file>
+        <file>qmldir</file>
+        <file>qtquickcontrols2.conf</file>
+        <file>yahei.ttf</file>
+        <file>MyBase.qml</file>
+        <file>MyDeviceList.qml</file>
     </qresource>
 </RCC>

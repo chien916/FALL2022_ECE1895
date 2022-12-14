@@ -2,13 +2,15 @@
 #include <QQmlApplicationEngine>
 #include <QtCore>
 #include <QtQuick>
-#include <server.h>
+#include <server.hpp>
 #if defined(Q_OS_ANDROID)
 #include <QTiltSensor>
 #include <QtAndroid>
 #endif
 
 int main(int argc, char *argv[]) {
+//	qmlRegisterType<()
+
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 	QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 #endif
@@ -29,15 +31,27 @@ int main(int argc, char *argv[]) {
 	permissionList.append("android.permission.ACCESS_COARSE_LOCATION");
 	QtAndroid::requestPermissionsSync(permissionList);
 #endif
+
+	/*int pingguo =*/ QFontDatabase::addApplicationFont(":/pingguo.ttf");
+	/*int yahei =*/ QFontDatabase::addApplicationFont(":/yahei.ttf");
+//	QString family = QFontDatabase::applicationFontFamilies(id).at(0);
+//	QFont pingguoHeiti = QFont(family);
+	Server myServer;
+
+	engine.rootContext()->setContextProperty("MyServer", &myServer);
 	engine.load(url);
-	auto rootobjects =  engine.rootObjects();
-	QObject * loader = engine.rootObjects().at(0)->findChild<QObject*>("loader_loader");
-	QObject * debugger = qvariant_cast<QObject*>(QQmlProperty::read(loader, "item"));
+	myServer.setQmlObjects(engine.rootObjects().at(0));
+
+//	QObject * debugger = qvariant_cast<QObject*>(QQmlProperty::read(loader, "item"));
 	QLoggingCategory::setFilterRules(QStringLiteral("qt.bluetooth* = true"));
+
+////	myServer.setDebugger(debugger);
 #if defined(Q_OS_ANDROID)
-	Server server("server", debugger);
+	myServer.execute("ROLE_SERVER");
 #elif defined(Q_OS_WINDOWS)
-	Server client("client", debugger);
+	myServer.execute("ROLE_CLIENT");
 #endif
+
+
 	return app.exec();
 }
