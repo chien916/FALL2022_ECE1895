@@ -1,7 +1,8 @@
 QT += quick\
 bluetooth\
 gui\
-sensors
+sensors\
+testlib
 android{
 QT += androidextras\
 

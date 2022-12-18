@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>MyDebugger.qml</file>
+        <file>MyInterface.qml</file>
+        <file>MyStyle.qml</file>
+        <file>pingguo.ttf</file>
+        <file>qmldir</file>
+        <file>qtquickcontrols2.conf</file>
+        <file>yahei.ttf</file>
+        <file>MyBase.qml</file>
+        <file>MyDeviceList.qml</file>
+        <file>logo.svg</file>
+        <file>seg.ttf</file>
+        <file>MyDisplay.qml</file>
+        <file>MyLineDisplay.qml</file>
+        <file>MyReadingsObserver.qml</file>
+        <file>MyDialer.qml</file>
+    </qresource>
+</RCC>

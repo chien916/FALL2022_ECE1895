@@ -7,21 +7,18 @@ import QtQuick.Controls 2.15
 //import QtBluetooth 5.15
 ApplicationWindow {
 	id: applicationwindow_applicationwindow
+	objectName: "root_main"
 	width: 640
 	height: 480
 	visible: true
 	//	onAfterRendering: PropertyAnimation{
 	//		target:
-	//	}
+	//	//	}
 	MyBase {
 		anchors.fill: parent
-		Component.onCompleted: reconfigureMyStyle()
+		Component.onCompleted: MyStyle.baseValue = Math.min(width,
+															height) * 0.03
 	}
-	onHeightChanged: reconfigureMyStyle()
-	onWidthChanged: reconfigureMyStyle()
-
-	function reconfigureMyStyle() {
-		MyStyle.baseValue = Math.min(width, height) * 0.03
-		MyServer.disp("reconfigued base value" + MyStyle.baseValue)
-	}
+	//	onHeightChanged: MyStyle.baseValue = Math.min(width, height) * 0.03
+	//	onWidthChanged: MyStyle.baseValue = Math.min(width, height) * 0.03
 }

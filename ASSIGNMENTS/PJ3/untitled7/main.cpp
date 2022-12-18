@@ -34,23 +34,18 @@ int main(int argc, char *argv[]) {
 
 	/*int pingguo =*/ QFontDatabase::addApplicationFont(":/pingguo.ttf");
 	/*int yahei =*/ QFontDatabase::addApplicationFont(":/yahei.ttf");
+	QFontDatabase::addApplicationFont(":/seg.ttf");
 //	QString family = QFontDatabase::applicationFontFamilies(id).at(0);
 //	QFont pingguoHeiti = QFont(family);
 	Server myServer;
 
 	engine.rootContext()->setContextProperty("MyServer", &myServer);
 	engine.load(url);
-	myServer.setQmlObjects(engine.rootObjects().at(0));
+//	myServer.setQmlObjects(engine.rootObjects().at(0));
 
-//	QObject * debugger = qvariant_cast<QObject*>(QQmlProperty::read(loader, "item"));
-	QLoggingCategory::setFilterRules(QStringLiteral("qt.bluetooth* = true"));
-
-////	myServer.setDebugger(debugger);
-#if defined(Q_OS_ANDROID)
-	myServer.execute("ROLE_SERVER");
-#elif defined(Q_OS_WINDOWS)
-	myServer.execute("ROLE_CLIENT");
-#endif
+	myServer.startTimer(700);
+//	QLoggingCategory::setFilterRules(QStringLiteral("qt.bluetooth* = true"));
+//	myServer.execute("CONNECT");
 
 
 	return app.exec();

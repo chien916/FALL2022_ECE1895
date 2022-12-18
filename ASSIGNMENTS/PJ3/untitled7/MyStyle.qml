@@ -5,7 +5,7 @@ import QtQuick 2.15
 Item {
 	property int baseValue: 10
 	readonly property color color_neutral900: "#1A202C"
-	//	readonly property color color_neutral800: "#2D3648"
+	readonly property color color_neutral800: "#2D3648"
 	//	readonly property color color_neutral700: "#4A5468"
 	readonly property color color_neutral600: "#717D96"
 	//	readonly property color color_neutral500: "#A0ABC0"

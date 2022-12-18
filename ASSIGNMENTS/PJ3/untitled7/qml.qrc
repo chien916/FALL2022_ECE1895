@@ -10,5 +10,11 @@
         <file>yahei.ttf</file>
         <file>MyBase.qml</file>
         <file>MyDeviceList.qml</file>
+        <file>logo.svg</file>
+        <file>seg.ttf</file>
+        <file>MyDisplay.qml</file>
+        <file>MyLineDisplay.qml</file>
+        <file>MyReadingsObserver.qml</file>
+        <file>MyDialer.qml</file>
     </qresource>
 </RCC>
